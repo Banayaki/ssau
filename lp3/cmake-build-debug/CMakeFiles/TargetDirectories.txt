@@ -1,0 +1,3 @@
+/cygdrive/c/Users/Banayaki/CLionProjects/ssau/lp3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/Users/Banayaki/CLionProjects/ssau/lp3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/Users/Banayaki/CLionProjects/ssau/lp3/cmake-build-debug/CMakeFiles/LP_3.dir

@@ -1,0 +1,4 @@
+C:\Users\Banayaki\.CLion2017.3\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/Banayaki/CLionProjects/ssau/OT_lp1
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/c/Users/Banayaki/CLionProjects/ssau/OT_lp1/cmake-build-debug

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Banayaki/CLionProjects/ssau/lp2/main.cpp
+iostream
+-
+fstream
+-
+cmath
+-
+C:/Users/Banayaki/CLionProjects/ssau/resources/MyClasses.h
+-
+
+C:/Users/Banayaki/CLionProjects/ssau/resources/Executor.cpp
+fstream
+-
+iostream
+-
+sstream
+-
+Windows.h
+-
+
+C:/Users/Banayaki/CLionProjects/ssau/resources/MyClasses.h
+MyVector.cpp
+C:/Users/Banayaki/CLionProjects/ssau/resources/MyVector.cpp
+Executor.cpp
+C:/Users/Banayaki/CLionProjects/ssau/resources/Executor.cpp
+
+C:/Users/Banayaki/CLionProjects/ssau/resources/MyVector.cpp
+Windows.h
+-
+
