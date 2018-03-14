@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <String.h>
 #include "C:\Users\Banayaki\CLionProjects\ssau\resources\MyClasses.h"
 
 
@@ -14,16 +13,16 @@ using namespace std;
  */
 class ExecutorOtLp1 : public Executor {
 public:
-    void readFile(vector<char *> &text) {
+    char *readFile() {
         printAll("---original text begin---");
-        char *line;
-        while (!fin.eof() && fin) {
-            line = nullptr;
-            fin.getline(line, fin.gcount(), EOL);
-            printAll(line);
-            text.push_back(line);
-        }
+        fin.seekg(0, fin.end);
+        int length = (int) fin.tellg();
+        char *line = new char[length];
+        fin.seekg(0, fin.beg);
+        fin.read(line, length);
+        printAll(line);
         printAll("---original text end---");
+        return line;
     }
 };
 
@@ -87,37 +86,36 @@ public:
     }
 
 
-    vector<Word> WordAnalysis(vector<char *> text) {
+    vector<Word> WordAnalysis(char *text) {
         vector<Word> result;
-        for (char *line : text) {
-            int currentPosition = 0;
-            int beginPosition = 0;
-            LexCondition condition = LexCondition::S;
-            Word word;
+        int currentPosition = 0;
+        int beginPosition = 0;
+        LexCondition condition = LexCondition::S;
+        Word word;
 
-            //TODO: Хранить \0
-            while (line[currentPosition] != '\0') {
-                char currentChar = line[currentPosition];
+        //TODO: Хранить \0
+        while (text[currentPosition] != '\0') {
+            char currentChar = text[currentPosition];
 
-                if (condition == LexCondition::S && getRow(currentChar) < 2) {
-                    beginPosition = currentPosition;
-                    word.setValid(true);
-                }
-                condition = (LexCondition) matrix[getRow(currentChar)][condition];
-
-                if (condition == LexCondition::E) {
-                    word.setValid(false);
-                }
-
-                if (condition == LexCondition::F) {
-                    word.setStr(substring(line, beginPosition, currentPosition));
-                    result.push_back(word);
-                    condition = LexCondition::S;
-                }
-
-                ++currentPosition;
+            if (condition == LexCondition::S && getRow(currentChar) < 2) {
+                beginPosition = currentPosition;
+                word.setValid(true);
             }
+            condition = (LexCondition) matrix[getRow(currentChar)][condition];
+
+            if (condition == LexCondition::E) {
+                word.setValid(false);
+            }
+
+            if (condition == LexCondition::F) {
+                word.setStr(substring(text, beginPosition, currentPosition));
+                result.push_back(word);
+                condition = LexCondition::S;
+            }
+
+            ++currentPosition;
         }
+
 
         return result;
     }
@@ -131,7 +129,7 @@ void clearInputStream(istream &in) {
     }
 }
 
-const char* readFileName(istream &in) {
+const char *readFileName(istream &in) {
     string line;
     cout << R"(Enter a name of txt file from C:\Users\Banayaki\Desktop\tests\ )" << endl;
     in >> line;
@@ -148,20 +146,22 @@ int main() {
     ExecutorOtLp1 executor;
     executor.getFout().open(R"(C:\Users\Banayaki\Desktop\tests\output.txt)");
     while (isWorking) {
-        vector<char*> text;
+        char *text;
         LexicalAnalyzer analyzer;
 
         while (!executor.getFin().is_open()) {
-            const char* fileName = readFileName(cin);
+            const char *fileName = readFileName(cin);
             executor.openFile(fileName);
         }
-        executor.readFile(text);
+        text = executor.readFile();
 
+        //TODO: ИЗбавится от ебучих указателей, передавать все по ссылкам
+        //TODO: Не работает чтение из файла
         vector<Word> result = analyzer.WordAnalysis(text);
 
         for (Word word : result) {
             executor.printAll(word.getStr());
         }
-
+        isWorking = false;
     }
 }
