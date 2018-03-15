@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 /*
  *  Словом текста считается любая последовательность цифр и букв русского
 алфавита; между соседними словами – не менее одного пробела. Найти те слова,
@@ -26,6 +27,8 @@ public:
         return line;
     }
 };
+//TODO: Убрать не забыть бы
+ExecutorOtLp1 executor;
 
 class Word {
 private:
@@ -79,14 +82,13 @@ public:
 
     //TODO: Проверить прваильно ли работает сабстринг
     char *substring(char *line, int begin, int end) {
-        int length = end - begin + 1;
-        auto *newLine = new char[length];
+        int length = end - begin;
+        char newLine[length];
         for (int i = 0; i < length; ++i) {
             newLine[i] = line[begin + i];
         }
-        return newLine;
+        return &newLine[0];
     }
-
 
     vector<Word> WordAnalysis(char *text) {
         vector<Word> result;
@@ -95,8 +97,7 @@ public:
         LexCondition condition = LexCondition::S;
         Word word;
 
-        //TODO: Хранить \0
-        while (text[currentPosition] != '\0') {
+        while (text[currentPosition] != EOS) {
             char currentChar = text[currentPosition];
 
             if (condition == LexCondition::S && getRow(currentChar) < 2) {
@@ -145,7 +146,7 @@ const char *readFileName(istream &in) {
 int main() {
     bool isWorking = true;
     setlocale(LC_ALL, "ru_RU.UTF-8");
-    ExecutorOtLp1 executor;
+//    ExecutorOtLp1 executor;
     executor.getFout().open(R"(C:\Users\Banayaki\Desktop\tests\output.txt)");
     while (isWorking) {
         char *text;

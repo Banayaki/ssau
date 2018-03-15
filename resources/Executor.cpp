@@ -10,6 +10,7 @@ const string INCORRECT_INPUT = "Incorrect input, try again."; //NOLINT
 const string ERROR_IFC = "ERROR. Incorrect file content."; //NOLINT
 const string DOUBLE_OVERFLOW = "Overflow double"; //NOLINT
 const string INTEGER_OVERFLOW = "Overflow double";
+const char EOS = '\0';
 const char SPACE = ' ';
 const char TAB = '\t';
 const char CR = '\r';
@@ -40,6 +41,11 @@ public:
     //virtual void readFile(vector<string> &text) = 0;
 
     void printAll(const string &line) {
+        cout << line << endl;
+        fout << line << endl;
+    }
+
+    void printAll(char line) {
         cout << line << endl;
         fout << line << endl;
     }
