@@ -220,9 +220,6 @@ ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf.exe
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=ProcessorCount_cmd_sysctl-NOTFOUND
 
-//Dependencies for target
-lib_LIB_DEPENDS:STATIC=
-
 
 ########################
 # INTERNAL cache entries

@@ -19,6 +19,7 @@ public:
         int length = (int) fin.tellg();
         char *line = new char[length];
         fin.seekg(0, fin.beg);
+        //fin.getline(line, length, '\0');
         fin.read(line, length);
         printAll(line);
         printAll("---original text end---");
@@ -64,18 +65,19 @@ private:
     };
 
     enum LexCondition {
-        S, A, E, F
+        S = 0, G = 1, F = 2, E = 3
     };
 
 public:
 
     int getRow(const char &currentChar) {
-        if (currentChar > 47 && currentChar < 58) return 1;
-        else if (currentChar > 127 && currentChar < 176 || currentChar > 223 && currentChar < 242) return 0;
+        if (currentChar < 0) return 0;
+        else if (currentChar > 47 && currentChar < 58) return 1;
         else if (currentChar == 32) return 2;
         else return 3;
     }
 
+    //TODO: Проверить прваильно ли работает сабстринг
     char *substring(char *line, int begin, int end) {
         int length = end - begin + 1;
         auto *newLine = new char[length];
@@ -116,7 +118,6 @@ public:
             ++currentPosition;
         }
 
-
         return result;
     }
 };
@@ -143,6 +144,7 @@ const char *readFileName(istream &in) {
 
 int main() {
     bool isWorking = true;
+    setlocale(LC_ALL, "ru_RU.UTF-8");
     ExecutorOtLp1 executor;
     executor.getFout().open(R"(C:\Users\Banayaki\Desktop\tests\output.txt)");
     while (isWorking) {
@@ -156,7 +158,6 @@ int main() {
         text = executor.readFile();
 
         //TODO: ИЗбавится от ебучих указателей, передавать все по ссылкам
-        //TODO: Не работает чтение из файла
         vector<Word> result = analyzer.WordAnalysis(text);
 
         for (Word word : result) {
