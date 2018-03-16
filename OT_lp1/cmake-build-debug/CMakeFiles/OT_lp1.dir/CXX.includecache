@@ -6,10 +6,12 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Banayaki/CLionProjects/ssau/OT_lp1/main.cpp
+C:/Users/Banayaki/CLionProjects/ssau/OT_lp1/main.cpp
 iostream
 -
 vector
+-
+Windows.h
 -
 C:/Users/Banayaki/CLionProjects/ssau/resources/MyClasses.h
 -

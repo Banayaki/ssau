@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <Windows.h>
 #include "C:\Users\Banayaki\CLionProjects\ssau\resources\MyClasses.h"
 
 
@@ -17,44 +18,30 @@ public:
     char *readFile() {
         printAll("---original text begin---");
         fin.seekg(0, fin.end);
-        int length = (int) fin.tellg();
+        int length = (int) fin.tellg() + 1;
         char *line = new char[length];
         fin.seekg(0, fin.beg);
-        //fin.getline(line, length, '\0');
-        fin.read(line, length);
+        fin.getline(line, length, '\0');
+        //fin.read(line, length);
         printAll(line);
         printAll("---original text end---");
         return line;
     }
 };
-//TODO: Убрать не забыть бы
-ExecutorOtLp1 executor;
 
 class Word {
 private:
-    bool valid;
-    char *str;
+    bool valid{};
+    char* str;
+
 public:
-    Word() = default;
-
-    Word(char *word) {
-        this->str = word;
-    }
-
-    bool isValid() const {
-        return valid;
-    }
-
-    void setValid(bool valid) {
+    Word(char* str, bool valid) {
+        this->str = str;
         this->valid = valid;
     }
 
-    char *getStr() const {
-        return str;
-    }
-
-    void setStr(char *str) {
-        this->str = str;
+    char* getStr() {
+        return this->str;
     }
 };
 
@@ -80,46 +67,39 @@ public:
         else return 3;
     }
 
-    //TODO: Проверить прваильно ли работает сабстринг
-    char *substring(char *line, int begin, int end) {
-        int length = end - begin;
-        char newLine[length];
-        for (int i = 0; i < length; ++i) {
-            newLine[i] = line[begin + i];
-        }
-        return &newLine[0];
-    }
 
-    vector<Word> WordAnalysis(char *text) {
-        vector<Word> result;
+    void WordAnalysis(char *text, vector<Word>& result) {
         int currentPosition = 0;
         int beginPosition = 0;
         LexCondition condition = LexCondition::S;
-        Word word;
+        bool valid = true;
 
         while (text[currentPosition] != EOS) {
             char currentChar = text[currentPosition];
 
             if (condition == LexCondition::S && getRow(currentChar) < 2) {
                 beginPosition = currentPosition;
-                word.setValid(true);
+                valid = true;
             }
             condition = (LexCondition) matrix[getRow(currentChar)][condition];
 
             if (condition == LexCondition::E) {
-                word.setValid(false);
+                valid = false;
             }
 
             if (condition == LexCondition::F) {
-                word.setStr(substring(text, beginPosition, currentPosition));
-                result.push_back(word);
+                int length = currentPosition - beginPosition;
+                char* line = (char*) calloc(length + 1, sizeof(char));
+                for (int i = 0; i < length; ++i) {
+                    line[i] = text[beginPosition + i];
+                }
+                result.emplace_back(Word(line, valid));
                 condition = LexCondition::S;
+                valid = true;
             }
 
             ++currentPosition;
         }
-
-        return result;
     }
 };
 
@@ -132,21 +112,21 @@ void clearInputStream(istream &in) {
 }
 
 const char *readFileName(istream &in) {
-    string line;
+    char* line;
     cout << R"(Enter a name of txt file from C:\Users\Banayaki\Desktop\tests\ )" << endl;
-    in >> line;
+
     while (!in || line == "output.txt") { //При некорректном вводе запрашиваем ввод повторно, перед этим очищая поток
         cout << INCORRECT_INPUT << endl;
         clearInputStream(in);
         in >> line;
     }
-    return line.c_str();
+    return line;
 }
 
 int main() {
     bool isWorking = true;
     setlocale(LC_ALL, "ru_RU.UTF-8");
-//    ExecutorOtLp1 executor;
+    ExecutorOtLp1 executor;
     executor.getFout().open(R"(C:\Users\Banayaki\Desktop\tests\output.txt)");
     while (isWorking) {
         char *text;
@@ -154,16 +134,17 @@ int main() {
 
         while (!executor.getFin().is_open()) {
             const char *fileName = readFileName(cin);
-            executor.openFile(fileName);
+            //executor.openFile("input.txt"/*fileName*/);
         }
         text = executor.readFile();
 
         //TODO: ИЗбавится от ебучих указателей, передавать все по ссылкам
-        vector<Word> result = analyzer.WordAnalysis(text);
-
-        for (Word word : result) {
+        vector<Word> result;
+        analyzer.WordAnalysis(text, result);
+            for (Word word : result) {
             executor.printAll(word.getStr());
         }
         isWorking = false;
+        //TODO: выбрасывает исключение непроверяемое
     }
 }
