@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/OT_lp1.dir/main.cpp.obj"
+  "CMakeFiles/OT_lp1.dir/main.cpp.o"
   "OT_lp1.pdb"
   "OT_lp1.exe"
-  "OT_lp1.exe.manifest"
   "libOT_lp1.dll.a"
 )
 

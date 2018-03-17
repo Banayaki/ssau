@@ -1,23 +1,3 @@
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <Windows.h>
-
-using namespace std;
-
-const string FILE_FORMAT = ".txt"; // NOLINT
-const string INCORRECT_INPUT = "Incorrect input, try again."; //NOLINT
-const string ERROR_IFC = "ERROR. Incorrect file content."; //NOLINT
-const string DOUBLE_OVERFLOW = "Overflow double"; //NOLINT
-const string INTEGER_OVERFLOW = "Overflow double";
-const char EOS = '\0';
-const char SPACE = ' ';
-const char TAB = '\t';
-const char CR = '\r';
-const char EOL = '\n';
-const char YES = 'y';
-const char NO = 'n';
-
 class Executor {
 protected:
     double EPS = 1.0;
@@ -28,24 +8,28 @@ public:
         while (1.0 + this->EPS != 1.0) {
             this->EPS /= 2.0;
         }
-        //Why he's print 0.00000???
-        //printAll("Machine EPS = " + to_string(this->EPS));
     }
 
     ~Executor() {
-        fin.close();
-        fout.close();
-        ZeroMemory(this, sizeof(Executor));
+        this->fin.close();
+        this->fout.close();
     }
 
-    //virtual void readFile(vector<string> &text) = 0;
+//    virtual void readFile(vector<string> &text) = 0;
 
-    void printAll(const string &line) {
+    void clearInputStream(istream &in) {
+        in.clear();
+        while (in.peek() != EOL && in.peek() != EOF) {
+            in.get();
+        }
+
+    }
+    void printAll(char *line) {
         cout << line << endl;
         fout << line << endl;
     }
 
-    void printAll(char line) {
+    void printAll(const string &line) {
         cout << line << endl;
         fout << line << endl;
     }
@@ -61,11 +45,42 @@ public:
         return path == FILE_FORMAT;
     }
 
-    void openFile(const string &fileName) {
-        //cout << R"(Enter a name of txt file from C:\Users\Banayaki\Desktop\tests\ )" << endl;
+    //Поиск начала строки
+    int seek(istream &in) {
+        while (in.peek() != EOL && in.peek() == SPACE) {
+            in.get();
+        }
+        return in.peek();
+    }
+
+    bool wishToContinue() {
+        cout << "Do you wish to continue? (y or n)" << endl;
+        char wish;
+        cin >> wish;
+        while (!cin || seek(cin) != EOL || wish != YES && wish != NO) {
+            clearInputStream(cin);
+            cout << INCORRECT_INPUT << endl;
+            cin >> wish;
+        }
+        return wish == YES;
+    }
+
+    const char *readFileName() {
+        char *line = (char*) calloc(BUFFERED_SIZE, sizeof(char));
+        cout << R"(Enter a name of txt file from C:\Users\Banayaki\Desktop\tests\ )" << endl;
+        scanf("%49s", line);
+        while (line == "output.txt") { //При некорректном вводе запрашиваем ввод повторно, перед этим очищая поток
+            cout << INCORRECT_INPUT << endl;
+            clearInputStream(cin);
+            scanf("%49s", line);
+        }
+        return line;
+    }
+
+    void openFile() {
         string path;
         path = R"(C:\Users\Banayaki\Desktop\tests\)";
-        path += fileName;
+        path += readFileName();
         fin.open(path);
         deleteSpaces();
         if (!checkFormat(path)) {

@@ -1,6 +1,3 @@
-#include <Windows.h>
-
-
 template<class T>
 class MyVector {
 private:

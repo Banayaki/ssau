@@ -31,7 +31,7 @@ using namespace std;
 */
 class ExecutorLp3 : public Executor {
 public:
-    void readFile(vector<string> &text) override {
+    void readFile(vector<string> &text) {
         printAll("---Original text begin---");
         string line;
         while (!fin.eof() && fin) {

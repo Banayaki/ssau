@@ -3,9 +3,7 @@
 #include <Windows.h>
 #include "C:\Users\Banayaki\CLionProjects\ssau\resources\MyClasses.h"
 
-
 using namespace std;
-
 
 /*
  *  Словом текста считается любая последовательность цифр и букв русского
@@ -13,138 +11,56 @@ using namespace std;
 которые начинаются и заканчиваются на цифру (слово из одной цифры
 удовлетворяет условию).
  */
+
+//Наследник исполнителя, новый метод - чтение файла
 class ExecutorOtLp1 : public Executor {
 public:
     char *readFile() {
-        printAll("---original text begin---");
-        fin.seekg(0, fin.end);
-        int length = (int) fin.tellg() + 1;
-        char *line = new char[length];
+        printAll("---Original text begin---");
+        fin.seekg(0, fin.end);                                  //Изменение текущей позиции
+        int length = (int) fin.tellg() + 1;                     //Количество символов в файле + 1, что бы поместился \0
+        char *line = (char *) calloc(length, sizeof(char));     //Выделение памяти и инициализация
         fin.seekg(0, fin.beg);
-        fin.getline(line, length, '\0');
-        //fin.read(line, length);
+        fin.getline(line, length, EOF);
         printAll(line);
-        printAll("---original text end---");
+        printAll("---Original text end---");
         return line;
     }
 };
 
-class Word {
-private:
-    bool valid{};
-    char* str;
-
-public:
-    Word(char* str, bool valid) {
-        this->str = str;
-        this->valid = valid;
+//Вывод результата, сначала выводятся слова подходящие под условия, затем слова не прошедьшие проверку
+void printResult(const vector<Word> &result, Executor &executor) {
+    stringstream ss;
+    executor.printAll("---Right words begin---");
+    for (Word word : result) {
+        if (word.getValid()) executor.printAll(word.getStr());
+        else ss << word.getStr() << EOL;
     }
-
-    char* getStr() {
-        return this->str;
-    }
-};
-
-class LexicalAnalyzer {
-private:
-    const int matrix[4][3] = { //  S    G     E
-            1, 1, 3,    //А...я    G    G     E
-            1, 1, 3,   //0...9     G    G     E
-            2, 2, 3,   //space     F    F     E
-            3, 3, 3   //other      E    E     E
-    };
-
-    enum LexCondition {
-        S = 0, G = 1, F = 2, E = 3
-    };
-
-public:
-
-    int getRow(const char &currentChar) {
-        if (currentChar < 0) return 0;
-        else if (currentChar > 47 && currentChar < 58) return 1;
-        else if (currentChar == 32) return 2;
-        else return 3;
-    }
-
-
-    void WordAnalysis(char *text, vector<Word>& result) {
-        int currentPosition = 0;
-        int beginPosition = 0;
-        LexCondition condition = LexCondition::S;
-        bool valid = true;
-
-        while (text[currentPosition] != EOS) {
-            char currentChar = text[currentPosition];
-
-            if (condition == LexCondition::S && getRow(currentChar) < 2) {
-                beginPosition = currentPosition;
-                valid = true;
-            }
-            condition = (LexCondition) matrix[getRow(currentChar)][condition];
-
-            if (condition == LexCondition::E) {
-                valid = false;
-            }
-
-            if (condition == LexCondition::F) {
-                int length = currentPosition - beginPosition;
-                char* line = (char*) calloc(length + 1, sizeof(char));
-                for (int i = 0; i < length; ++i) {
-                    line[i] = text[beginPosition + i];
-                }
-                result.emplace_back(Word(line, valid));
-                condition = LexCondition::S;
-                valid = true;
-            }
-
-            ++currentPosition;
-        }
-    }
-};
-
-//Очистка потока при некорректном вводе
-void clearInputStream(istream &in) {
-    in.clear();
-    while (in.peek() != EOL && in.peek() != EOF) {
-        in.get();
-    }
-}
-
-const char *readFileName(istream &in) {
-    char* line;
-    cout << R"(Enter a name of txt file from C:\Users\Banayaki\Desktop\tests\ )" << endl;
-
-    while (!in || line == "output.txt") { //При некорректном вводе запрашиваем ввод повторно, перед этим очищая поток
-        cout << INCORRECT_INPUT << endl;
-        clearInputStream(in);
-        in >> line;
-    }
-    return line;
+    executor.printAll("---Right words end---");
+    executor.printAll("---Wrongs words begin---");
+    executor.printAll(ss.str());                        //Будет лишний перевод строки
+    executor.printAll("---Wrongs word end---");         //TODO: не выводить лишний '\n'
 }
 
 int main() {
     bool isWorking = true;
-    setlocale(LC_ALL, "ru_RU.UTF-8");
     ExecutorOtLp1 executor;
-    executor.getFout().open(R"(C:\Users\Banayaki\Desktop\tests\output.txt)");
+    executor.getFout().open(OUTPUT_FILE);
     while (isWorking) {
         char *text;
         LexicalAnalyzer analyzer;
 
         while (!executor.getFin().is_open()) {
-            const char *fileName = readFileName(cin);
-            //executor.openFile("input.txt"/*fileName*/);
+            executor.openFile();
         }
         text = executor.readFile();
 
-        //TODO: ИЗбавится от ебучих указателей, передавать все по ссылкам
         vector<Word> result;
         analyzer.WordAnalysis(text, result);
-            for (Word word : result) {
-            executor.printAll(word.getStr());
-        }
-        isWorking = false;
-        //TODO: выбрасывает исключение непроверяемое
+        printResult(result, executor);
+        free(text);
+        executor.getFin().close();
+        isWorking = executor.wishToContinue();
+        if (isWorking) executor.printAll("\n###---Next iteration---###");
     }
 }
