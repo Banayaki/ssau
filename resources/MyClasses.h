@@ -21,9 +21,9 @@ const char CR = '\r';
 const char EOL = '\n';
 const char YES = 'y';
 const char NO = 'n';
-const char NUMBERS_BEGIN = '0';
-const char NUMBERS_END = '9';
-const int BUFFERED_SIZE = 50;
+const char NUMBERS_BEGIN = 48;
+const char NUMBERS_END = 57;
+const int BUFFERED_SIZE = 256;
 
 #include "MyVector.cpp"
 #include "Executor.cpp"

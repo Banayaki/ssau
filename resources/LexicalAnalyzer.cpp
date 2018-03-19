@@ -1,15 +1,15 @@
 class Word {
 private:
     bool valid;
-    char *str;
+    wchar_t *str;
 
 public:
-    Word(char *str, bool valid) {
+    Word(wchar_t *str, bool valid) {
         this->str = str;
         this->valid = valid;
     }
 
-    char *getStr() {
+    wchar_t *getStr() {
         return this->str;
     }
 
@@ -20,56 +20,48 @@ public:
 
 //Класс - лексический анализатор, анализирует текст используя Конечный Автомат (далее КА)
 class LexicalAnalyzer {
-private:                        //Матрица переходов состояний КА
-    const int matrix[4][3] = {  //      S    G    E
-            1, 1, 3,            //  А...я    G    G     E
-            1, 1, 3,            //  0...9    G    G     E
-            2, 2, 3,            //  space    F    F     E
-            3, 3, 3             //  other    E    E     E
+private:
+    const int matrix[4][4] = {      //              S   G   X   E
+            4, 1, 1, 4,             //  А,...,я     E   G   G   E
+            2, 2, 2, 4,             //  0,...,9     X   X   X   E
+            3, 4, 3, 4,             //  spaces      F   E   F   E
+            4, 4, 4, 4              //  other       E   E   E   E
     };
 
     enum LexCondition {         //Возможные состояния КА
-        S, G, F, E              //S - начальное, G - корректно, F - заключительное, Е - некорректно
+        S, G, X, F, E              //S - начальное, G - корректное, Х - помогает остледить окончание на цифру, F - заключительное, Е - некорректно
     };
 
 public:
 
-    int getSymbolGroup(const char &currentChar) {                                         //Для перехода по матрице, выбор нужной строки
-        if (currentChar < 0) return 0;                                                    //Группа с Кириллицей
-        else if (currentChar >= NUMBERS_BEGIN && currentChar <= NUMBERS_END) return 1;    //Группа чисел
-        else if (currentChar == SPACE || currentChar == EOL || currentChar == CR || currentChar == EOS) return 2;   //Заключительные символы
-        else return 3;                                                                    //Все остальные не корректны
-    }
-
-    //Проверка: Подходит ли слово условию
-    bool checkWord(char *word, int length) {
-        if (length == 1) {
-            return getSymbolGroup(word[0]) == 1;
-        } else
-            return getSymbolGroup(word[0]) == 1 && getSymbolGroup(word[length - 1]) == 1;
+    int getSymbolGroup(const wchar_t &currentChar) {                                                                    //Для перехода по матрице, выбор нужной строки
+        if (currentChar >= 1040 && currentChar <= 1103) return 0;                                                       //Группа с Кириллицей
+        else if (currentChar >= NUMBERS_BEGIN && currentChar <= NUMBERS_END) return 1;                                  //Группа чисел
+        else if (currentChar == SPACE || currentChar == EOL || currentChar == CR || currentChar == EOS) return 2;       //Заключительные символы
+        else return 3;                                                                                                  //Все остальные не корректны
     }
 
     //Добавление слова в результирующий вектор
-    void addWord(vector<Word> &result, char *text, int beginP, int endP) {
+    void addWord(vector<Word> &result, wchar_t *text, int beginP, int endP, bool isValid) {
         int length = endP - beginP;
-        char *line = (char *) calloc(length + 1, sizeof(char));
+        wchar_t *line = (wchar_t *) calloc(length + 1, sizeof(wchar_t));
         for (int i = 0; i < length; ++i) {
             line[i] = text[beginP + i];
         }
-        result.emplace_back(Word(line, checkWord(line, length)));
+        result.emplace_back(Word(line, isValid));
     }
 
     //Метод выполняющий лексический анализ согласно матрице переходов КА
-    void WordAnalysis(char *text, vector<Word> &result) {
+    void wordAnalysis(wchar_t *text, vector<Word> &result) {
         int currentPosition = 0;
         int beginPosition = 0;
-        char currentChar;
+        wchar_t currentChar;
         LexCondition condition = LexCondition::S;
 
         while (text[currentPosition] != EOS) {
             currentChar = text[currentPosition];
 
-            if (condition == LexCondition::S && getSymbolGroup(currentChar) < 3) {
+            if (condition == LexCondition::S) {
                 if (getSymbolGroup(currentChar) == 2) {
                     ++currentPosition;
                     continue;
@@ -82,19 +74,20 @@ public:
                 while (getSymbolGroup(currentChar) != 2) {
                     currentChar = text[++currentPosition];
                 }
+                addWord(result, text, beginPosition, currentPosition, false);
                 condition = LexCondition::S;
                 beginPosition = currentPosition;
             }
 
             if (condition == LexCondition::F) {
-                addWord(result, text, beginPosition, currentPosition);
+                addWord(result, text, beginPosition, currentPosition, true);
                 condition = LexCondition::S;
             }
             ++currentPosition;
         }
 
-        if (condition == LexCondition::G) {
-            addWord(result, text, beginPosition, currentPosition);
+        if (condition == LexCondition::X) {
+            addWord(result, text, beginPosition, currentPosition, true);
         }
     }
 };

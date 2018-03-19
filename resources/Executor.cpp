@@ -1,8 +1,9 @@
+
 class Executor {
 protected:
     double EPS = 1.0;
-    ifstream fin;
-    ofstream fout;
+    wifstream fin;
+    wofstream fout;
 public:
     Executor() {
         while (1.0 + this->EPS != 1.0) {
@@ -17,6 +18,10 @@ public:
 
 //    virtual void readFile(vector<string> &text) = 0;
 
+    wstring toWString(string str) {
+        return wstring(str.begin(), str.end());
+    }
+
     void clearInputStream(istream &in) {
         in.clear();
         while (in.peek() != EOL && in.peek() != EOF) {
@@ -24,13 +29,19 @@ public:
         }
 
     }
-    void printAll(char *line) {
+
+    /*void printAll(char *line) {
         cout << line << endl;
+        fout << line << endl;
+    }*/
+
+    void printAll(wchar_t *line) {
+        wcout << line << endl;
         fout << line << endl;
     }
 
-    void printAll(const string &line) {
-        cout << line << endl;
+    void printAll(const wstring &line) {
+        wcout << line << endl;
         fout << line << endl;
     }
 
@@ -68,11 +79,11 @@ public:
     const char *readFileName() {
         char *line = (char*) calloc(BUFFERED_SIZE, sizeof(char));
         cout << R"(Enter a name of txt file from C:\Users\Banayaki\Desktop\tests\ )" << endl;
-        scanf("%49s", line);
+        scanf("%255s", line);
         while (line == "output.txt") { //При некорректном вводе запрашиваем ввод повторно, перед этим очищая поток
             cout << INCORRECT_INPUT << endl;
             clearInputStream(cin);
-            scanf("%49s", line);
+            scanf("%255s", line);
         }
         return line;
     }
@@ -96,11 +107,11 @@ public:
 
     }
 
-    ifstream &getFin() {
+    wifstream &getFin() {
         return this->fin;
     }
 
-    ofstream &getFout() {
+    wofstream &getFout() {
         return this->fout;
     }
 };
