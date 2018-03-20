@@ -7,12 +7,6 @@
 #IncludeRegexTransform: 
 
 /cygdrive/c/Users/Banayaki/CLionProjects/ssau/OT_lp1/main.cpp
-iostream
--
-vector
--
-codecvt
--
 C:/Users/Banayaki/CLionProjects/ssau/resources/MyClasses.h
 -
 
@@ -28,6 +22,8 @@ iostream
 sstream
 -
 Windows.h
+-
+vector
 -
 MyVector.cpp
 C:/Users/Banayaki/CLionProjects/ssau/resources/MyVector.cpp

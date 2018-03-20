@@ -9,8 +9,16 @@ public:
         this->valid = valid;
     }
 
+//    ~Word() {
+//        ZeroMemory(this, sizeof(this));
+//    }
+
     wchar_t *getStr() {
         return this->str;
+    }
+
+    void setStr(wchar_t* str) {
+        this->str = str;
     }
 
     bool getValid() {
@@ -35,7 +43,7 @@ private:
 public:
 
     int getSymbolGroup(const wchar_t &currentChar) {                                                                    //Для перехода по матрице, выбор нужной строки
-        if (currentChar >= 1040 && currentChar <= 1103) return 0;                                                       //Группа с Кириллицей
+        if (currentChar >= CYRILLIC_BEGIN && currentChar <= CYRILLIC_END) return 0;                                     //Группа с Кириллицей
         else if (currentChar >= NUMBERS_BEGIN && currentChar <= NUMBERS_END) return 1;                                  //Группа чисел
         else if (currentChar == SPACE || currentChar == EOL || currentChar == CR || currentChar == EOS) return 2;       //Заключительные символы
         else return 3;                                                                                                  //Все остальные не корректны
@@ -77,6 +85,7 @@ public:
                 addWord(result, text, beginPosition, currentPosition, false);
                 condition = LexCondition::S;
                 beginPosition = currentPosition;
+                continue;
             }
 
             if (condition == LexCondition::F) {

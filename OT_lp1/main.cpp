@@ -1,6 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <codecvt>
 #include "C:\Users\Banayaki\CLionProjects\ssau\resources\MyClasses.h"
 
 /*
@@ -9,17 +6,15 @@
 которые начинаются и заканчиваются на цифру (слово из одной цифры
 удовлетворяет условию).
  */
-using namespace std;
 
 //Наследник исполнителя, новый метод - чтение файла
 class ExecutorOtLp1 : public Executor {
 public:
-
     wchar_t *readFile() {
         printAll(toWString("---Original text begin---"));
-        fin.seekg(0, fin.end);              //Изменение текущей позиции
-        int length = (int) fin.tellg() + 1;                     //Количество символов в файле + 1, что бы поместился \0
-        auto *line = (wchar_t *) calloc(length, sizeof(wchar_t));     //Выделение памяти и инициализация
+        fin.seekg(0, fin.end);                                          //Изменение текущей позиции
+        size_t length = static_cast<size_t>((int) fin.tellg() + 1);                     //Количество символов в файле + 1, что бы поместился \0
+        auto *line = (wchar_t *) calloc(length, sizeof(wchar_t));     //Выделение памяти и инициализация 0
         fin.seekg(0, fin.beg);
         fin.getline(line, length, EOF);
         printAll(line);
@@ -38,12 +33,19 @@ void printResult(const vector<Word> &result, Executor &executor) {
     }
     executor.printAll(executor.toWString("---Right words end---"));
     executor.printAll(executor.toWString("---Wrongs words begin---"));
-    executor.printAll(ss.str());                        //Будет лишний перевод строки
-    executor.printAll(executor.toWString("---Wrongs word end---"));         //TODO: не выводить лишний '\n'
+    executor.printAll(ss.str());
+    executor.printAll(executor.toWString("---Wrongs word end---"));
+    ss.clear();
+}
+
+void lolFunction(vector<Word> &result) {                    //Сборщик мусора в с++, здарова
+    for (Word word : result) {
+        ZeroMemory(word.getStr(), sizeof(word.getStr()));
+    }
 }
 
 int main() {
-    setlocale(LC_ALL, "ru_RU.UTF-8" );
+    setlocale(LC_ALL, "ru_RU.UTF-8");
     bool isWorking = true;
     ExecutorOtLp1 executor;
     LexicalAnalyzer analyzer;
@@ -59,8 +61,9 @@ int main() {
         vector<Word> result;
         analyzer.wordAnalysis(text, result);
         printResult(result, executor);
-        free(text);
+        ZeroMemory(text, sizeof(text));
         executor.getFin().close();
+        lolFunction(result);
         isWorking = executor.wishToContinue();
         if (isWorking) executor.printAll(executor.toWString("\n###---Next iteration---###"));
     }
