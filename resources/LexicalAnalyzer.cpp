@@ -32,7 +32,7 @@ private:
     const int matrix[4][4] = {      //              S   G   X   E
             4, 1, 1, 4,             //  А,...,я     E   G   G   E
             2, 2, 2, 4,             //  0,...,9     X   X   X   E
-            3, 4, 3, 4,             //  spaces      F   E   F   E
+            0, 4, 3, 4,             //  spaces      F   E   F   E
             4, 4, 4, 4              //  other       E   E   E   E
     };
 
@@ -47,6 +47,14 @@ public:
         else if (currentChar >= NUMBERS_BEGIN && currentChar <= NUMBERS_END) return 1;                                  //Группа чисел
         else if (currentChar == SPACE || currentChar == EOL || currentChar == CR || currentChar == EOS) return 2;       //Заключительные символы
         else return 3;                                                                                                  //Все остальные не корректны
+    }
+
+    bool checkForE(Word &word, int length) {
+        wchar_t* str = word.getStr();
+        for (int i = 0; i < length; ++i) {
+            if (getSymbolGroup(str[i]) > 1) return false;
+        }
+        return true;
     }
 
     //Добавление слова в результирующий вектор
@@ -70,10 +78,6 @@ public:
             currentChar = text[currentPosition];
 
             if (condition == LexCondition::S) {
-                if (getSymbolGroup(currentChar) == 2) {
-                    ++currentPosition;
-                    continue;
-                }
                 beginPosition = currentPosition;
             }
             condition = (LexCondition) matrix[getSymbolGroup(currentChar)][condition];
@@ -83,6 +87,7 @@ public:
                     currentChar = text[++currentPosition];
                 }
                 addWord(result, text, beginPosition, currentPosition, false);
+                if (!checkForE(result[result.size() - 1], currentPosition - beginPosition)) result.pop_back();
                 condition = LexCondition::S;
                 beginPosition = currentPosition;
                 continue;
