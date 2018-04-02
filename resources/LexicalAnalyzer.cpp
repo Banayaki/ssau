@@ -32,7 +32,7 @@ private:
     const int matrix[4][4] = {      //              S   G   X   E
             4, 1, 1, 4,             //  А,...,я     E   G   G   E
             2, 2, 2, 4,             //  0,...,9     X   X   X   E
-            0, 4, 3, 4,             //  spaces      F   E   F   E
+            0, 4, 3, 4,             //  spaces      S   E   F   E
             4, 4, 4, 4              //  other       E   E   E   E
     };
 
@@ -45,11 +45,11 @@ public:
     int getSymbolGroup(const wchar_t &currentChar) {                                                                    //Для перехода по матрице, выбор нужной строки
         if (currentChar >= CYRILLIC_BEGIN && currentChar <= CYRILLIC_END) return 0;                                     //Группа с Кириллицей
         else if (currentChar >= NUMBERS_BEGIN && currentChar <= NUMBERS_END) return 1;                                  //Группа чисел
-        else if (currentChar == SPACE || currentChar == EOL || currentChar == CR || currentChar == EOS) return 2;       //Заключительные символы
+        else if (currentChar == SPACE || currentChar == EOL || currentChar == CR) return 2;       //Заключительные символы
         else return 3;                                                                                                  //Все остальные не корректны
     }
 
-    bool checkForE(Word &word, int length) {
+    bool checkForE(Word &word, int length) {                                                                            //небольшая функция для проверки слово это или нет
         wchar_t* str = word.getStr();
         for (int i = 0; i < length; ++i) {
             if (getSymbolGroup(str[i]) > 1) return false;
@@ -87,7 +87,7 @@ public:
                     currentChar = text[++currentPosition];
                 }
                 addWord(result, text, beginPosition, currentPosition, false);
-                if (!checkForE(result[result.size() - 1], currentPosition - beginPosition)) result.pop_back();
+                if (!checkForE(result[result.size() - 1], currentPosition - beginPosition)) result.pop_back();          //Если не слово то убираем из вектора
                 condition = LexCondition::S;
                 beginPosition = currentPosition;
                 continue;

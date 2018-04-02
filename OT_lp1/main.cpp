@@ -8,7 +8,7 @@
  */
 
 //Наследник исполнителя, новый метод - чтение файла
-class ExecutorOtLp1 : public Executor {
+class ExecutorOtLp1 : public WFStreamExecutor {
 public:
     wchar_t *readFile() {
         printAll(toWString("---Original text begin---"));
@@ -24,7 +24,7 @@ public:
 };
 
 //Вывод результата, сначала выводятся слова подходящие под условия, затем слова не прошедьшие проверку
-void printResult(const vector<Word> &result, Executor &executor) {
+void printResult(const vector<Word> &result, WFStreamExecutor &executor) {
     wstringstream ss;
     executor.printAll(executor.toWString("---Right words begin---"));
     for (Word word : result) {
@@ -38,14 +38,14 @@ void printResult(const vector<Word> &result, Executor &executor) {
     ss.clear();
 }
 
-void lolFunction(vector<Word> &result) {                    //Сборщик мусора в с++, здарова
+void lolFunction(vector<Word> &result) {                    //Сборщик мусора в с++, здарова, очищаем вектор
     for (Word word : result) {
         ZeroMemory(word.getStr(), sizeof(word.getStr()));
     }
 }
 
 int main() {
-    setlocale(LC_ALL, "ru_RU.UTF-8");
+    setlocale(LC_ALL, "ru_RU.UTF-8");           //Открываем, читаем, анализируем файл, закрываем, подчищаем, заново?
     bool isWorking = true;
     ExecutorOtLp1 executor;
     LexicalAnalyzer analyzer;

@@ -6,6 +6,8 @@
 #include <sstream>
 #include <Windows.h>
 #include <vector>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -31,5 +33,7 @@ const int BUFFERED_SIZE = 256;
 #include "MyVector.cpp"
 #include "Executor.cpp"
 #include "LexicalAnalyzer.cpp"
+#include "WFStreamExecutor.cpp"
+#include "Test.cpp"
 
 #endif //SSAU_MYCLASSES_H

@@ -1,19 +1,25 @@
 
-class Executor {
+class WFStreamExecutor {
 protected:
     double EPS = 1.0;
-    ifstream fin;
-    ofstream fout;
+    wifstream fin;
+    wofstream fout;
 public:
-    Executor() {
+    WFStreamExecutor() {
         while (1.0 + this->EPS != 1.0) {
             this->EPS /= 2.0;
         }
     }
 
-    ~Executor() {
+    ~WFStreamExecutor() {
         this->fin.close();
         this->fout.close();
+    }
+
+//    virtual void readFile(vector<string> &text) = 0;
+
+    wstring toWString(const string &str) {
+        return wstring(str.begin(), str.end());
     }
 
     void clearInputStream(istream &in) {
@@ -24,13 +30,18 @@ public:
 
     }
 
-    void printAll(char *line) {
+    /*void printAll(char *line) {
         cout << line << endl;
+        fout << line << endl;
+    }*/
+
+    void printAll(wchar_t *line) {
+        wcout << line << endl;
         fout << line << endl;
     }
 
-    void printAll(const string &line) {
-        cout << line << endl;
+    void printAll(const wstring &line) {
+        wcout << line << endl;
         fout << line << endl;
     }
 
@@ -85,25 +96,22 @@ public:
         deleteSpaces();
         if (!checkFormat(path)) {
             cout << "Incorrect file format. You need .txt file" << endl;
-            clearInputStream(cin);
             fin.close();
         } else if (!fin.is_open()) {
             cout << "File does not exist, try again" << endl;
-            clearInputStream(cin);
             fin.close();
         } else if (fin.eof()) {
             cout << "Empty file, try again" << endl;
-            clearInputStream(cin);
             fin.close();
         } else cout << "File is opened" << endl;
 
     }
 
-    ifstream &getFin() {
+    wifstream &getFin() {
         return this->fin;
     }
 
-    ofstream &getFout() {
+    wofstream &getFout() {
         return this->fout;
     }
 };
