@@ -163,7 +163,7 @@ public:
 
     string toString() {
         stringstream ss;
-        for (Element *current = begin; current != last; ++current) {
+        for (Element *current = begin; current != last; current = current->getNext()) {
             ss << current->getValue() << EOL;
         }
         return ss.str();
