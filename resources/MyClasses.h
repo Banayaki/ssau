@@ -35,5 +35,6 @@ const int BUFFERED_SIZE = 256;
 #include "LexicalAnalyzer.cpp"
 #include "WFStreamExecutor.cpp"
 #include "Test.cpp"
+#include "LinkedList.cpp"
 
 #endif //SSAU_MYCLASSES_H

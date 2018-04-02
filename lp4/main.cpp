@@ -1,194 +1,6 @@
 #include "C:\Users\Banayaki\CLionProjects\ssau\resources\MyClasses.h"
 
 template<typename T>
-class LinkedList {
-public:
-    class Element;
-
-private:
-    Element *begin;
-    Element *last;
-    int size;
-
-    void checkPositionIndex(int index) {
-        if (index < 0 || index >= size) {
-            throw ERROR;
-        }
-    }
-
-public:
-    class Element {
-    private:
-        T value;
-        Element *next;
-    public:
-        Element() {}
-
-        Element(const T &value, Element *next) {
-            this->value = value;
-            this->next = next;
-        }
-
-        Element *getNext() {
-            return this->next;
-        }
-
-        T getValue() {
-            return this->value;
-        }
-
-        void setNext(Element *next) {
-            this->next = next;
-        }
-
-        bool hasNext() {
-            return next != nullptr;
-        }
-
-        void setValue(const T &current) {
-            this->value = current;
-        }
-    };
-
-
-    LinkedList() {
-        this->size = 0;
-        this->begin = nullptr;
-    }
-
-
-    LinkedList(LinkedList *list) {
-        addAll(list);
-    }
-
-    Element *get(const int &index) {
-        Element *x = begin;
-        if (index == size) {
-            return nullptr;
-        }
-        for (int i = 0; i < index; ++i) {
-            x = x->getNext();
-        }
-        return x;
-    }
-
-    void addFirst(const T &value) {
-        Element *newBegin = new Element(value, begin);
-        begin = newBegin;
-    }
-
-    void add(const T &value) {
-        Element *current = new Element(value, nullptr);
-        if (size == 0) {
-            begin = current;
-            last = current;
-        } else {
-            last->setNext(current);
-            last = current;
-        }
-        ++size;
-    }
-
-    void add(const int &index,const T &value) {
-        checkPositionIndex(index);
-        if (index == size) {
-            add(value);
-        }
-        if (index == 0) {
-            addFirst(value);
-        }
-        Element *past = get(index - 1);
-        Element tmp = *past->getNext();
-        past->setNext(new Element(value, &tmp));
-    }
-
-    void addAll(const int &index, LinkedList *list) {
-        checkPositionIndex(index);
-        //TODO проследить за nullptr
-        if (list->getSize() == 0) {
-            return;
-        }
-        Element *target;
-        target = this->get(index - 1);
-        Element *tmp = target->getNext();
-        for (int i = 0; i < list->getSize(); ++i) {
-            target->setNext(list->get(i));
-            target = target->getNext();
-        }
-        target->setNext(tmp);
-        if (index == size) last = target;
-    }
-
-    void addAll(LinkedList *list) {
-        addAll(size, list);
-    }
-
-    void set(const int &index,const T &value) {
-        checkPositionIndex(index);
-        Element *target = this->get(index);
-        target->setValue(value);
-    }
-
-    void remove(const int &index) {
-        checkPositionIndex(index);
-        if (index == 0) {
-            removeFirst();
-        } else if (index == size - 1) {
-            removeLast();
-        } else {
-            this->get(index - 1)->setNext(this->get(index + 1));
-        }
-    }
-
-    void removeLast() {
-        last = this->get(size - 2);
-        last->setNext(nullptr);
-    }
-
-    void removeFirst() {
-        begin = this->get(1);
-    }
-
-    Element *startOfList() {
-        return this->begin;
-    }
-
-    Element *endOfList() {
-        return this->last;
-    }
-
-    int getSize() {
-        return size;
-    }
-
-    string toString() {
-        stringstream ss;
-        for (Element *current = begin; current != last; current = current->getNext()) {
-            ss << current->getValue() << EOL;
-        }
-        return ss.str();
-    }
-
-    void clear() {
-        for (Element *current = begin; current != last; ++current) {
-            delete current;
-        }
-    }
-};
-
-class ExecutorLp4 : public Executor {
-public:
-    template<typename T>
-    void readFile(LinkedList<T> &list) {
-        T x = {};
-        while (!fin.eof()) {
-            fin >> x;
-            list.add(x);
-        }
-    }
-};
-
-template<typename T>
 double shellSort(LinkedList<T> &list) {
     LARGE_INTEGER start, finish, freq;
     QueryPerformanceFrequency(&freq);
@@ -214,17 +26,86 @@ double shellSort(LinkedList<T> &list) {
     return (finish.QuadPart - start.QuadPart) / (double) freq.QuadPart;
 }
 
+int chooseTestType(Executor &executor) {
+    cout
+            << "Print 0 to sort your file\nPrint 1 to sort 1.000 elements\nPrint 2 to sort 5.000 elements\nPrint 3 to sort 10.000 elements"
+            << endl;
+    int type;
+    cin >> type;
+    while (!cin || type < 0 || type > 3) {
+        cout << INCORRECT_INPUT << endl;
+        executor.clearInputStream(cin);
+        cin >> type;
+    }
+    return type;
+}
+
+template<typename T>
+void openAndSort(ExecutorLp4 &executor, LinkedList<T> &list, const string &fileName) {
+    executor.openFile(fileName);
+    executor.readFile(list);
+    double time = shellSort(list);
+    executor.printAll("----- List sorted by " + to_string(time) + " -----" + EOL);
+//    executor.getFout() << list.toString();
+//    list.clear();
+}
+
+template<typename T>
+void runTest(ExecutorLp4 &executor, LinkedList<T> &list) {
+    int type = chooseTestType(executor);
+    string fileName;
+    if (type == 1) {
+        executor.printAll("***----- Test on 1.000 elements -----***");
+        fileName = "1_000_Elements.txt";
+        openAndSort(executor, list, fileName);
+        fileName = "L_1_000_Elements.txt";
+        openAndSort(executor, list, fileName);
+        fileName = "R_1_000_Elements.txt";
+        openAndSort(executor, list, fileName);
+        executor.printAll("***----- End of test -----***");
+    } else if (type == 2) {
+        executor.printAll("***----- Test on 5.000 elements -----***");
+        fileName = "5_000_Elements.txt";
+        openAndSort(executor, list, fileName);
+        fileName = "L_5_000_Elements.txt";
+        openAndSort(executor, list, fileName);
+        fileName = "R_5_000_Elements.txt";
+        openAndSort(executor, list, fileName);
+        executor.printAll("***----- End of test -----***");
+    } else if (type == 3) {
+        executor.printAll("***----- Test on 10.000 elements -----***");
+        fileName = "10_000_Elements.txt";
+        openAndSort(executor, list, fileName);
+        fileName = "L_10_000_Elements.txt";
+        openAndSort(executor, list, fileName);
+        fileName = "R_10_000_Elements.txt";
+        openAndSort(executor, list, fileName);
+        executor.printAll("***----- End of test -----***");
+    } else {
+        executor.printAll("***----- Custom test -----***");
+        while (!executor.getFin().is_open()) {
+            executor.openFile();
+        }
+        executor.readFile(list);
+        double time = shellSort(list);
+        executor.printAll("----- List sorted by " + to_string(time) + " -----" + EOL);
+        executor.getFout() << list.toString();
+        list.clear();
+    }
+}
 
 int main() {
-//    createFiles();
+//    createRandomFiles();
+//    createLightlyRandomFiles();
+//    createReverseFiles();
     //TODO некорректный формат не работает ыыыы
+    //TODO сравнение даблов
+    //TODO не работает clear
+    //TODO сравнение времени сортировок
     ExecutorLp4 executor;
     LinkedList<double> list;
-    executor.openFile();
     executor.getFout().open(R"(C:\Users\Banayaki\Desktop\tests\output.txt)");
-    executor.readFile(list);
-    executor.printAll(list.toString());
-    list.clear();
+    runTest(executor, list);
     executor.getFout().close();
     executor.getFin().close();
     return 0;

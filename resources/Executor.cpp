@@ -80,23 +80,40 @@ public:
     void openFile() {
         string path;
         path = R"(C:\Users\Banayaki\Desktop\tests\)";
-        path += readFileName();
+        string fileName = readFileName();
+        path += fileName;
         fin.open(path);
         deleteSpaces();
         if (!checkFormat(path)) {
             cout << "Incorrect file format. You need .txt file" << endl;
-            clearInputStream(cin);
             fin.close();
         } else if (!fin.is_open()) {
             cout << "File does not exist, try again" << endl;
-            clearInputStream(cin);
             fin.close();
         } else if (fin.eof()) {
             cout << "Empty file, try again" << endl;
-            clearInputStream(cin);
             fin.close();
-        } else cout << "File is opened" << endl;
+        } else cout << "File: " + fileName + " is opened" << endl;
+    }
 
+    void openFile(const string &fileName) {
+        string path = R"(C:\Users\Banayaki\Desktop\tests\)";
+        path += fileName;
+        fin.open(path);
+        deleteSpaces();
+        if (!checkFormat(path)) {
+            cout << "Incorrect file format. You need .txt file" << endl;
+            fin.close();
+            throw ERROR;
+        } else if (!fin.is_open()) {
+            cout << "File does not exist" << endl;
+            fin.close();
+            throw ERROR;
+        } else if (fin.eof()) {
+            cout << "Empty file" << endl;
+            fin.close();
+            throw ERROR;
+        } else cout << "File: " + fileName + " is opened" << endl;
     }
 
     ifstream &getFin() {
