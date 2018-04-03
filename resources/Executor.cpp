@@ -4,6 +4,25 @@ protected:
     double EPS = 1.0;
     ifstream fin;
     ofstream fout;
+private:
+    void deleteSpaces() {
+        while (fin.peek() == CR || fin.peek() == EOL || fin.peek() == TAB || fin.peek() == SPACE) {
+            fin.get();
+        }
+    }
+
+    bool checkFormat(string path) {
+        path = path.substr(path.length() - 4, string::npos);
+        return path == FILE_FORMAT;
+    }
+
+    //Поиск начала строки
+    int seek(istream &in) {
+        while (in.peek() != EOL && in.peek() == SPACE) {
+            in.get();
+        }
+        return in.peek();
+    }
 public:
     Executor() {
         while (1.0 + this->EPS != 1.0) {
@@ -32,25 +51,6 @@ public:
     void printAll(const string &line) {
         cout << line << endl;
         fout << line << endl;
-    }
-
-    void deleteSpaces() {
-        while (fin.peek() == CR || fin.peek() == EOL || fin.peek() == TAB || fin.peek() == SPACE) {
-            fin.get();
-        }
-    }
-
-    bool checkFormat(string path) {
-        path = path.substr(path.length() - 4, string::npos);
-        return path == FILE_FORMAT;
-    }
-
-    //Поиск начала строки
-    int seek(istream &in) {
-        while (in.peek() != EOL && in.peek() == SPACE) {
-            in.get();
-        }
-        return in.peek();
     }
 
     bool wishToContinue() {
@@ -93,10 +93,11 @@ public:
         } else if (fin.eof()) {
             cout << "Empty file, try again" << endl;
             fin.close();
-        } else cout << "File: " + fileName + " is opened" << endl;
+        } else printAll("File: " + fileName + " is opened");
     }
 
     void openFile(const string &fileName) {
+        if (fin.is_open()) fin.close();
         string path = R"(C:\Users\Banayaki\Desktop\tests\)";
         path += fileName;
         fin.open(path);
@@ -113,7 +114,7 @@ public:
             cout << "Empty file" << endl;
             fin.close();
             throw ERROR;
-        } else cout << "File: " + fileName + " is opened" << endl;
+        } else printAll("File: " + fileName + " is opened");
     }
 
     ifstream &getFin() {

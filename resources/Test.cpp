@@ -1,7 +1,16 @@
+/*
+ * Возвращает случайное вещественное число в диапазоне от left до right
+ */
 double random(double left, double right) {
     return (double) (rand()) / RAND_MAX * (right - left) + left;
 }
 
+/*
+ * Следующие три функции создают файлы и заполняют их значениями:
+ * createRandomFiles - случайными значениями
+ * createLightRandomFiles - почти отсортированный
+ * createReverseFiles - обратно отсортированный
+ */
 void createRandomFiles() {
     srand((unsigned int) time(0));
     stringstream ss;
@@ -66,3 +75,23 @@ void createReverseFiles() {
     tenThousandElements << ss.str();
 }
 
+/*
+ * Функция, спрашивающая у пользователя какой тест он хочет провести
+ * 0 - пользовательский файл
+ * 1 - файлы с 1.000 элементами
+ * 2 - файлы с 5.000 элементами
+ * 3 - файлы с 10.000 элементами
+ */
+int chooseTestType(Executor &executor) {
+    cout
+            << "Print 0 to sort your file\nPrint 1 to sort 1.000 elements\nPrint 2 to sort 5.000 elements\nPrint 3 to sort 10.000 elements"
+            << endl;
+    int type;
+    cin >> type;
+    while (!cin || type < 0 || type > 3) {
+        cout << INCORRECT_INPUT << endl;
+        executor.clearInputStream(cin);
+        cin >> type;
+    }
+    return type;
+}

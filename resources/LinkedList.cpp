@@ -1,4 +1,46 @@
 
+/*
+ * Односвязный список
+ * Это контейнер, который знает о том где его первый элемент, последний и размер
+ *
+ * Содержит inner-class Element который служит для работы с элементами коллекции
+ * Так каждый элемент структуры содержит своё собственное значение и
+ * Указывает на следующий элемент, если элемент последний то он содержит пустой
+ * указатель
+ *
+ * LinkedList может хранить в себе любой тип/класс
+ *
+ * Имеет два конструктора:
+ *      1) Конструктор без параметров
+ *      2) Копирующий конструктор
+ *
+ * Так же имеет ряд методов для работы с элементами колеекции...
+ *
+ * Стандартные геттеры и сеттеры
+ *
+ * hasNext() возвращающая true если следующий элемент есть
+ *
+ * get(int index) метод возвращающий элемент стоящий на месте index, стоит отметить
+ * что метод работает в среднем за время O(n/2)
+ *
+ * методы содержащие в названии add:
+ * Очевидно что они добавляют элементы, addFirst(Т) добавляет элемент в начало коллекции
+ * ( сложность О(1) ), аdd(Т) без указание индекса добавляет элемент в конец списка ( О(1) )
+ * ну и add(index, T) добавление элемента в указанную позицию ( О(n) )
+ * функии addAll() добавляют все элементы другого списка в тот из которого вызван метод
+ * можно добавить как в конец списка, так и в указанную позицию
+ *
+ * метод set() изменяющий значение элемента по индексу
+ *
+ * методы семейства remove() - удаляют элементы, первый или последний за ( O(1) )
+ * или по индексу за ( O(n) )
+ *
+ * startOfList и endOfList возвращают указатели на первый и последний элемент соотвественно
+ *
+ * toString() возвращает все элементы коллекции перечисленные в строке
+ *
+ * clear() очищает контейнер, память и тп
+ */
 template<typename T>
 class LinkedList {
 public:
@@ -27,6 +69,10 @@ public:
             this->value = value;
             this->next = next;
         }
+
+//        ~Element() {
+//            delete next;
+//        }
 
         Element *getNext() {
             return this->next;
@@ -60,11 +106,13 @@ public:
         addAll(list);
     }
 
+    ~LinkedList() {
+        this->clear();
+    }
+
     Element *get(const int &index) {
+        checkPositionIndex(index);
         Element *x = begin;
-        if (index == size) {
-            return nullptr;
-        }
         for (int i = 0; i < index; ++i) {
             x = x->getNext();
         }
@@ -103,7 +151,6 @@ public:
 
     void addAll(const int &index, LinkedList *list) {
         checkPositionIndex(index);
-        //TODO проследить за nullptr
         if (list->getSize() == 0) {
             return;
         }
@@ -162,30 +209,22 @@ public:
 
     string toString() {
         stringstream ss;
-        for (Element *current = begin; current != last; current = current->getNext()) {
+        Element *current;
+        for (current = begin; current != last; current = current->getNext()) {
             ss << current->getValue() << EOL;
         }
+        ss << current->getValue() << EOL;
         return ss.str();
     }
 
     void clear() {
-        for (Element *current = begin; current != last; ++current) {
+        for (Element *current = begin; current != last;) {
+            Element *next = current->getNext();
             delete current;
+            current = next;
         }
-        delete last;
+        begin = nullptr;
+        last = nullptr;
         size = 0;
-    }
-};
-
-class ExecutorLp4 : public Executor {
-public:
-    template<typename T>
-    void readFile(LinkedList<T> &list) {
-        T x = {};
-        while (!fin.eof()) {
-            fin >> x;
-            list.add(x);
-        }
-        this->fin.close();
     }
 };
