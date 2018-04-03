@@ -38,6 +38,18 @@ public:
  *
  * Сама сортировка Шелла - есть модификация сортировки вставками
  *
+ * Сортировка работает быстрее дефолтной сортировки вставками,
+ * т.к. коллекция элементов делится на некие подгруппы, т.е.
+ * мы формируем не, отсортированную и не отсортированную
+ * последовательностии, а множество отсортированных подпоследовательностей.
+ * Вконце сортировки уже не будет разделения на группы, а начнется обычная
+ * сортировка вставками, но т.к. все элементы максимально упорядочены, то и
+ * вконце потребуется малое количество действий
+ *
+ * Можно ускорить сортировку если использовать метод Седжвика (выбор оптимальной длины
+ * подпоследовательностей)
+ *
+ *
  * @param LinkedList<T>
  * @return double
  */
@@ -58,7 +70,6 @@ double shellSort(LinkedList<T> &list) {
                     list.get(j)->setValue(list.get(j - step)->getValue());
                 } else break;
             }
-
             list.get(j)->setValue(tmp);
         }
     }
@@ -123,7 +134,7 @@ double openAndSort(ExecutorLp4 &executor, LinkedList<T> &list, const string &fil
     executor.readFile(list);
     double time = shellSort(list);
     executor.printAll("----- List sorted by " + to_string(time) + " -----" + EOL);
-//    executor.getFout() << list.toString();
+    executor.getFout() << list.toString();
     list.clear();
     executor.getFin().close();
     return time;
