@@ -1,107 +1,146 @@
-class Word {
-private:
-    bool valid;
-    wchar_t *str;
 
+enum Tag {
+    DO, UNTIL, LOOP, NOT, AND, OR,
+    ASSIGM, AO, COMPARE, NUM, INDET, WRONG
+};
+
+class Lexem {
 public:
-    Word(wchar_t *str, bool valid) {
-        this->str = str;
-        this->valid = valid;
+    string tag;
+    string lexem;
+
+    Lexem(const string &tag, const string &lexem) {
+        this->tag = tag;
+        this->lexem = lexem;
     }
 
-//    ~Word() {
-//        ZeroMemory(this, sizeof(this));
-//    }
-
-    wchar_t *getStr() {
-        return this->str;
+    Lexem(const int &tag, const string &lexem) {
+        if (tag == Tag::DO) this->tag = "do";
+        else if (tag == Tag::UNTIL) this->tag = "until";
+        else if (tag == Tag::LOOP) this->tag = "loop";
+        else if (tag == Tag::NOT) this->tag = "not";
+        else if (tag == Tag::AND) this->tag = "and";
+        else if (tag == Tag::OR) this->tag = "or";
+        this->lexem = lexem;
     }
 
-    void setStr(wchar_t* str) {
-        this->str = str;
+    string getTag() {
+        return this->tag;
     }
 
-    bool getValid() {
-        return this->valid;
+    string getLexem() {
+        return this->lexem;
     }
 };
 
 //Класс - лексический анализатор, анализирует текст используя Конечный Автомат (далее КА)
 class LexicalAnalyzer {
 private:
-    const int matrix[4][4] = {      //              S   G   X   E
-            4, 1, 1, 4,             //  А,...,я     E   G   G   E
-            2, 2, 2, 4,             //  0,...,9     X   X   X   E
-            0, 4, 3, 4,             //  spaces      S   E   F   E
-            4, 4, 4, 4              //  other       E   E   E   E
+
+    const int matrix[9][7] = {
+            1, 1, 7, 8, 8, 8, 8,
+            2, 1, 2, 8, 8, 8, 8,
+            8, 8, 8, 8, 8, 8, 8,
+            3, 8, 8, 7, 7, 7, 7,
+            5, 8, 8, 4, 7, 7, 7,
+            5, 8, 8, 4, 7, 4, 7,
+            6, 8, 8, 7, 7, 7, 7,
+            8, 8, 8, 7, 7, 7, 7,
+            7, 7, 7, 7, 7, 7, 7
     };
 
-    enum LexCondition {         //Возможные состояния КА
-        S, G, X, F, E              //S - начальное, G - корректное, Х - помогает остледить окончание на цифру, F - заключительное, Е - некорректно
+    const vector<string> KEY_WORDS = {"do", "until", "loop", "not", "and", "or"};
+
+    enum LexCondition {
+        S, A, B, C, D, G, H, E, F,
     };
 
 public:
 
-    int getSymbolGroup(const wchar_t &currentChar) {                                                                    //Для перехода по матрице, выбор нужной строки
-        if (currentChar >= CYRILLIC_BEGIN && currentChar <= CYRILLIC_END) return 0;                                     //Группа с Кириллицей
-        else if (currentChar >= NUMBERS_BEGIN && currentChar <= NUMBERS_END) return 1;                                  //Группа чисел
-        else if (currentChar == SPACE || currentChar == EOL || currentChar == CR) return 2;       //Заключительные символы
-        else return 3;                                                                                                  //Все остальные не корректны
+    int getSymbolGroup(const char &currentChar) {
+        if (currentChar >= 65 && currentChar <= 90 || currentChar >= 97 && currentChar <= 122) return 0;
+        else if (currentChar >= NUMBERS_BEGIN && currentChar <= NUMBERS_END) return 1;
+        else if (currentChar == SPACE || currentChar == EOL || currentChar == CR || currentChar == TAB) return 2;
+        else if (currentChar == '<') return 3;
+        else if (currentChar == '>') return 4;
+        else if (currentChar == '=') return 5;
+        else if (currentChar == '-' || currentChar == '*' || currentChar == '/'  || currentChar == '+') return 6;
+        else if (currentChar == ';') return 7;
+        else return 8;
     }
 
-    bool checkForE(Word &word, int length) {                                                                            //небольшая функция для проверки слово это или нет
-        wchar_t* str = word.getStr();
-        for (int i = 0; i < length; ++i) {
-            if (getSymbolGroup(str[i]) > 1) return false;
+    int find(const string &line) {
+        int i = 0;
+        for (const string &word : KEY_WORDS) {
+            if (line == word) return i;
+            ++i;
         }
-        return true;
     }
 
-    //Добавление слова в результирующий вектор
-    void addWord(vector<Word> &result, wchar_t *text, int beginP, int endP, bool isValid) {
+    void addWord(vector<Lexem> &result, const string &text,
+                 const int &beginP, const int &endP) {
         int length = endP - beginP;
-        wchar_t *line = (wchar_t *) calloc(length + 1, sizeof(wchar_t));
-        for (int i = 0; i < length; ++i) {
-            line[i] = text[beginP + i];
+        if (length == 0)
+            return;
+        string line = text.substr(beginP, length);
+        int tag = find(line);
+
+        if (tag < KEY_WORDS.size()) {
+            result.emplace_back(Lexem((Tag) tag, line));
+        } else if (line == "=") {
+            result.emplace_back(Lexem("Assignment", line));
+        } else if (line == "+" || line == "-" || line == "*" || line == "/") {
+            result.emplace_back(Lexem("Arithmetic operation", line));
+        } else if (line == ">" || line == "<" || line == "<>" || line == "==" || line == "<=" || line == ">=") {
+            result.emplace_back(Lexem("Compare operation", line));
+        } else {
+            int i = 0;
+            for (char ch : line) {
+                if (isdigit(ch)) ++i;
+            }
+            if (i == line.size()) result.emplace_back(Lexem("Number", line));
+            else result.emplace_back(Lexem("Identification", line));
         }
-        result.emplace_back(Word(line, isValid));
     }
 
-    //Метод выполняющий лексический анализ согласно матрице переходов КА
-    void wordAnalysis(wchar_t *text, vector<Word> &result) {
+    void wordAnalysis(const string &text, std::vector<Lexem> &result) {
         int currentPosition = 0;
         int beginPosition = 0;
-        wchar_t currentChar;
-        LexCondition condition = LexCondition::S;
+        char currentChar;
+        LexCondition lexCondition = LexCondition::S;
 
         while (text[currentPosition] != EOS) {
             currentChar = text[currentPosition];
 
-            if (condition == LexCondition::S) {
+            if (lexCondition == LexCondition::S) {
                 beginPosition = currentPosition;
             }
-            condition = (LexCondition) matrix[getSymbolGroup(currentChar)][condition];
+            lexCondition = (LexCondition) matrix[getSymbolGroup(currentChar)][lexCondition];
 
-            if (condition == LexCondition::E) {
-                while (getSymbolGroup(currentChar) != 2) {
+            if (lexCondition == LexCondition::E) {
+                while (getSymbolGroup(currentChar) != 2 && currentChar != 0) {
                     currentChar = text[++currentPosition];
                 }
-                addWord(result, text, beginPosition, currentPosition, false);
-                if (!checkForE(result[result.size() - 1], currentPosition - beginPosition)) result.pop_back();          //Если не слово то убираем из вектора
-                condition = LexCondition::S;
+                int length = currentPosition - beginPosition;
+                string line = text.substr(beginPosition, length);
+                result.emplace_back(Lexem("Wrong", line));
+                lexCondition = LexCondition::S;
                 beginPosition = currentPosition;
                 continue;
             }
 
-            if (condition == LexCondition::F) {
-                addWord(result, text, beginPosition, currentPosition, true);
-                condition = LexCondition::S;
+            if (lexCondition == LexCondition::F) {
+                addWord(result, text, beginPosition, currentPosition);
+                if (currentChar == ';') {
+                    result.emplace_back("Separator", ";");
+                }
+                lexCondition = LexCondition::S;
+                if (currentChar != ' ' && currentChar != ';') continue;
             }
             ++currentPosition;
         }
-
-        if (condition == LexCondition::X) {
-            addWord(result, text, beginPosition, currentPosition, true);
+        if (lexCondition != LexCondition::S) {
+            addWord(result, text, beginPosition, currentPosition);
         }
     }
 };
