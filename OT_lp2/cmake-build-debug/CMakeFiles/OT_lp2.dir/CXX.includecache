@@ -6,15 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Banayaki/CLionProjects/ssau/lp4/main.cpp
-limits
--
+/cygdrive/c/Users/Banayaki/CLionProjects/ssau/OT_lp2/main.cpp
 C:/Users/Banayaki/CLionProjects/ssau/resources/MyClasses.h
 -
 
 C:/Users/Banayaki/CLionProjects/ssau/resources/Executor.cpp
-
-C:/Users/Banayaki/CLionProjects/ssau/resources/LexicalAnalyzer.cpp
 
 C:/Users/Banayaki/CLionProjects/ssau/resources/LinkedList.cpp
 
@@ -27,6 +23,8 @@ sstream
 -
 Windows.h
 -
+algorithm
+-
 vector
 -
 stdlib.h
@@ -37,8 +35,6 @@ MyVector.cpp
 C:/Users/Banayaki/CLionProjects/ssau/resources/MyVector.cpp
 Executor.cpp
 C:/Users/Banayaki/CLionProjects/ssau/resources/Executor.cpp
-LexicalAnalyzer.cpp
-C:/Users/Banayaki/CLionProjects/ssau/resources/LexicalAnalyzer.cpp
 WFStreamExecutor.cpp
 C:/Users/Banayaki/CLionProjects/ssau/resources/WFStreamExecutor.cpp
 Test.cpp

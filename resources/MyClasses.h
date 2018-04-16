@@ -5,18 +5,20 @@
 #include <iostream>
 #include <sstream>
 #include <Windows.h>
+#include <algorithm>
 #include <vector>
 #include <stdlib.h>
 #include <time.h>
 
 using namespace std;
 
-const string FILE_FORMAT = ".txt"; // NOLINT
-const string INCORRECT_INPUT = "Incorrect input, try again."; //NOLINT
-const string ERROR_IFC = "ERROR. Incorrect file content."; //NOLINT
-const string DOUBLE_OVERFLOW = "Overflow double"; //NOLINT
-const string INTEGER_OVERFLOW = "Overflow double";
-const string OUTPUT_FILE = R"(C:\Users\Banayaki\Desktop\tests\output.txt)";
+const std::string FILE_FORMAT = ".txt";
+const std::string OUT_OF_BOUNDS = "index: out of bounds.";
+const std::string INCORRECT_INPUT = "Incorrect input, try again.";
+const std::string ERROR_IFC = "ERROR. Incorrect file content.";
+const std::string DOUBLE_OVERFLOW = "Overflow double";
+const std::string INTEGER_OVERFLOW = "Overflow double";
+const std::string OUTPUT_FILE = R"(C:\Users\Banayaki\Desktop\tests\output.txt)";
 const char EOS = 0;
 const char SPACE = ' ';
 const char TAB = '\t';
@@ -32,7 +34,7 @@ const int BUFFERED_SIZE = 256;
 
 #include "MyVector.cpp"
 #include "Executor.cpp"
-#include "LexicalAnalyzer.cpp"
+//#include "LexicalAnalyzer.cpp"
 #include "WFStreamExecutor.cpp"
 #include "Test.cpp"
 #include "LinkedList.cpp"

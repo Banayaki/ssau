@@ -53,7 +53,7 @@ private:
 
     void checkPositionIndex(int index) {
         if (index < 0 || index >= size) {
-            throw ERROR;
+            throw runtime_error(OUT_OF_BOUNDS);
         }
     }
 
@@ -99,6 +99,7 @@ public:
     LinkedList() {
         this->size = 0;
         this->begin = nullptr;
+        this->last = nullptr;
     }
 
 
@@ -136,7 +137,7 @@ public:
         ++size;
     }
 
-    void add(const int &index,const T &value) {
+    void add(const int &index, const T &value) {
         checkPositionIndex(index);
         if (index == size) {
             add(value);
@@ -169,7 +170,7 @@ public:
         addAll(size, list);
     }
 
-    void set(const int &index,const T &value) {
+    void set(const int &index, const T &value) {
         checkPositionIndex(index);
         Element *target = this->get(index);
         target->setValue(value);
@@ -187,12 +188,30 @@ public:
     }
 
     void removeLast() {
+        if (size == 0)
+            return;
+        if (size == 1) {
+            begin = nullptr;
+            last = nullptr;
+            size = 0;
+            return;
+        }
         last = this->get(size - 2);
         last->setNext(nullptr);
+        --size;
     }
 
     void removeFirst() {
+        if (size == 0)
+            return;
+        if (size == 1) {
+            begin = nullptr;
+            last = nullptr;
+            size = 0;
+            return;
+        }
         begin = this->get(1);
+        --size;
     }
 
     Element *startOfList() {

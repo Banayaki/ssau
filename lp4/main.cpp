@@ -1,3 +1,4 @@
+#include <limits>
 #include "C:\Users\Banayaki\CLionProjects\ssau\resources\MyClasses.h"
 
 /*
@@ -22,10 +23,11 @@ public:
     void readFile(LinkedList<T> &list) {
         T x;
         while (!fin.eof()) {
-            x = NULL;
+            x = numeric_limits<T>::quiet_NaN();
             fin >> x;
-            if (x != NULL) list.add(x);
+            if (x != numeric_limits<T>::quiet_NaN()) list.add(x);
         }
+        list.removeLast();
         this->fin.close();
     }
 };
@@ -134,7 +136,7 @@ double openAndSort(ExecutorLp4 &executor, LinkedList<T> &list, const string &fil
     executor.readFile(list);
     double time = shellSort(list);
     executor.printAll("----- List sorted by " + to_string(time) + " -----" + EOL);
-    executor.getFout() << list.toString();
+//    executor.getFout() << list.toString();
     list.clear();
     executor.getFin().close();
     return time;
@@ -216,7 +218,11 @@ int main() {
     bool isWorking = true;
     while (isWorking) {
         LinkedList<double> list;
-        runTest(executor, list);
+        try {
+            runTest(executor, list);
+        } catch (runtime_error &ex) {
+            executor.printAll(ex.what());
+        }
         isWorking = executor.wishToContinue();
     }
     return 0;

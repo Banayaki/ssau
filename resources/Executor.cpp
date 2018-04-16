@@ -23,6 +23,7 @@ private:
         }
         return in.peek();
     }
+
 public:
     Executor() {
         while (1.0 + this->EPS != 1.0) {
@@ -43,12 +44,12 @@ public:
 
     }
 
-    void printAll(char *line) {
+    void printAll(const string &line) {
         cout << line << endl;
         fout << line << endl;
     }
 
-    void printAll(const string &line) {
+    void printAll(const char *line) {
         cout << line << endl;
         fout << line << endl;
     }
