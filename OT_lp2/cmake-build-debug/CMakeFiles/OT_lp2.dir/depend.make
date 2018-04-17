@@ -3,6 +3,7 @@
 
 CMakeFiles/OT_lp2.dir/main.cpp.o: ../main.cpp
 CMakeFiles/OT_lp2.dir/main.cpp.o: C:/Users/Banayaki/CLionProjects/ssau/resources/Executor.cpp
+CMakeFiles/OT_lp2.dir/main.cpp.o: C:/Users/Banayaki/CLionProjects/ssau/resources/LexicalAnalyzer.cpp
 CMakeFiles/OT_lp2.dir/main.cpp.o: C:/Users/Banayaki/CLionProjects/ssau/resources/LinkedList.cpp
 CMakeFiles/OT_lp2.dir/main.cpp.o: C:/Users/Banayaki/CLionProjects/ssau/resources/MyClasses.h
 CMakeFiles/OT_lp2.dir/main.cpp.o: C:/Users/Banayaki/CLionProjects/ssau/resources/MyVector.cpp

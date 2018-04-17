@@ -1,6 +1,8 @@
 #ifndef SSAU_MYCLASSES_H
 #define SSAU_MYCLASSES_H
 
+#include <queue>
+#include <stack>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -34,7 +36,7 @@ const int BUFFERED_SIZE = 256;
 
 #include "MyVector.cpp"
 #include "Executor.cpp"
-//#include "LexicalAnalyzer.cpp"
+#include "LexicalAnalyzer.cpp"
 #include "WFStreamExecutor.cpp"
 #include "Test.cpp"
 #include "LinkedList.cpp"

@@ -12,9 +12,15 @@ C:/Users/Banayaki/CLionProjects/ssau/resources/MyClasses.h
 
 C:/Users/Banayaki/CLionProjects/ssau/resources/Executor.cpp
 
+C:/Users/Banayaki/CLionProjects/ssau/resources/LexicalAnalyzer.cpp
+
 C:/Users/Banayaki/CLionProjects/ssau/resources/LinkedList.cpp
 
 C:/Users/Banayaki/CLionProjects/ssau/resources/MyClasses.h
+queue
+-
+stack
+-
 fstream
 -
 iostream
@@ -35,6 +41,8 @@ MyVector.cpp
 C:/Users/Banayaki/CLionProjects/ssau/resources/MyVector.cpp
 Executor.cpp
 C:/Users/Banayaki/CLionProjects/ssau/resources/Executor.cpp
+LexicalAnalyzer.cpp
+C:/Users/Banayaki/CLionProjects/ssau/resources/LexicalAnalyzer.cpp
 WFStreamExecutor.cpp
 C:/Users/Banayaki/CLionProjects/ssau/resources/WFStreamExecutor.cpp
 Test.cpp

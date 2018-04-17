@@ -1,9 +1,20 @@
-
+/*
+ * Перечисление возможных тэгов лексемы, используются в программе не все, однако
+ * другому пользователю может быть интересно узнать о возможностях анализатор без
+ * подробного чтения кода
+ * Do --- Or тэги так же используются для быстрого разбиения по группам
+ */
 enum Tag {
     DO, UNTIL, LOOP, NOT, AND, OR,
     ASSIGM, AO, COMPARE, NUM, INDET, WRONG
 };
 
+/*
+ * Класс, имеющий два поля:
+ * tag - хранит информацию о типе лексемы
+ * lexem - содержит сам текст лексемы
+ * Так же класс имеет два конструктора инициализации, и геттеры для обоих полей
+ */
 class Lexem {
 public:
     string tag;
@@ -33,7 +44,13 @@ public:
     }
 };
 
-//Класс - лексический анализатор, анализирует текст используя Конечный Автомат (далее КА)
+/*
+ * Класс лексический анализатор, в теории должен быть статическим, однако как в с++
+ * это реализовать я не нашел.
+ * Имеет три поля - матрицу переходов (КА), контейнер с ключевыми словами и
+ * перечисление (содержать информацию о вохможных состояниях)
+ * Конструктор стандартный
+ */
 class LexicalAnalyzer {
 private:
 
@@ -46,7 +63,7 @@ private:
             5, 8, 8, 4, 7, 4, 7,
             6, 8, 8, 7, 7, 7, 7,
             8, 8, 8, 7, 7, 7, 7,
-            7, 7, 7, 7, 7, 7, 7
+            7, 7, 7, 7, 7, 7, 7,
     };
 
     const vector<string> KEY_WORDS = {"do", "until", "loop", "not", "and", "or"};
@@ -56,7 +73,13 @@ private:
     };
 
 public:
-
+    /*
+     * Метод возвращающая число, обозначающее к какой группе символов относится символ
+     * Это число является номером строки в матрице переходов
+     *
+     * @param char
+     * @return int
+     */
     int getSymbolGroup(const char &currentChar) {
         if (currentChar >= 65 && currentChar <= 90 || currentChar >= 97 && currentChar <= 122) return 0;
         else if (currentChar >= NUMBERS_BEGIN && currentChar <= NUMBERS_END) return 1;
@@ -64,12 +87,19 @@ public:
         else if (currentChar == '<') return 3;
         else if (currentChar == '>') return 4;
         else if (currentChar == '=') return 5;
-        else if (currentChar == '-' || currentChar == '*' || currentChar == '/'  || currentChar == '+') return 6;
+        else if (currentChar == '-' || currentChar == '*' || currentChar == '/' || currentChar == '+') return 6;
         else if (currentChar == ';') return 7;
         else return 8;
     }
 
-    int find(const string &line) {
+    /*
+     * Метод проверяющий является ли слово ключевым, если является то возвращает число,
+     * по которому мы определяем индекс (какое это ключевое слово)
+     *
+     * @param string
+     * @return int
+     */
+    int checkForMatch(const string &line) {
         int i = 0;
         for (const string &word : KEY_WORDS) {
             if (line == word) return i;
@@ -77,6 +107,11 @@ public:
         }
     }
 
+    /*
+     * Функция добавляющее лексему в результирующий контейнер, осонвывается на работе
+     * лексического анализатора. Вытаксивает из текста подстроку используя переданные индексы
+     * и проверяет к какой группе относится слово
+     */
     void addWord(vector<Lexem> &result, const string &text,
                  const int &beginP, const int &endP) {
         int length = endP - beginP;
@@ -103,7 +138,16 @@ public:
         }
     }
 
-    void wordAnalysis(const string &text, std::vector<Lexem> &result) {
+    /*
+     * Функция выполняющая основновое действие анализатора. Анализирует переданный ей
+     * текст и составляет перечень лексем (в порядке в котором был передан текст)
+     * Предполагается что результат впоследствии будет использоваться синтаксическим анализатором
+     * Анализатор работает на осонве автоматной грамматики, так же благодаря его работе
+     * на этом этапе мы уже можем найти некоторые ошибки
+     *
+     * @param string, vector<Lexem>
+     */
+    void wordAnalysis(const string &text, vector<Lexem> &result) {
         int currentPosition = 0;
         int beginPosition = 0;
         char currentChar;
@@ -118,8 +162,10 @@ public:
             lexCondition = (LexCondition) matrix[getSymbolGroup(currentChar)][lexCondition];
 
             if (lexCondition == LexCondition::E) {
-                while (getSymbolGroup(currentChar) != 2 && currentChar != 0) {
+                int group = getSymbolGroup(currentChar);
+                while (group != 2 && group != 7 && currentChar != 0) {
                     currentChar = text[++currentPosition];
+                    group = getSymbolGroup(currentChar);
                 }
                 int length = currentPosition - beginPosition;
                 string line = text.substr(beginPosition, length);
@@ -135,7 +181,7 @@ public:
                     result.emplace_back("Separator", ";");
                 }
                 lexCondition = LexCondition::S;
-                if (currentChar != ' ' && currentChar != ';') continue;
+                if (getSymbolGroup(currentChar) != 2 && currentChar != ';') continue;
             }
             ++currentPosition;
         }
