@@ -39,7 +39,15 @@ public:
         return this->tag;
     }
 
+    string getTag() const{
+        return this->tag;
+    }
+
     string getLexem() {
+        return this->lexem;
+    }
+
+    string getLexem() const {
         return this->lexem;
     }
 };
@@ -58,12 +66,12 @@ private:
             1, 1, 7, 8, 8, 8, 8,
             2, 1, 2, 8, 8, 8, 8,
             8, 8, 8, 8, 8, 8, 8,
-            3, 8, 8, 7, 7, 7, 7,
-            5, 8, 8, 4, 7, 7, 7,
-            5, 8, 8, 4, 7, 4, 7,
-            6, 8, 8, 7, 7, 7, 7,
-            8, 8, 8, 7, 7, 7, 7,
-            7, 7, 7, 7, 7, 7, 7,
+            3, 8, 8, 8, 8, 8, 8,
+            5, 8, 8, 4, 8, 8, 8,
+            5, 8, 8, 4, 8, 4, 8,
+            6, 8, 8, 8, 8, 8, 8,
+            8, 8, 8, 8, 8, 8, 8,
+            7, 8, 8, 8, 8, 8, 8,
     };
 
     const vector<string> KEY_WORDS = {"do", "until", "loop", "not", "and", "or"};
@@ -81,7 +89,8 @@ public:
      * @return int
      */
     int getSymbolGroup(const char &currentChar) {
-        if (currentChar >= 65 && currentChar <= 90 || currentChar >= 97 && currentChar <= 122) return 0;
+        if (currentChar >= BIG_EN_L_BEGIN && currentChar <= BIG_EN_L_END ||
+            currentChar >= SMALL_EN_L_BEGIN && currentChar <= SMALL_EN_L_END) return 0;
         else if (currentChar >= NUMBERS_BEGIN && currentChar <= NUMBERS_END) return 1;
         else if (currentChar == SPACE || currentChar == EOL || currentChar == CR || currentChar == TAB) return 2;
         else if (currentChar == '<') return 3;
@@ -118,7 +127,7 @@ public:
         if (length == 0)
             return;
         string line = text.substr(beginP, length);
-        int tag = find(line);
+        int tag = checkForMatch(line);
 
         if (tag < KEY_WORDS.size()) {
             result.emplace_back(Lexem((Tag) tag, line));
@@ -163,7 +172,7 @@ public:
 
             if (lexCondition == LexCondition::E) {
                 int group = getSymbolGroup(currentChar);
-                while (group != 2 && group != 7 && currentChar != 0) {
+                while (group == 8 && currentChar != EOS) {
                     currentChar = text[++currentPosition];
                     group = getSymbolGroup(currentChar);
                 }
