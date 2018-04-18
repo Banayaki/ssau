@@ -71,7 +71,7 @@ private:
             5, 8, 8, 4, 8, 4, 8,
             6, 8, 8, 8, 8, 8, 8,
             8, 8, 8, 8, 8, 8, 8,
-            7, 8, 8, 8, 8, 8, 8,
+            7, 7, 7, 8, 8, 8, 8,
     };
 
     const vector<string> KEY_WORDS = {"do", "until", "loop", "not", "and", "or"};
@@ -172,7 +172,7 @@ public:
 
             if (lexCondition == LexCondition::E) {
                 int group = getSymbolGroup(currentChar);
-                while (group == 8 && currentChar != EOS) {
+                while ((group == 8 || group == 0 || group == 1) && currentChar != EOS) {
                     currentChar = text[++currentPosition];
                     group = getSymbolGroup(currentChar);
                 }

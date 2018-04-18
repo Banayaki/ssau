@@ -123,6 +123,18 @@ void findByTag(vector<Lexem> &list, string *arr, const int &size, Executor &exec
     int j = 0;
     for (j = 0; j < list.size(); ++j) {
         string tag = list[j].getTag();
+        if (size == 6){
+            if (tag == arr[0] || tag == arr[1] || tag == arr[2] || tag == arr[3] || tag == arr[4] || tag == arr[5]) {
+                cout <<  setw(20) << list[j].getLexem();
+                executor.getFout() << setw(20) << list[j].getLexem();
+                if (j == list.size() - 1) {
+                    list.erase(list.begin() + j);
+                    return;
+                }
+                list.erase(list.begin() + j);
+                break;
+            }
+        }
         if (size == 3){
             if (tag == arr[0] || tag == arr[1] || tag == arr[2]) {
                 cout <<  setw(20) << list[j].getLexem();
@@ -171,8 +183,8 @@ void printTable(vector<Lexem> list, Executor &executor) {
 
         cout << setw(5) << i + 1 << left;
         executor.getFout() << setw(5) << i + 1 << left;
-        string arr[3] = {"do", "until", "loop"};
-        findByTag(list, arr, 3, executor);
+        string arr[6] = {"do", "until", "loop", "not", "and", "or"};
+        findByTag(list, arr, 6, executor);
 
         string arr1[3] = {"Arithmetic operation", "Compare operation", "Assignment"};
         findByTag(list, arr1, 3, executor);
@@ -184,7 +196,7 @@ void printTable(vector<Lexem> list, Executor &executor) {
         findByTag(list, arr3, 1, executor);
     }
 
-    executor.printAll("----****----\n\n");
+    executor.printAll("******************************************************************************\n\n");
 }
 
 /*
@@ -213,6 +225,7 @@ int main() {
         for (const string &line : text) {
             lexicalAnalyzer.wordAnalysis(line, readyToUse);
         }
+
         printResult(readyToUse, executor);
         printTable(readyToUse, executor);
 

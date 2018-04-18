@@ -11,17 +11,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49140a04-3d50-489a-a541-920d1e125327" name="Default" comment="Lex already to use">
+    <list default="true" id="49140a04-3d50-489a-a541-920d1e125327" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OT_lp2.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OT_lp2.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OT_lp2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OT_lp2.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OT_lp2.dir/main.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/OT_lp2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OT_lp2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OT_lp2.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OT_lp2.exe.stackdump" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/MyClasses.h" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/MyClasses.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +40,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+            <state relative-caret-position="600">
+              <caret line="213" column="41" selection-start-line="213" selection-start-column="41" selection-end-line="213" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -62,7 +58,7 @@
       <file leaf-file-name="MyClasses.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../resources/MyClasses.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-140">
+            <state relative-caret-position="276">
               <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
               <folding>
                 <element signature="e#1091#1114#0" expanded="true" />
@@ -74,8 +70,8 @@
       <file leaf-file-name="LexicalAnalyzer.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="162" selection-start-line="162" selection-end-line="162" />
+            <state relative-caret-position="385">
+              <caret line="197" column="53" lean-forward="true" selection-start-line="197" selection-start-column="53" selection-end-line="197" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -89,9 +85,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../resources/Executor.cpp" />
+        <option value="$PROJECT_DIR$/../resources/MyClasses.h" />
         <option value="$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/../resources/MyClasses.h" />
       </list>
     </option>
   </component>
@@ -160,7 +156,9 @@
       <workItem from="1523938794628" duration="2726000" />
       <workItem from="1523941551157" duration="15535000" />
       <workItem from="1523981741257" duration="6389000" />
-      <workItem from="1523990344429" duration="4537000" />
+      <workItem from="1523990344429" duration="5379000" />
+      <workItem from="1524024502211" duration="2693000" />
+      <workItem from="1524031272866" duration="4738000" />
     </task>
     <task id="LOCAL-00001" summary="Lex already to use">
       <created>1523973245559</created>
@@ -169,11 +167,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523973245559</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Lex already to use">
+      <created>1523994902537</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1523994902538</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86755000" />
+    <option name="totallyTimeSpent" value="95028000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -185,7 +190,7 @@
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32908705" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3269639" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3269639" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -194,8 +199,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="3" side_tool="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
     </layout>
@@ -215,10 +220,72 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="26" />
+      <option name="time" value="27" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3772">
+          <caret line="164" column="5" lean-forward="true" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../resources/Executor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1840">
+          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../resources/MyClasses.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="e#1091#1114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1679">
+          <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4278">
+          <caret line="186" column="101" selection-start-line="186" selection-start-column="101" selection-end-line="186" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../resources/Executor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1840">
+          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../resources/MyClasses.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="e#1091#1114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3726">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3174">
@@ -422,6 +489,16 @@
         <state relative-caret-position="-876" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../resources/MyClasses.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="e#1091#1114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../resources/Executor.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1840">
@@ -431,25 +508,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="162" selection-start-line="162" selection-end-line="162" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../resources/MyClasses.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <element signature="e#1091#1114#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="385">
+          <caret line="197" column="53" lean-forward="true" selection-start-line="197" selection-start-column="53" selection-end-line="197" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        <state relative-caret-position="600">
+          <caret line="213" column="41" selection-start-line="213" selection-start-column="41" selection-end-line="213" selection-end-column="41" />
         </state>
       </provider>
     </entry>
