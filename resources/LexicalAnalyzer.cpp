@@ -199,3 +199,100 @@ public:
         }
     }
 };
+
+
+/*
+ * Функция которая выводит на экран и в файл результат работы лексического анализатор
+ * Тип лексемы + { текст лексемы }
+ *
+ * @param vector<lexem>, Executor
+ */
+void printResult(const vector<Lexem> &list, Executor &executor) {
+    for (Lexem lex : list) {
+        executor.printAll("It's " + lex.getTag() + ": {" + lex.getLexem() + "}");
+    }
+    executor.printAll("----****----\n");
+}
+
+/*
+ * Используется при формировании таблицы
+ */
+void findByTag(vector<Lexem> &list, string *arr, const int &size, Executor &executor) {
+    int j = 0;
+    for (j = 0; j < list.size(); ++j) {
+        string tag = list[j].getTag();
+        if (size == 6) {
+            if (tag == arr[0] || tag == arr[1] || tag == arr[2] || tag == arr[3] || tag == arr[4] || tag == arr[5]) {
+                cout << setw(20) << list[j].getLexem();
+                executor.getFout() << setw(20) << list[j].getLexem();
+                if (j == list.size() - 1) {
+                    list.erase(list.begin() + j);
+                    return;
+                }
+                list.erase(list.begin() + j);
+                break;
+            }
+        }
+        if (size == 3) {
+            if (tag == arr[0] || tag == arr[1] || tag == arr[2]) {
+                cout << setw(20) << list[j].getLexem();
+                executor.getFout() << setw(20) << list[j].getLexem();
+                if (j == list.size() - 1) {
+                    list.erase(list.begin() + j);
+                    return;
+                }
+                list.erase(list.begin() + j);
+                break;
+            }
+        } else if (size == 1) {
+            if (tag == arr[0]) {
+                cout << setw(20) << list[j].getLexem();
+                executor.getFout() << setw(20) << list[j].getLexem();
+                if (j == list.size() - 1) {
+                    list.erase(list.begin() + j);
+                    return;
+                }
+                list.erase(list.begin() + j);
+                break;
+            }
+        }
+    }
+    if (j == list.size()) {
+        cout << left << setw(20) << " ";
+        executor.getFout() << setw(20) << " ";
+    }
+}
+
+/*
+ * Выводит таблицу лексем составленную на осонвен лексического анализа текста
+ *
+ * @param vector<Lexem>, Executor
+ */
+void printTable(vector<Lexem> list, Executor &executor) {
+    cout << left << setw(5) << "№" << setw(20) << "KeyWord"
+         << setw(20) << "Operation"
+         << setw(20) << "Number"
+         << setw(20) << "Identification" << endl;
+    executor.getFout() << left << setw(5) << "№" << setw(20) << "KeyWord"
+                       << setw(20) << "Operation"
+                       << setw(20) << "Number"
+                       << setw(20) << "Identification" << endl;
+    for (int i = 0; i < list.size(); ++i, cout << endl, executor.getFout() << endl) {
+
+        cout << setw(5) << i + 1 << left;
+        executor.getFout() << setw(5) << i + 1 << left;
+        string arr[6] = {"do", "until", "loop", "not", "and", "or"};
+        findByTag(list, arr, 6, executor);
+
+        string arr1[3] = {"Arithmetic operation", "Compare operation", "Assignment"};
+        findByTag(list, arr1, 3, executor);
+
+        string arr2[1] = {"Number"};
+        findByTag(list, arr2, 1, executor);
+
+        string arr3[1] = {"Identification"};
+        findByTag(list, arr3, 1, executor);
+    }
+
+    executor.printAll("******************************************************************************\n\n");
+}
