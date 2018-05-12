@@ -290,7 +290,7 @@ void printTable(vector<Lexem> list, Executor &executor) {
         string arr2[1] = {"Number"};
         findByTag(list, arr2, 1, executor);
 
-        string arr3[1] = {"Identification"};
+            string arr3[1] = {"Identification"};
         findByTag(list, arr3, 1, executor);
     }
 
