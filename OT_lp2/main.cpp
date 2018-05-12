@@ -56,7 +56,7 @@ private:
 
     const int waitingRoom[11][12] = {
             1, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
-            11, 11, 11, 11, 5, 11, 11, 0, 11, 11, 11, 11,
+            11, 11, 11, 11, 11, 11, 11, 0, 11, 11, 11, 11,
             11, 3, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
             11, 11, 5, 11, 5, 11, 11, 11, 11, 11, 11, 11,
             11, 11, 11, 11, 11, 11, 11, 11, 9, 11, 11, 11,
@@ -127,7 +127,7 @@ public:
             checkDoUntil(currentPos);
             currentPos += 2;
             logicalExpr(currentPos);
-            operators(--currentPos);
+            operators(currentPos);
             printResult(*text, *executor);
         }
     }
@@ -136,11 +136,13 @@ public:
         string current = text->at(currentPos).getTag();
         string next = text->at(currentPos + 1).getTag();
         unsigned int size = text->size();
-        while (currentPos + 1 < size && (current != "do" && next != "until")) {
+        if (current != "do" && next != "until") {
             executor->printAll(
                     "# I can't define the construction, because: " + current + ", " + next + " is unknown lexem's #");
             executor->printAll("# As I know only one construction, I think it would be a \"do until\" #");
             executor->printAll("# I will trying to find that construction!!! #");
+        }
+        while (currentPos + 1 < size && (current != "do" && next != "until")) {
             ++currentPos;
         }
         if (currentPos + 1 == size) {
@@ -155,7 +157,7 @@ public:
     void printMessage(bool isError, Condition prev, Condition current, const int &pos) {
         string lex = text->at(pos).getLexem();
         string tag = text->at(pos).getTag();
-        if (prev == Condition::LS || prev == Condition::LS1 || prev == Condition::OPS) {
+        if (prev == Condition::LS || (prev == Condition::LS1 && current == Condition::OPS) || prev == Condition::OPS) {
             if (isError)
                 executor->printAll("\tCatch the ERROR, trying to fix it");
             else
@@ -163,7 +165,6 @@ public:
             executor->printAll(
                     "\t# I checked: " + lex + " ,with tag: " + tag + " ,in position: " + to_string(pos) + " #");
             executor->printAll("\t# From: " + nameOfCondition.at(prev) + " to: " + nameOfCondition.at(current) + " #");
-
         } else if (prev == Condition::begin) {
             if (isError)
                 executor->printAll("Catch the ERROR, trying to fix it");
@@ -216,7 +217,7 @@ public:
     void operators(unsigned int &currentPos) {
         unsigned int beginPos = currentPos;
         unsigned int size = text->size();
-        Condition condition = Condition::OPS;
+        Condition condition = Condition::assigm;
         Condition prevCondition;
         bool isAS = false;
 
@@ -241,6 +242,9 @@ public:
                 }
             }
             ++currentPos;
+        }
+        if (condition == Condition::begin) {
+            executor->printAll("# The construction is completed correctly #");
         }
     }
 
@@ -344,15 +348,25 @@ public:
         executor->printAll("! Erroneous lexem: " + lexem + ",  check them !");
 
         if (prev == OPS || prev == assigm || prev == AS || prev == AO) {
-            while (pos < size && text->at(pos).getTag() != "Separator") {
+            while (text->at(pos).getTag() != "Separator") {
+                if (pos == size - 1) {
+                    executor->printAll("# I reached the end of the text :C #");
+                    return;
+                }
                 executor->printAll("! Skip the: " + text->at(pos).getLexem() + " !");
                 ++pos;
             }
+            executor->printAll("! Separator was founded, move on to the next construction !");
         } else {
-            while (pos < size && text->at(pos).getTag() != "Assignment") {
+            while (text->at(pos).getTag() != "Assignment") {
+                if (pos == size - 1) {
+                    executor->printAll("# I reached the end of the text :C #");
+                    return;
+                }
                 executor->printAll("! Skip the: " + text->at(pos).getLexem() + " !");
                 ++pos;
             }
+            executor->printAll("! Assignment was founded, move on to the next construction !");
             pos -= 2;
         }
     }
