@@ -53,11 +53,10 @@ class SyntacticAnalyzer {
 private:
     Executor *executor;
     vector<Lexem> *text;
-    bool loggingIsOn = true;
 
     const int waitingRoom[11][12] = {
             1, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
-            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 0, 11,
+            11, 11, 11, 11, 11, 11, 11, 0, 11, 11, 11, 11,
             11, 3, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
             11, 11, 5, 11, 5, 11, 11, 11, 11, 11, 11, 11,
             11, 11, 11, 11, 11, 11, 11, 11, 9, 11, 11, 11,
@@ -70,22 +69,22 @@ private:
     };
 
     enum Condition {
-        begin, LS, CS, UO, LS1, BO, CO, OPS, assigm, AS, AS1, ER
+        begin, LS, CS, UO, LS1, BO, CO, OPS, assigm, AS, AO, ER
     };
 
     vector<string> nameOfCondition = {
-            "\" Determination of construction \"",
-            "\" Logical statement \""
-            "\" Compare statement \""
-            "\" Unary operation \""
-            "\" Logical statement \""
-            "\" Binary operation \""
-            "\" Compare operation \""
-            "\" Operators \""
-            "\" Assignment \""
-            "\" Arithmetic statement \""
-            "\" Arithmetic statement \""
-            "\" Error condition \""
+            "\" Determination of construction \"", //0
+            "\" Logical statement \"", //1
+            "\" Compare statement \"", //2
+            "\" Unary operation \"",
+            "\" Logical statement \"", //1
+            "\" Binary operation \"",
+            "\" Compare operation \"",
+            "\" Operators \"", //1
+            "\" Assignment \"",
+            "\" Arithmetic statement \"", //1
+            "\" Arithmetic operation \"", //2
+            "\" Error condition \"" //error
     };
 
     int getTagGroup(const string &tag) {
@@ -124,7 +123,6 @@ public:
     void analyze() {
         stack<string> condition;
         unsigned int currentPos = 0;
-        executor->printAll(to_string(Condition::LS));
         checkDoUntil(currentPos);
         currentPos += 2;
         logicalExpr(currentPos);
@@ -134,18 +132,48 @@ public:
 
     void checkDoUntil(unsigned int &currentPos) {
         if (text->at(currentPos).getTag() != "do" && text->at(currentPos + 1).getTag() != "until") {
+            executor->printAll("Catch the ERROR, trying to fix it");
             executor->printAll("# Because I know only one construction, I think it would be a \"do until\" #");
             executor->printAll("# I move on to the next lexem #");
+        } else {
+            executor->printAll("Everything is fine");
+            executor->printAll("# It's a \"do until\" #");
         }
     }
 
-    void printError(Condition prev, Condition current, const int &pos) {
-        executor->printAll("I was in ");
+    void printMessage(bool isError, Condition prev, Condition current, const int &pos) {
+        string lex = text->at(pos).getLexem();
+        string tag = text->at(pos).getTag();
+        if (prev == Condition::LS || prev == Condition::LS1 || prev == Condition::OPS) {
+            if (isError)
+                executor->printAll("\tCatch the ERROR, trying to fix it");
+            else
+                executor->printAll("\tEverything is fine");
+            executor->printAll(
+                    "\t# I checked: " + lex + " ,with tag: " + tag + " ,in position: " + to_string(pos) + " #");
+            executor->printAll("\t# From: " + nameOfCondition.at(prev) + " to: " + nameOfCondition.at(current) + " #");
+
+        } else if (prev == Condition::begin) {
+            if (isError)
+                executor->printAll("Catch the ERROR, trying to fix it");
+            else
+                executor->printAll("Everything is fine");
+            executor->printAll(
+                    "# I checked: " + lex + " ,with tag: " + tag + " ,in position: " + to_string(pos) + " #");
+            executor->printAll(
+                    "# From: " + nameOfCondition.at(prev) + " to: " + nameOfCondition.at(current) + " #");
+        } else {
+            if (isError)
+                executor->printAll("\t\tCatch the ERROR, trying to fix it");
+            else
+                executor->printAll("\t\tEverything is fine");
+            executor->printAll(
+                    "\t\t# I checked: " + lex + " ,with tag: " + tag + " ,in position: " + to_string(pos) + " #");
+            executor->printAll(
+                    "\t\t# From: " + nameOfCondition.at(prev) + " to: " + nameOfCondition.at(current) + " #");
+        }
     }
 
-    void allFine(Condition prev, Condition current, const int &pos) {
-        executor->printAll("All fine in " + pos);
-    }
 
     void logicalExpr(unsigned int &currentPos) {
         unsigned int beginPos = currentPos;
@@ -155,16 +183,17 @@ public:
         string currentTag;
 
         while (currentPos < size && !(prevCondition == Condition::LS1 && currentTag == "Identification")) {
-            currentTag = text->at(currentPos++).getTag();
+            currentTag = text->at(currentPos).getTag();
 
             prevCondition = condition;
             condition = (Condition) waitingRoom[getTagGroup(currentTag)][condition];
 
             if (condition == Condition::ER) {
-                printError(prevCondition, condition, currentPos);
+                printMessage(true, prevCondition, condition, currentPos);
                 condition = (Condition) waitingRoom[getTagGroup(currentTag)][condition];
             } else {
-                allFine(prevCondition, condition, currentPos);
+                printMessage(false, prevCondition, condition, currentPos);
+                ++currentPos;
             }
         }
 
@@ -180,16 +209,17 @@ public:
         bool isAS = false;
 
         while (currentPos < size && condition != Condition::begin) {
-            string currentTag = text->at(currentPos++).getTag();
+            string currentTag = text->at(currentPos).getTag();
 
             prevCondition = condition;
             condition = (Condition) waitingRoom[getTagGroup(currentTag)][condition];
 
             if (condition == Condition::ER) {
-                printError(prevCondition, condition, currentPos);
+                printMessage(true, prevCondition, condition, currentPos);
                 condition = (Condition) waitingRoom[getTagGroup(currentTag)][condition];
                 //Todo: переход какой нибудь нужен
             } else {
+                printMessage(false, prevCondition, condition, currentPos);
                 if (!isAS && condition == Condition::AS) {
                     beginPos = currentPos;
                     isAS = true;
@@ -197,6 +227,7 @@ public:
                     toPosixA(beginPos, currentPos - 1);
                     isAS = false;
                 }
+                ++currentPos;
             }
         }
     }
