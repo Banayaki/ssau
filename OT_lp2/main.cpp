@@ -31,18 +31,26 @@ public:
     }
 };
 
+//TODO вход числа в диапазон значений и длина строки максимальная, кек
+
 /*
  * Это класс который выполняет роль синтаксического анализа, на данный момент
  * он находится на стадии разработки и не используется в программе
  */
 class SyntacticAnalyzer {
 private:
+    enum Condition {
+        begin, LS, CS, UO, LS1, BO, CO, assigm, OPS, AS, AO, ER
+    };
+
     Executor *executor;
     vector<Lexem> *text;
+    Condition condition = Condition::begin;
+    Condition prevCondition = Condition::begin;
 
     const int waitingRoom[11][12] = {
             1, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
-            11, 11, 7, 11, 7, 11, 11, 11, 0, 11, 11, 11,
+            11, 11, 0, 11, 0, 11, 11, 11, 0, 11, 11, 11,
             11, 3, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
             11, 11, 5, 11, 5, 11, 11, 11, 11, 11, 11, 11,
             11, 11, 11, 11, 11, 11, 11, 9, 11, 11, 11, 11,
@@ -52,10 +60,6 @@ private:
             11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 8, 11,
             11, 11, 6, 11, 11, 11, 11, 11, 11, 11, 11, 11,
             11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11
-    };
-
-    enum Condition {
-        begin, LS, CS, UO, LS1, BO, CO, assigm, OPS, AS, AO, ER
     };
 
     vector<string> nameOfCondition = {
@@ -110,16 +114,18 @@ public:
         unsigned int size = text->size();
         unsigned int currentPos = 0;
         while (currentPos < size) {
-            checkDoUntil(currentPos);
-            if (currentPos == size - 1) return;
-            if (!logicalExpr(currentPos)) {
-                ++currentPos;
-                continue;
-            }
-            //TODO вывести какое-нибудь сообщение
-            if (currentPos == size - 1) return;
-            operators(--currentPos);
             executor->printAll("");
+            checkDoUntil(currentPos);
+            if (currentPos >= size - 1) {
+                executor->printAll("# I reached the end of the text :C #");
+                return;
+            }
+            logicalExpr(currentPos);
+            if (currentPos >= size - 1) {
+                executor->printAll("# I reached the end of the text :C #");
+                return;
+            }
+            operators(currentPos);
         }
     }
 
@@ -129,7 +135,7 @@ public:
             (text->at(currentPos).getTag() != "do" || text->at(currentPos + 1).getTag() != "until")) {
             executor->printAll(
                     "# I can't define the construction, because: " + text->at(currentPos).getLexem() + ", " +
-                    text->at(currentPos + 1).getTag() + " is unknown lexem's #");
+                    text->at(currentPos + 1).getLexem() + " is unknown lexem's #");
             executor->printAll("# As I know only one construction, I think it would be a \"do until\" #");
             executor->printAll("# I will trying to find that construction!!! #");
         }
@@ -143,18 +149,19 @@ public:
         }
         executor->printAll("# I found! #");
         executor->printAll("# It's a \"do until\" #");
-        currentPos += 2;
+        ++currentPos;
     }
 
-    bool logicalExpr(unsigned int &currentPos) {
+    void logicalExpr(unsigned int &currentPos) {
         unsigned int beginPos = currentPos;
         unsigned int size = text->size(); //NOLINT
-        Condition condition = Condition::LS;
-        Condition prevCondition = Condition::LS;
+        condition = Condition::LS;
+        prevCondition = Condition::LS;
         string currentTag;
 
-        while (currentPos < size && !((prevCondition == Condition::LS1 || prevCondition == Condition::CS) &&
+        while (currentPos < size && !(condition == Condition::OPS &&
                                       currentTag == "Identification")) {
+            ++currentPos;
             currentTag = text->at(currentPos).getTag();
 
             prevCondition = condition;
@@ -163,27 +170,24 @@ public:
             if (condition == Condition::ER) {
                 printMessage(prevCondition, condition, currentPos);
                 errorHandler(prevCondition, currentPos);
+                currentTag = text->at(currentPos).getTag();
                 executor->printAll("! Logical Expression is incorrect !");
                 if (currentTag == "loop") {
-                    executor->printAll("! Empty body of cycle !");
-                    return false;
+                    condition = Condition::begin;
+                } else {
+                    condition = Condition::OPS;
                 }
-                return true;
             } else {
                 printMessage(prevCondition, condition, currentPos);
             }
             if (currentTag == "loop") {
                 executor->printAll("! Empty body of cycle !");
-                return false;
+                ++currentPos;
+                return;
             }
-
-            ++currentPos;
         }
-        executor->printAll("# Logical Expression is correct #");
-
-        toPosixL(beginPos, currentPos - 1);
-
-        return true;
+        executor->printAll("# Logical Expression was ended #");
+        toPosixL(beginPos, currentPos - 1); //Убратb???
         //Todo: if == size
     }
 
@@ -191,8 +195,6 @@ public:
     void operators(unsigned int &currentPos) {
         unsigned int beginPos = currentPos;
         unsigned int size = text->size();
-        Condition condition = Condition::OPS;
-        Condition prevCondition;
         bool isAS = false;
 
         while (currentPos < size && condition != Condition::begin) {
@@ -220,11 +222,6 @@ public:
                 }
             }
             ++currentPos;
-        }
-        if (condition == Condition::begin) {
-            executor->printAll("# The body is correctly #");
-        } else {
-            executor->printAll("! The body is incorrectly !");
         }
     }
 
@@ -292,7 +289,7 @@ public:
         }
     }
 
-    void printMessage(Condition prev, Condition current, const int &pos) {
+    void printMessage(const Condition &prev, const Condition &current, const int &pos) {
         string lex = text->at(pos).getLexem();
         string tag = text->at(pos).getTag();
         if (prev == Condition::LS || (prev == Condition::LS1 && current == Condition::OPS) || prev == Condition::OPS) {
@@ -301,18 +298,18 @@ public:
             executor->printAll("\t# From: " + nameOfCondition.at(prev) + " to: " + nameOfCondition.at(current) + " #");
         } else if (prev == Condition::begin) {
             executor->printAll(
-                    "# I checked: " + lex + " ,with tag: " + tag + " ,in position: " + to_string(pos) + " #");
+                    "# I checked: \"" + lex + "\" ,with tag: " + tag + " ,in position: " + to_string(pos) + " #");
             executor->printAll(
                     "# From: " + nameOfCondition.at(prev) + " to: " + nameOfCondition.at(current) + " #");
         } else {
             executor->printAll(
-                    "\t\t# I checked: " + lex + " ,with tag: " + tag + " ,in position: " + to_string(pos) + " #");
+                    "\t\t# I checked: \"" + lex + "\" ,with tag: " + tag + " ,in position: " + to_string(pos) + " #");
             executor->printAll(
                     "\t\t# From: " + nameOfCondition.at(prev) + " to: " + nameOfCondition.at(current) + " #");
         }
     }
 
-    void errorHandler(Condition &prev, unsigned int &pos) {
+    void errorHandler(const Condition &prev, unsigned int &pos) {
         string lexem = text->at(pos).getLexem();
         unsigned int size = text->size();
         executor->printAll("!!! Syntax error !!!");
@@ -366,11 +363,12 @@ public:
             }
             executor->printAll("! Separator/Loop was founded, move on to the next construction !");
         } else {
-            while (text->at(pos).getTag() != "Assignment" && text->at(pos).getTag() != "loop") {
+            while ((text->at(pos).getTag() != "Identification" || text->at(pos + 1).getTag() != "Assignment") &&
+                   text->at(pos).getTag() != "loop") {
                 executor->printAll("! Skip the: " + text->at(pos).getLexem() + " !");
                 ++pos;
             }
-            executor->printAll("! Assignment/Loop was founded, move on to the next construction !");
+            executor->printAll("! Identification + Assignment/Loop was founded, move on to the next construction !");
         }
     }
 };
