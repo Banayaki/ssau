@@ -40,16 +40,17 @@ public:
 class SyntacticAnalyzer {
 private:
     enum Condition {
-        begin, LS, CS, UO, LS1, BO, CO, assigm, OPS, AS, AO, ER
+        begin, LS, CS, UO, LS1, BO, CO, assigm, OPS, AS, AO, ER, REC
     };
 
     Executor *executor;
     vector<Lexem> *text;
     Condition condition = Condition::begin;
     Condition prevCondition = Condition::begin;
+    unsigned int size;
 
     const int waitingRoom[11][12] = {
-            1, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+            1, 11, 12, 11, 12, 11, 11, 11, 12, 11, 11, 11,
             11, 11, 0, 11, 0, 11, 11, 11, 0, 11, 11, 11,
             11, 3, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
             11, 11, 5, 11, 5, 11, 11, 11, 11, 11, 11, 11,
@@ -78,7 +79,7 @@ private:
     };
 
     int getTagGroup(const string &tag) {
-        if (tag == "do" || tag == "until") return 0;
+        if (tag == "do") return 0;
         if (tag == "loop") return 1;
         if (tag == "not") return 2;
         if (tag == "and" || tag == "or") return 3;
@@ -106,27 +107,23 @@ private:
 public:
     SyntacticAnalyzer(vector<Lexem> &text, Executor &executor) {
         this->text = &text;
+        this->size = text.size();
         this->executor = &executor;
-        analyze();
+        runAnalysis();
     }
 
-    void analyze() {
-        unsigned int size = text->size();
+    void runAnalysis() {
         unsigned int currentPos = 0;
         while (currentPos < size) {
-            executor->printAll("");
-            checkDoUntil(currentPos);
-            if (currentPos >= size - 1) {
-                executor->printAll("# I reached the end of the text :C #");
-                return;
-            }
-            logicalExpr(currentPos);
-            if (currentPos >= size - 1) {
-                executor->printAll("# I reached the end of the text :C #");
-                return;
-            }
-            operators(currentPos);
+            analysis(currentPos);
         }
+    }
+
+    void analysis(unsigned int &currentPos) {
+        executor->printAll("");
+        checkDoUntil(currentPos);
+        logicalExpr(currentPos);
+        operators(currentPos);
     }
 
     void checkDoUntil(unsigned int &currentPos) {
@@ -143,8 +140,9 @@ public:
                (text->at(currentPos).getTag() != "do" || text->at(currentPos + 1).getTag() != "until")) {
             ++currentPos;
         }
-        if (currentPos + 1 == size) {
+        if (currentPos >= size - 1) {
             executor->printAll("# I reached the end of the text :C #");
+            currentPos = size;
             return;
         }
         executor->printAll("# I found! #");
@@ -154,7 +152,6 @@ public:
 
     void logicalExpr(unsigned int &currentPos) {
         unsigned int beginPos = currentPos;
-        unsigned int size = text->size(); //NOLINT
         condition = Condition::LS;
         prevCondition = Condition::LS;
         string currentTag;
@@ -167,6 +164,17 @@ public:
             prevCondition = condition;
             condition = (Condition) waitingRoom[getTagGroup(currentTag)][condition];
 
+            if (condition == Condition::REC) {
+                if (currentPos + 1 < size && text->at(currentPos + 1).getTag() == "until") {
+                    executor->printAll("% Begin inserted cycle %");
+                    analysis(currentPos);
+                    condition = Condition::OPS;
+                    currentTag = text->at(currentPos).getTag();
+                    executor->printAll("% End inserted cycle %\n");
+                } else {
+                    condition = Condition::ER;
+                }
+            }
             if (condition == Condition::ER) {
                 printMessage(prevCondition, condition, currentPos);
                 errorHandler(prevCondition, currentPos);
@@ -186,15 +194,17 @@ public:
                 return;
             }
         }
+        if (currentPos >= size) {
+            executor->printAll("# I reached the end of the text :C #");
+            return;
+        }
         executor->printAll("# Logical Expression was ended #");
-        toPosixL(beginPos, currentPos - 1); //Убратb???
-        //Todo: if == size
+        toPosixL(beginPos, currentPos - 1); //Убратb??
     }
 
 
     void operators(unsigned int &currentPos) {
         unsigned int beginPos = currentPos;
-        unsigned int size = text->size();
         bool isAS = false;
 
         while (currentPos < size && condition != Condition::begin) {
@@ -203,6 +213,21 @@ public:
             prevCondition = condition;
             condition = (Condition) waitingRoom[getTagGroup(currentTag)][condition];
 
+            if (condition == Condition::REC) {
+                if (currentPos + 1 < size && text->at(currentPos + 1).getTag() == "until") {
+                    executor->printAll("% Begin inserted cycle %");
+                    Condition inMind = prevCondition;
+                    analysis(currentPos);
+                    condition = prevCondition;
+                    if (currentPos >= size && condition != Condition::begin) {
+                        executor->printAll("! I think you are forget \"loop\"");
+                        break;
+                    }
+                    executor->printAll("% End inserted cycle %");
+                } else {
+                    condition = Condition::ER;
+                }
+            }
             if (condition == Condition::ER) {
                 printMessage(prevCondition, condition, currentPos);
                 errorHandler(prevCondition, currentPos);
@@ -222,6 +247,11 @@ public:
                 }
             }
             ++currentPos;
+        }
+        if (condition != Condition::begin) {
+            executor->printAll("! I think you are forget \"loop\"");
+        } else {
+            executor->printAll("# End of body #");
         }
     }
 

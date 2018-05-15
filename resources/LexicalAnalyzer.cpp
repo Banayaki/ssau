@@ -142,8 +142,15 @@ public:
             for (char ch : line) {
                 if (isdigit(ch)) ++i;
             }
-            if (i == line.size()) result.emplace_back(Lexem("Number", line));
-            else result.emplace_back(Lexem("Identification", line));
+            if (i == line.size()) {
+                int num = stoi(line);
+                if (-32768 <= num && 32767 >= num)
+                    result.emplace_back(Lexem("Number", line));
+            }
+            else {
+                if (line.size() <= 255)
+                    result.emplace_back(Lexem("Identification", line));
+            }
         }
     }
 
