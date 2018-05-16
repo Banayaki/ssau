@@ -113,6 +113,7 @@ public:
     }
 
     void runAnalysis() {
+        checkNegativeNumbers();
         unsigned int currentPos = 0;
         while (currentPos < size) {
             analysis(currentPos);
@@ -399,6 +400,22 @@ public:
                 ++pos;
             }
             executor->printAll("! Identification + Assignment/Loop was founded, move on to the next construction !");
+        }
+    }
+
+    void checkNegativeNumbers() {
+        for (int i = 2; i < size; ++i) {
+            string number = text->at(i).getLexem();
+            string isMinus = text->at(i - 1).getLexem();
+            string isGood = text->at(i - 2).getTag();
+            if (text->at(i).getTag() == "Number") {
+                if (isMinus == "-" && isGood == "Arithmetic operation" ||
+                    isMinus == "-" && isGood == "Assignment") {
+                    text->at(i).setLexem("(-" + number + ")");
+                    text->erase(text->begin() + i - 1);
+                    --size;
+                }
+            }
         }
     }
 };
