@@ -50,6 +50,10 @@ public:
     string getLexem() const {
         return this->lexem;
     }
+
+    void setLexem(const string &lex) {
+        this->lexem = lex;
+    }
 };
 
 /*

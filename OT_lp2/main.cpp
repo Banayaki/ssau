@@ -2,6 +2,7 @@
 
 //Вариант 2
 //Сложеость 3
+//Hell
 
 /*
  * Класс исполнитель для 2-ой лабараторной работы
@@ -31,36 +32,21 @@ public:
     }
 };
 
-//TODO вход числа в диапазон значений и длина строки максимальная, кек
-
 /*
- * Это класс который выполняет роль синтаксического анализа, на данный момент
- * он находится на стадии разработки и не используется в программе
+ * Это класс который выполняет роль синтаксического анализа.
+ * Пригоден только для анализ конструкции do until <...> loop, распознаёт так же вложенные циклы
+ * И находит большинство возможных ошибок и советует, как их можно исправить.
  */
 class SyntacticAnalyzer {
 private:
+
+    /*
+     * Состояния автомата
+     * Ниже в векторе nameOfCondition указанны расшифровки имен состояний, используется далее в программе,
+     * для форматированного вывода ошибок
+     */
     enum Condition {
         begin, LS, CS, UO, LS1, BO, CO, assigm, OPS, AS, AO, ER, REC
-    };
-
-    Executor *executor;
-    vector<Lexem> *text;
-    Condition condition = Condition::begin;
-    Condition prevCondition = Condition::begin;
-    unsigned int size;
-
-    const int waitingRoom[11][12] = {
-            1, 11, 12, 11, 12, 11, 11, 11, 12, 11, 11, 11,
-            11, 11, 0, 11, 0, 11, 11, 11, 0, 11, 11, 11,
-            11, 3, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
-            11, 11, 5, 11, 5, 11, 11, 11, 11, 11, 11, 11,
-            11, 11, 11, 11, 11, 11, 11, 9, 11, 11, 11, 11,
-            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 11,
-            11, 2, 11, 2, 11, 4, 2, 11, 11, 10, 11, 11,
-            11, 2, 8, 2, 8, 4, 2, 11, 7, 10, 11, 11,
-            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 8, 11,
-            11, 11, 6, 11, 11, 11, 11, 11, 11, 11, 11, 11,
-            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11
     };
 
     vector<string> nameOfCondition = {
@@ -75,9 +61,39 @@ private:
             "\"Operators\"", //1
             "\"Arithmetic statement\"", //1
             "\"Arithmetic operation\"", //2
-            "\"Error condition\"" //error
+            "\"Error condition\"", //error
+            "\"Recursion call\""
     };
 
+    Executor *executor;
+    vector<Lexem> *text;
+    Condition condition = Condition::begin;
+    Condition prevCondition = Condition::begin;
+
+    unsigned long size;
+
+    /*
+     * Матрица переходов между состояниями, строки - входные лексеми (их тэги), колонки - состояния.
+     *
+     * @see LexicalAnalyzer.Lexem
+     */
+    const int waitingRoom[11][12] = {
+            1, 11, 12, 11, 12, 11, 11, 11, 12, 11, 11, 11,
+            11, 11, 0, 11, 0, 11, 11, 11, 0, 11, 11, 11,
+            11, 3, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+            11, 11, 5, 11, 5, 11, 11, 11, 11, 11, 11, 11,
+            11, 11, 11, 11, 11, 11, 11, 9, 11, 11, 11, 11,
+            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 9, 11,
+            11, 2, 11, 2, 11, 4, 2, 11, 11, 10, 11, 11,
+            11, 2, 8, 2, 8, 4, 2, 11, 7, 10, 11, 11,
+            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 8, 11,
+            11, 11, 6, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11
+    };
+
+    /*
+     * Строки матрицы переходов
+     */
     int getTagGroup(const string &tag) {
         if (tag == "do") return 0;
         if (tag == "loop") return 1;
@@ -92,6 +108,10 @@ private:
         if (tag == "Wrong") return 10;
     }
 
+    /*
+     * Следующие две функции используются для алгоритма "Обратной польской записи"
+     * Определяют приоритеты соотвествующих операций
+     */
     int checkPriorityA(const string &lexem) {
         if (lexem == "*" || lexem == "/") return 2;
         else if (lexem == "+" || lexem == "-") return 1;
@@ -109,26 +129,39 @@ public:
         this->text = &text;
         this->size = text.size();
         this->executor = &executor;
-        runAnalysis();
     }
 
+    /*
+     * Запуск анализатора, анализирует пока не дойдет до конца файла.
+     */
     void runAnalysis() {
         checkNegativeNumbers();
-        unsigned int currentPos = 0;
+        unsigned long currentPos = 0;
+        if (size == 1) {
+            executor->printAll("# So short code #");
+        }
         while (currentPos < size) {
             analysis(currentPos);
         }
     }
 
-    void analysis(unsigned int &currentPos) {
+    /*
+     * Функция вызывающая методы начинающие анализ
+     */
+    void analysis(unsigned long &currentPos) {
         executor->printAll("");
         checkDoUntil(currentPos);
         logicalExpr(currentPos);
         operators(currentPos);
     }
 
-    void checkDoUntil(unsigned int &currentPos) {
-        unsigned int size = text->size();
+    /*
+     * Анализ текста - ищет начало нашей конструкции, пока не найдет, либо не достигнет конца файла
+     *
+     * @param unsigned long
+     */
+    void checkDoUntil(unsigned long &currentPos) {
+        unsigned long size = text->size();
         if (currentPos + 1 < size &&
             (text->at(currentPos).getTag() != "do" || text->at(currentPos + 1).getTag() != "until")) {
             executor->printAll(
@@ -151,15 +184,23 @@ public:
         ++currentPos;
     }
 
-    void logicalExpr(unsigned int &currentPos) {
-        unsigned int beginPos = currentPos;
+    /*
+     * Функция анализирующая логическое выражение, умеет определать после своего конца начало вложенного цикла
+     * Работает либо до определенного состояния, либо до конца файла, либо до конца цикла
+     * Так же переводит логическое выражение в обратную польскую форму
+     *
+     * @param unsigned long
+     */
+    void logicalExpr(unsigned long &currentPos) {
+        unsigned long beginPos = currentPos;
         condition = Condition::LS;
         prevCondition = Condition::LS;
         string currentTag;
 
-        while (currentPos < size && !(condition == Condition::OPS &&
+        while (!(condition == Condition::OPS &&
                                       currentTag == "Identification")) {
             ++currentPos;
+            if (currentPos >= size) break;
             currentTag = text->at(currentPos).getTag();
 
             prevCondition = condition;
@@ -200,12 +241,16 @@ public:
             return;
         }
         executor->printAll("# Logical Expression was ended #");
-        toPosixL(beginPos, currentPos - 1); //Убратb??
+        toPosixL(beginPos, currentPos - 1);
     }
 
-
-    void operators(unsigned int &currentPos) {
-        unsigned int beginPos = currentPos;
+    /*
+     * Функция анализирующая операторы, по идее умеет все тоже самое что и прошлая функция
+     *
+     * @param unsigned long
+     */
+    void operators(unsigned long &currentPos) {
+        unsigned long beginPos = currentPos;
         bool isAS = false;
 
         while (currentPos < size && condition != Condition::begin) {
@@ -220,7 +265,7 @@ public:
                     Condition inMind = prevCondition;
                     analysis(currentPos);
                     condition = prevCondition;
-                    if (currentPos >= size && condition != Condition::begin) {
+                    if (currentPos >= size) {
                         executor->printAll("! I think you are forget \"loop\"");
                         break;
                     }
@@ -260,12 +305,12 @@ public:
      * Алгоритм преобразования инфиксной записи в постфиксную (алгоритм обратной польской записи)
      * Нужен для того что бы при анализе было легче воспринимать приоритет операций
      *
-     * @param Integer
+     * @param usigned long
      */
-    void toPosixA(const unsigned int &left, const unsigned int &right) {
+    void toPosixA(const unsigned long &left, const unsigned long &right) {
         stack<Lexem> stack;
         vector<Lexem> changed;
-        int i;
+        unsigned long i;
         for (i = left; i != right; ++i) {
             Lexem tmp = text->at(i);
             string tag = text->at(i).getTag();
@@ -284,7 +329,7 @@ public:
             changed.push_back(stack.top());
             stack.pop();
         }
-        for (int i = 0; i < changed.size(); ++i) {
+        for (unsigned long i = 0; i < changed.size(); ++i) {
             text->at(left + i) = changed[i];
         }
     }
@@ -292,11 +337,15 @@ public:
 
     /*
      * Тоже самое только для булевых выражений
+     *
+     * @param unsigned long
      */
-    void toPosixL(const unsigned int &left, const unsigned int &right) {
+    void toPosixL(const unsigned long &left, const unsigned long &right) {
+        if (left >= right)
+            return;
         stack<Lexem> stack;
         vector<Lexem> changed;
-        int i;
+        unsigned long i;
         for (i = left; i != right; ++i) {
             Lexem tmp = text->at(i);
             string tag = text->at(i).getTag();
@@ -315,12 +364,17 @@ public:
             changed.push_back(stack.top());
             stack.pop();
         }
-        for (int i = 0; i < changed.size(); ++i) {
+        for (unsigned long i = 0; i < changed.size(); ++i) {
             text->at(left + i) = changed[i];
         }
     }
 
-    void printMessage(const Condition &prev, const Condition &current, const int &pos) {
+    /*
+     * Выводит сообщения на экран, о том в каком состоянии находится анализатор и какую лексему анализирует
+     *
+     * @param Condition, unsigned long
+     */
+    void printMessage(const Condition &prev, const Condition &current, const unsigned long &pos) {
         string lex = text->at(pos).getLexem();
         string tag = text->at(pos).getTag();
         if (prev == Condition::LS || (prev == Condition::LS1 && current == Condition::OPS) || prev == Condition::OPS) {
@@ -340,9 +394,15 @@ public:
         }
     }
 
-    void errorHandler(const Condition &prev, unsigned int &pos) {
+    /*
+     * Выводит ошибки, анализируя предыдущее состяоние и позицию лексемы, так же переходит к началу следующей
+     * конструкции.
+     *
+     * @param Condition, unsigned long
+     */
+    void errorHandler(const Condition &prev, unsigned long &pos) {
         string lexem = text->at(pos).getLexem();
-        unsigned int size = text->size();
+        unsigned long size = text->size();
         executor->printAll("!!! Syntax error !!!");
         executor->printAll("! Catch the ERROR in this \"" + to_string(pos) + "\" position !");
         if (prev == AS || prev == CO || prev == UO || prev == BO) {
@@ -403,8 +463,11 @@ public:
         }
     }
 
+    /*
+     * Пробегает по всем лексемам и находит отрицательные числа
+     */
     void checkNegativeNumbers() {
-        for (int i = 2; i < size; ++i) {
+        for (unsigned long i = 2; i < size; ++i) {
             string number = text->at(i).getLexem();
             string isMinus = text->at(i - 1).getLexem();
             string isGood = text->at(i - 2).getTag();
@@ -450,9 +513,9 @@ int main() {
         printTable(readyToUse, executor);
 
         SyntacticAnalyzer syntacticAnalyzer(readyToUse, executor);
+        syntacticAnalyzer.runAnalysis();
 
         isWorking = executor.wishToContinue();
     }
-
     return 0;
 }

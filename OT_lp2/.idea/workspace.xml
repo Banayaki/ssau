@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49140a04-3d50-489a-a541-920d1e125327" name="Default" comment="Construct in construct">
+    <list default="true" id="49140a04-3d50-489a-a541-920d1e125327" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OT_lp2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OT_lp2.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/OT_lp2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OT_lp2.exe" afterDir="false" />
@@ -39,8 +39,17 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="244" column="55" lean-forward="true" selection-start-line="244" selection-start-column="55" selection-end-line="244" selection-end-column="55" />
+            <state relative-caret-position="1664">
+              <caret line="392" column="1" lean-forward="true" selection-start-line="392" selection-start-column="1" selection-end-line="392" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stl_vector.h" pinned="false" current-in-tab="false">
+        <entry file="file://C:/cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_vector.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="803" selection-start-line="803" selection-end-line="803" />
             </state>
           </provider>
         </entry>
@@ -66,8 +75,8 @@
       <file leaf-file-name="LexicalAnalyzer.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="138" column="31" lean-forward="true" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+            <state relative-caret-position="690">
+              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -90,8 +99,8 @@
         <option value="$PROJECT_DIR$/../resources/Executor.cpp" />
         <option value="$PROJECT_DIR$/../resources/MyClasses.h" />
         <option value="$PROJECT_DIR$/t.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -183,7 +192,8 @@
       <workItem from="1526184439782" duration="10797000" />
       <workItem from="1526307147460" duration="4671000" />
       <workItem from="1526359165113" duration="12911000" />
-      <workItem from="1526392373203" duration="13493000" />
+      <workItem from="1526392373203" duration="13544000" />
+      <workItem from="1526443831020" duration="6856000" />
     </task>
     <task id="LOCAL-00001" summary="Lex already to use">
       <created>1523973245559</created>
@@ -248,17 +258,31 @@
       <option name="project" value="LOCAL" />
       <updated>1526396552151</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="-num">
+      <created>1526415907243</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1526415907243</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Almost ready">
+      <created>1526445574778</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1526445574779</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206813000" />
+    <option name="totallyTimeSpent" value="213720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.41753653" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.4171875" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32484075" />
       <window_info anchor="bottom" id="CMake" order="7" />
@@ -295,30 +319,25 @@
     <MESSAGE value="pre-release" />
     <MESSAGE value="Before change the matrix" />
     <MESSAGE value="Construct in construct" />
-    <option name="LAST_COMMIT_MESSAGE" value="Construct in construct" />
+    <MESSAGE value="-num" />
+    <MESSAGE value="Almost ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost ready" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>122</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>143</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="49" />
+      <option name="time" value="52" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="this-&gt;text" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../resources/Executor.cpp">
@@ -655,6 +674,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://C:/cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -662,17 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="138" column="31" lean-forward="true" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="244" column="55" lean-forward="true" selection-start-line="244" selection-start-column="55" selection-end-line="244" selection-end-column="55" />
+        <state relative-caret-position="1664">
+          <caret line="392" column="1" lean-forward="true" selection-start-line="392" selection-start-column="1" selection-end-line="392" selection-end-column="1" />
         </state>
       </provider>
     </entry>
