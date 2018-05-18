@@ -16,14 +16,17 @@ private:
         return path == FILE_FORMAT;
     }
 
-    //Поиск начала строки
-    int seek(istream &in) {
-        while (in.peek() != EOL && in.peek() == SPACE) {
-            in.get();
+    string readFileName() {
+        string line;
+        cout << R"(Enter a name of txt file from C:\Users\Banayaki\Desktop\tests\ )" << endl;
+        cin >> line;
+        while (line == "output.txt") { //При некорректном вводе запрашиваем ввод повторно, перед этим очищая поток
+            cout << INCORRECT_INPUT << endl;
+            clearInputStream(cin);
+            cin >> line;
         }
-        return in.peek();
+        return line;
     }
-
 public:
     Executor() {
         while (1.0 + this->EPS != 1.0) {
@@ -34,6 +37,13 @@ public:
     ~Executor() {
         this->fin.close();
         this->fout.close();
+    }
+
+    int seek(istream &in) {
+        while (in.peek() != EOL && in.peek() == SPACE) {
+            in.get();
+        }
+        return in.peek();
     }
 
     void clearInputStream(istream &in) {
@@ -64,18 +74,6 @@ public:
             cin >> wish;
         }
         return wish == YES;
-    }
-
-    string readFileName() {
-        string line;
-        cout << R"(Enter a name of txt file from C:\Users\Banayaki\Desktop\tests\ )" << endl;
-        cin >> line;
-        while (line == "output.txt") { //При некорректном вводе запрашиваем ввод повторно, перед этим очищая поток
-            cout << INCORRECT_INPUT << endl;
-            clearInputStream(cin);
-            cin >> line;
-        }
-        return line;
     }
 
     void openFile() {

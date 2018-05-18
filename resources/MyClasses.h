@@ -15,6 +15,7 @@
 
 using namespace std;
 
+const string WAITING_PAIR_XY = "Waiting for pair (x,y), where x, y is coordinates of a point";
 const string FILE_FORMAT = ".txt";
 const string OUT_OF_BOUNDS = "index: out of bounds.";
 const string INCORRECT_INPUT = "Incorrect input, try again.";
@@ -39,11 +40,11 @@ const int CYRILLIC_BEGIN = 1040;
 const int CYRILLIC_END = 1103;
 const int BUFFERED_SIZE = 256;
 
-#include "MyVector.cpp"
+//#include "MyVector.cpp"
 #include "Executor.cpp"
-#include "LexicalAnalyzer.cpp"
-#include "WFStreamExecutor.cpp"
-#include "Test.cpp"
-#include "LinkedList.cpp"
+//#include "LexicalAnalyzer.cpp"
+//#include "WFStreamExecutor.cpp"
+//#include "Test.cpp"
+//#include "LinkedList.cpp"
 
 #endif //SSAU_MYCLASSES_H
