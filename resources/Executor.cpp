@@ -39,19 +39,20 @@ public:
         this->fout.close();
     }
 
-    int seek(istream &in) {
+    template <typename T>
+    int seek(T &in) {
         while (in.peek() != EOL && in.peek() == SPACE) {
             in.get();
         }
         return in.peek();
     }
 
-    void clearInputStream(istream &in) {
+    template <typename T>
+    void clearInputStream(T &in) {
         in.clear();
         while (in.peek() != EOL && in.peek() != EOF) {
             in.get();
         }
-
     }
 
     void printAll(const string &line) {

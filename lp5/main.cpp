@@ -1,9 +1,24 @@
 #include "C:\Users\Banayaki\CLionProjects\ssau\resources\MyClasses.h"
+
 // Вариант 2
+class Point;
+class Polygon;
 
 class ExecutorForLP5 : public Executor {
-    template <typename T>
-
+public:
+    template<typename T>
+    Polygon getPolygon(T &stream) {
+        double x, y;
+        cout << WAITING_PAIR_XY << endl;
+        stream >> x >> y;
+        while (!stream || executor.seek(stream) != EOL) {
+            cout << INCORRECT_INPUT << endl;
+            executor.clearInputStream(stream);
+            stream >> x >> y;
+        }
+        Polygon p(Point(x,y));
+        return p;
+    }
 };
 
 ExecutorForLP5 executor;
@@ -71,6 +86,10 @@ public:
     bool isInLine(const Point &point) {
         return (A * point.getX() + B * point.getY() + C) == 0;
     }
+
+    string toString() {
+        return to_string(A) + "x " + to_string(B) + "y " + to_string(C) + " = 0";
+    }
 };
 
 class Polygon {
@@ -84,16 +103,27 @@ public:
         this->countOfPoints = 0;
     }
 
+    Polygon(const Point &point) {
+        this->countOfPoints = 1;
+        points.push_back(point);
+    }
+
+    Polygon(const unsigned long &count, const vector<Point> p, const vector<Line> l) {
+        this->countOfPoints = count;
+        this->points.assign(p.begin(), p.end());
+        this->lines.assign(l.begin(), l.end());
+    }
+
     Polygon(const Polygon &polygon) {
         this->countOfPoints = polygon.countOfPoints;
-        this->points = polygon.points;
-        this->lines = polygon.lines;
+        this->points.assign(polygon.points.begin(), polygon.points.end());
+        this->lines.assign(polygon.lines.begin(), polygon.lines.end());
 
     }
 
     Polygon(const vector<Point> &points) {
         this->countOfPoints = points.size();
-        this->points = points;
+        this->points.assign(points.begin(), points.end());
 
         for (int i = 0; i < countOfPoints - 1; ++i) {
             Point first = points[i];
@@ -105,76 +135,64 @@ public:
     ~Polygon() = default;
 
     //Будем возвращать тут точку
-    const Point& operator[](const unsigned long &n) {
+    const Point &operator[](const unsigned long &n) {
         return points[n];
     }
 
-    istream& operator>>(istream &stream, Polygon &polygon) {
-        double x,y;
-        cout << WAITING_PAIR_XY << endl;
-        cin >> x >> y;
-        while (!cin || executor.seek(cin) != EOL) {
-            cout << INCORRECT_INPUT << endl;
-            executor.clearInputStream(cin);
-            cin >> x >> y;
-        }
+    istream &operator>>(istream &stream, Polygon &polygon) {
+        polygon += executor.getPolygon(stream);
         return stream;
     }
 
-    ifstream& operator>>(ifstream &stream, Polygon &polygon) {
-        double x,y;
-        cout << WAITING_PAIR_XY << endl;
-        cin >> x >> y;
-        while (!cin || executor.seek(cin) != EOL) {
-            cout << INCORRECT_INPUT << endl;
-            executor.clearInputStream(cin);
-            cin >> x >> y;
-        }
+    ifstream &operator>>(ifstream &stream, Polygon &polygon) {
+        polygon += executor.getPolygon(stream);
         return stream;
     }
 
-    ostream& operator<<(ostream &stream, Polygon &polygon) {
-
+    ostream &operator<<(ostream &stream, Polygon &polygon) {
+        stream << polygon.toString();
+        return stream;
     }
 
-    ofstream& operator<<(ofstream &stream, Polygon &polygon) {
-
+    ofstream &operator<<(ofstream &stream, Polygon &polygon) {
+        stream << polygon.toString();
+        return stream;
     }
 
     Polygon &operator=(const Polygon &polygon) {
-        if (this == &polygon) {
-            return *this;
+        if (this != &polygon) {
+            Polygon p(polygon);
+            p.swap(*this);
         }
-        return Polygon(polygon);
+        return *this;
     }
 
-    const Polygon operator>(const Point &point) {
-
+    const bool operator>(const Polygon &polygon) {
+        return this->countOfPoints > polygon.countOfPoints;
     }
 
-    const Polygon operator<(const Point &point) {
-
+    const bool operator<(const Polygon &polygon) {
+        return this->countOfPoints < polygon.countOfPoints;
     }
 
-    const Polygon operator<=(const Point &point) {
-
+    const bool operator>=(const Polygon &polygon) {
+        return this->countOfPoints >= polygon.countOfPoints;
     }
 
-    const Polygon operator>=(const Point &point) {
-
+    const bool operator<=(const Polygon &polygon) {
+        return this->countOfPoints <= polygon.countOfPoints;
     }
 
-    const Polygon operator==(const Point &point) {
-
+    const bool operator==(const Polygon &polygon) {
+        return this->countOfPoints == polygon.countOfPoints;
     }
 
-    const Polygon operator!=(const Point &point) {
-
+    const bool operator!=(const Polygon &polygon) {
+        return this->countOfPoints != polygon.countOfPoints;
     }
 
-    //TODO friend const?
-    const Polygon operator+=(const Point &point) {
-
+    Polygon &operator+=(Polygon &polygon) {
+        return this->operator=(this->operator+(*this, polygon));
     }
 
     const Polygon operator-=(const Point &point) {
@@ -189,8 +207,12 @@ public:
 
     }
 
-    const Polygon operator+(const Point &point) {
-
+    Polygon& operator+(const Polygon &first, const Polygon &second) {
+        unsigned long countOfPoints = second.countOfPoints + first.countOfPoints;
+        vector<Point> points(first.points, second.points);
+        vector<Line> lines(first.lines, second.lines);
+        Polygon p(countOfPoints, points, lines);
+        return p;
     }
 
     const Polygon operator-(const Point &point) {
@@ -219,6 +241,28 @@ public:
 
     const Polygon operator--(const Point &point, int) {
 
+    }
+
+    void swap(Polygon &polygon) {
+        this->countOfPoints = polygon.countOfPoints;
+        std::swap(this->points, polygon.points);
+        std::swap(this->lines, polygon.lines);
+    }
+
+    string toString() {
+        stringstream ss;
+        ss << "It's a Polygon \n" << "Count of point: " << countOfPoints << '\n';
+        ss << "Points: \n";
+        int i = 1;
+        for (Point point : points) {
+            ss << i << " : (" << point.getX() << ";" << point.getY() << ")\n";
+        }
+        ss << "Equations of lines: (Ax + By + C = 0)";
+        i = 1;
+        for (Line line : lines) {
+            ss << i << " -> " << i + 1 << " " << line.toString() << '\n';
+        }
+        return ss.str();
     }
 
     unsigned int getSize() {

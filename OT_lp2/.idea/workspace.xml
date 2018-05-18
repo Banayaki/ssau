@@ -13,10 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="49140a04-3d50-489a-a541-920d1e125327" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OT_lp2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OT_lp2.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OT_lp2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OT_lp2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +35,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1664">
-              <caret line="392" column="1" lean-forward="true" selection-start-line="392" selection-start-column="1" selection-end-line="392" selection-end-column="1" />
+            <state relative-caret-position="292">
+              <caret line="366" column="27" selection-start-line="366" selection-start-column="27" selection-end-line="366" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -48,7 +44,7 @@
       <file leaf-file-name="stl_vector.h" pinned="false" current-in-tab="false">
         <entry file="file://C:/cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_vector.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
+            <state relative-caret-position="18469">
               <caret line="803" selection-start-line="803" selection-end-line="803" />
             </state>
           </provider>
@@ -75,7 +71,7 @@
       <file leaf-file-name="LexicalAnalyzer.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
+            <state relative-caret-position="1242">
               <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
             </state>
           </provider>
@@ -122,6 +118,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,7 +130,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -194,6 +190,8 @@
       <workItem from="1526359165113" duration="12911000" />
       <workItem from="1526392373203" duration="13544000" />
       <workItem from="1526443831020" duration="6856000" />
+      <workItem from="1526454430910" duration="300000" />
+      <workItem from="1526583695610" duration="412000" />
     </task>
     <task id="LOCAL-00001" summary="Lex already to use">
       <created>1523973245559</created>
@@ -272,19 +270,24 @@
       <option name="project" value="LOCAL" />
       <updated>1526445574779</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Goow work!)">
+      <created>1526454709383</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1526454709383</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213720000" />
+    <option name="totallyTimeSpent" value="214432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4171875" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4171875" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32484075" />
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32908705" />
@@ -297,8 +300,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="3" side_tool="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32484075" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
     </layout>
@@ -321,7 +325,8 @@
     <MESSAGE value="Construct in construct" />
     <MESSAGE value="-num" />
     <MESSAGE value="Almost ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="Almost ready" />
+    <MESSAGE value="Goow work!)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Goow work!)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -676,22 +681,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../resources/LexicalAnalyzer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
+        <state relative-caret-position="1242">
           <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
+        <state relative-caret-position="18469">
           <caret line="803" selection-start-line="803" selection-end-line="803" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1664">
-          <caret line="392" column="1" lean-forward="true" selection-start-line="392" selection-start-column="1" selection-end-line="392" selection-end-column="1" />
+        <state relative-caret-position="292">
+          <caret line="366" column="27" selection-start-line="366" selection-start-column="27" selection-end-line="366" selection-end-column="27" />
         </state>
       </provider>
     </entry>
