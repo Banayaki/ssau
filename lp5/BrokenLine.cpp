@@ -17,9 +17,7 @@ BrokenLine::BrokenLine(const unsigned long &count, const vector<Point> p, const 
 }
 
 BrokenLine::BrokenLine(const BrokenLine &polygon) {
-    this->countOfPoints = polygon.countOfPoints;
-    this->points.assign(polygon.points.begin(), polygon.points.end());
-    this->lines.assign(polygon.lines.begin(), polygon.lines.end());
+    *this = polygon;
 }
 
 BrokenLine::BrokenLine(const vector<Point> &points) {
@@ -58,7 +56,7 @@ ofstream &operator<<(ofstream &stream, BrokenLine &polygon) {
 BrokenLine &BrokenLine::operator=(const BrokenLine &polygon) {
     if (this != &polygon) {
         BrokenLine p(polygon);
-        p.swap(*this);
+        BrokenLine::swap(*this, p);
     }
     return *this;
 }
@@ -93,7 +91,7 @@ BrokenLine &BrokenLine::operator+=(const BrokenLine &polygon) {
 }
 
 BrokenLine &BrokenLine::operator-=(const BrokenLine &polygon) {
-    *this = (*this - polygon);
+    *this = *this - polygon;
     return *this;
 }
 
@@ -147,17 +145,17 @@ BrokenLine &BrokenLine::operator-(const BrokenLine &polygon) {
     return *this;
 }
 
-void BrokenLine::swap(BrokenLine &polygon) {
-    auto tmp = this->countOfPoints;
-    this->countOfPoints = polygon.countOfPoints;
-    countOfPoints = tmp;
-    std::swap(this->points, polygon.points);
-    std::swap(this->lines, polygon.lines);
+static void BrokenLine::swap(BrokenLine &first, BrokenLine &second) {
+    auto tmp = first.countOfPoints;
+    first.countOfPoints = second.countOfPoints;
+    second.countOfPoints = tmp;
+    std::swap(first.points, second.points);
+    std::swap(first.lines, second.lines);
 }
 
 string BrokenLine::toString() {
     stringstream ss;
-    ss << "It's a BrokenLine \n" << "Count of point: " << countOfPoints << '\n';
+    ss << "Class: \n" << "Count of point: " << countOfPoints << '\n';
     ss << "Points: \n";
     int i = 1;
     for (const Point &point : points) {
@@ -175,25 +173,25 @@ string BrokenLine::toString() {
 
 unsigned long BrokenLine::getSize() {
     return countOfPoints;
+}
 
-
-    BrokenLine getBrokenLine(ifstream &stream) {
-        double x, y;
+BrokenLine getBrokenLine(ifstream &stream) {
+    double x, y;
+    stream >> x >> y;
+    while (!stream) {
+        cout << INCORRECT_INPUT << endl;
         stream >> x >> y;
-        while (!stream) {
-            cout << INCORRECT_INPUT << endl;
-            stream >> x >> y;
-        }
-        BrokenLine p(Point(x, y));
-        return p;
     }
+    BrokenLine p(Point(x, y));
+    return p;
+}
 
-    long find(const vector<Point> &vec, const Point &val) {
-        long size = vec.size();
-        for (int i = 0; i < size; ++i) {
-            if (vec[i].getX() == val.getX() && vec[i].getY() == val.getY()) {
-                return i;
-            }
+long find(const vector<Point> &vec, const Point &val) {
+    long size = vec.size();
+    for (int i = 0; i < size; ++i) {
+        if (vec[i].getX() == val.getX() && vec[i].getY() == val.getY()) {
+            return i;
         }
-        return -1;
     }
+    return -1;
+}

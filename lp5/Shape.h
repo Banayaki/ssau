@@ -47,7 +47,7 @@ public:
 
     Shape &operator-(const Shape &shape);
 
-    void swap(Shape &shape);
+    static void swap(Shape &first, Shape &second);
 
     string toString();
 

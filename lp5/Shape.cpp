@@ -9,7 +9,7 @@ Shape::Shape() : BrokenLine() {
 }
 
 Shape::Shape(const Shape &shape) {
-
+    *this = shape;
 }
 
 Shape::Shape(const Point &point) : BrokenLine(point) {
@@ -65,35 +65,48 @@ const bool Shape::operator!=(const Shape &shape) {
 Shape &Shape::operator=(const Shape &shape) {
     if (this != &shape) {
         Shape shp(shape);
-        shp.swap(*this);
+        Shape::swap(*this, shp);
     }
     return *this;
 }
 
 Shape &Shape::operator+=(const Shape &shape) {
-    return <#initializer#>;
+    *this = *this + shape;
+    return *this;
 }
 
 Shape &Shape::operator-=(const Shape &shape) {
-    return <#initializer#>;
+    *this = *this - shape;
+    return *this;
 }
 
 Shape &Shape::operator+(const Shape &shape) {
-    return <#initializer#>;
+    this->lines.erase(lines.end());
+    this->BrokenLine::operator+(*dynamic_cast<BrokenLine *>(shape));
+    if (this->countOfPoints > 1)
+        this->lines.emplace_back(Line(this->points.front(), this->points.back()));
+    return *this;
 }
 
 Shape &Shape::operator-(const Shape &shape) {
-    return <#initializer#>;
+    this->lines.erase(lines.end());
+    this->BrokenLine::operator-(*dynamic_cast<BrokenLine *>(shape));
+    if (this->countOfPoints > 1)
+        this->lines.emplace_back(Line(this->points.front(), this->points.back()));
+    return *this;
 }
 
-void Shape::swap(Shape &shape) {
-    this->BrokenLine::swap(*dynamic_cast<BrokenLine *>(shape));
-    auto tmp1 = this->perimeter;
-    this->perimeter = shape.perimeter;
-    shape.perimeter = tmp1;
-    auto tmp2 = this->isInsertion;
-    this->isInsertion = shape.isInsertion;
-    shape.isInsertion = tmp2;
+static void Shape::swap(Shape &first, Shape &second) {
+    BrokenLine::swap(
+            *dynamic_cast<BrokenLine *>(first),
+            *dynamic_cast<BrokenLine *>(second)
+    );
+    auto tmp1 = first.perimeter;
+    first.perimeter = second.perimeter;
+    second.perimeter = tmp1;
+    auto tmp2 = first.isInsertion;
+    first.isInsertion = second.isInsertion;
+    second.isInsertion = tmp2;
 }
 
 string Shape::toString() {

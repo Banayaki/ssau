@@ -47,12 +47,14 @@ public:
 
     BrokenLine &operator-(const BrokenLine &polygon);
 
-    void swap(BrokenLine &polygon);
 
     string toString();
 
+    static void swap(BrokenLine &first, BrokenLine &second);
+
     unsigned long getSize();
 };
+
 
 BrokenLine getBrokenLine(ifstream &stream);
 
