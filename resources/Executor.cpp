@@ -1,4 +1,3 @@
-
 class Executor {
 protected:
     double EPS = 1.0;

@@ -1,5 +1,5 @@
-#ifndef SSAU_MYCLASSES_H
-#define SSAU_MYCLASSES_H
+#ifndef MYCLASSES_H
+#define MYCLASSES_H
 
 #include <queue>
 #include <stack>
@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <iomanip>
 #include <time.h>
+#include <cmath>
 
 using namespace std;
 
@@ -40,8 +41,8 @@ const int CYRILLIC_BEGIN = 1040;
 const int CYRILLIC_END = 1103;
 const int BUFFERED_SIZE = 256;
 
-//#include "MyVector.cpp"
 #include "Executor.cpp"
+//#include "MyVector.cpp"
 //#include "LexicalAnalyzer.cpp"
 //#include "WFStreamExecutor.cpp"
 //#include "Test.cpp"
