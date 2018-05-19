@@ -1,7 +1,7 @@
 #ifndef POINT_H
 #define POINT_H
 
-class Point{
+class Point {
 private:
     double x;
     double y;
@@ -21,7 +21,6 @@ public:
 
     void setIsInPolygon(bool isInPolygon);
 };
-
 
 
 #endif

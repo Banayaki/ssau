@@ -1,6 +1,5 @@
 #include "C:\Users\Banayaki\CLionProjects\ssau\resources\MyClasses.h"
 #include "Line.h"
-#include "Point.h"
 
 Line::Line(const int &A, const int &B, const int &C) {
         this->A = A;
@@ -27,5 +26,5 @@ Line::Line(const int &A, const int &B, const int &C) {
     }
 
     string Line::toString() {
-        return to_string(A) + "x " + to_string(B) + "y " + to_string(C) + " = 0";
+        return to_string(A) + "x + " + to_string(B) + "y + " + to_string(C) + " = 0";
     }
