@@ -99,18 +99,16 @@ BrokenLine &BrokenLine::operator-=(const BrokenLine &polygon) {
 }
 
 BrokenLine &BrokenLine::operator+(const BrokenLine &polygon) {
-    vector<Point> *check = &this->points;
-    vector<Line> *lines = &this->lines;
+    BrokenLine brokenLine(*this);
     const vector<Point> *points = &polygon.points;
     for (const Point &point : *points) {
-        if (find(*check, point) == -1) {
-            lines->emplace_back(Line(check->back(), point));
+        if (find(brokenLine.points, point) == -1) {
+            brokenLine.lines.emplace_back(Line(brokenLine.points.back(), point));
             ++this->countOfPoints;
-            check->push_back(point);
+            brokenLine.points.push_back(point);
         }
     }
-    //delete check?
-    return *this;
+    return brokenLine;
 }
 
 BrokenLine &BrokenLine::operator-(const BrokenLine &polygon) {
@@ -166,7 +164,7 @@ string BrokenLine::toString() {
     return ss.str();
 }
 
-unsigned long BrokenLine::getSize() {
+unsigned long BrokenLine::getSize() const {
     return countOfPoints;
 }
 

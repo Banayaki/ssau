@@ -123,4 +123,8 @@ public:
     ofstream &getFout() {
         return this->fout;
     }
+
+    double getEps() {
+        return this->EPS;
+    }
 };

@@ -14,7 +14,7 @@ public:
 
     Shape(const Point &point);
 
-    Shape(const unsigned long &count, const vector<Point> p, const vector<Line> l);
+    Shape(const unsigned long &count, const vector<Point> &p, const vector<Line> &l);
 
     Shape(const BrokenLine &polygon);
 
@@ -22,8 +22,8 @@ public:
 
     ~Shape();
 
-    const Point &operator[](const unsigned long &n);
-
+//    const Point &operator[](const unsigned long &n);
+//
 //    const bool operator>(const Shape &shape);
 //
 //    const bool operator<(const Shape &shape);
@@ -48,8 +48,9 @@ public:
 
     static void swap(Shape &first, Shape &second);
 
-    bool haveInsertion(Shape &shape);
+    bool haveIntersection(const Shape &shape);
 
+    bool isInPolygon(const Point &point, const double &eps);
 };
 
 ifstream &operator>>(ifstream &stream, Shape &shape);

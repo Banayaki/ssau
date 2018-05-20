@@ -5,11 +5,8 @@ class Point {
 private:
     double x;
     double y;
-    bool isInPolygon;
 public:
     Point(const double &x, const double &y);
-
-    Point(const double &x, const double &y, const bool &isInPolygon);
 
     ~Point();
 
@@ -17,9 +14,6 @@ public:
 
     double getY() const;
 
-    bool isIsInPolygon() const;
-
-    void setIsInPolygon(bool isInPolygon);
 };
 
 

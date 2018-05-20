@@ -21,21 +21,21 @@ public:
 
     BrokenLine(const vector<Point> &points);
 
-    ~BrokenLine();
+    virtual ~BrokenLine();
 
-    const Point &operator[](const unsigned long &n);
+    virtual const Point &operator[](const unsigned long &n);
 
-    const bool operator>(const BrokenLine &polygon);
+    virtual const bool operator>(const BrokenLine &polygon);
 
-    const bool operator<(const BrokenLine &polygon);
+    virtual const bool operator<(const BrokenLine &polygon);
 
-    const bool operator>=(const BrokenLine &polygon);
+    virtual const bool operator>=(const BrokenLine &polygon);
 
-    const bool operator<=(const BrokenLine &polygon);
+    virtual const bool operator<=(const BrokenLine &polygon);
 
-    const bool operator==(const BrokenLine &polygon);
+    virtual const bool operator==(const BrokenLine &polygon);
 
-    const bool operator!=(const BrokenLine &polygon);
+    virtual const bool operator!=(const BrokenLine &polygon);
 
     BrokenLine &operator=(const BrokenLine &polygon);
 
@@ -45,13 +45,13 @@ public:
 
     BrokenLine &operator+(const BrokenLine &polygon);
 
-    BrokenLine &operator-(const BrokenLine &polygon);
+    virtual BrokenLine &operator-(const BrokenLine &polygon);
 
     string toString();
 
     static void swap(BrokenLine &first, BrokenLine &second);
 
-    unsigned long getSize();
+    unsigned long getSize() const;
 };
 
 
