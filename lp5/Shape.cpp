@@ -33,47 +33,10 @@ ifstream &operator>>(ifstream &stream, Shape &shape) {
     return stream;
 }
 
-ostream &operator<<(ostream &stream, Shape &shape) {
-    stream << shape.toString();
-    return stream;
-}
-
-ofstream &operator<<(ofstream &stream, Shape &shape) {
-    stream << shape.toString();
-    return stream;
-}
-//
-//const Point &Shape::operator[](const unsigned long &n) {
-//    return BrokenLine::operator[](n);
-//}
-//
-//const bool Shape::operator>(const Shape &shape) {
-//    return BrokenLine::operator>(shape);}
-//
-//const bool Shape::operator<(const Shape &shape) {
-//    return BrokenLine::operator<(shape);
-//}
-//
-//const bool Shape::operator>=(const Shape &shape) {
-//    return BrokenLine::operator>=(shape);
-//}
-//
-//const bool Shape::operator<=(const Shape &shape) {
-//    return BrokenLine::operator<=(shape);
-//}
-//
-//const bool Shape::operator==(const Shape &shape) {
-//    return BrokenLine::operator==(shape);
-//}
-//
-//const bool Shape::operator!=(const Shape &shape) {
-//    return BrokenLine::operator!=(shape);
-//}
-
 Shape &Shape::operator=(const Shape &shape) {
     if (this != &shape) {
         Shape shp(shape);
-        Shape::swap(*this, shp);
+        BrokenLine::swap(*this, shp);
     }
     return *this;
 }
@@ -103,13 +66,6 @@ Shape &Shape::operator-(Shape &shape) {
     if (target.countOfPoints > 1)
         target.lines.emplace_back(Line(target.points.front(), target.points.back()));
     return target;
-}
-
-void Shape::swap(Shape &first, Shape &second) {
-    BrokenLine::swap(
-            *dynamic_cast<BrokenLine *>(&first),
-            *dynamic_cast<BrokenLine *>(&second)
-    );
 }
 
 bool Shape::haveIntersection(const Shape &shape) {

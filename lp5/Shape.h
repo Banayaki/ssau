@@ -46,7 +46,7 @@ public:
 
     Shape &operator-(Shape &shape);
 
-    static void swap(Shape &first, Shape &second);
+//    static void swap(Shape &first, Shape &second);
 
     bool haveIntersection(const Shape &shape);
 
@@ -54,9 +54,9 @@ public:
 };
 
 ifstream &operator>>(ifstream &stream, Shape &shape);
-
-ostream &operator<<(ostream &stream, Shape &shape);
-
-ofstream &operator<<(ofstream &stream, Shape &shape);
+//
+//ostream &operator<<(ostream &stream, Shape &shape);
+//
+//ofstream &operator<<(ofstream &stream, Shape &shape);
 
 #endif //LP5_SHAPE_H

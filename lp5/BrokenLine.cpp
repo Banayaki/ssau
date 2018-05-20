@@ -112,18 +112,19 @@ BrokenLine &BrokenLine::operator+(const BrokenLine &polygon) {
 }
 
 BrokenLine &BrokenLine::operator-(const BrokenLine &polygon) {
-    vector<Point> *points = &this->points;
-    vector<Line> *lines = &this->lines;
+    BrokenLine brokenLine(*this);
+    vector<Point> *points = &brokenLine.points;
+    vector<Line> *lines = &brokenLine.lines;
     const vector<Point> *check = &polygon.points;
     if (this->countOfPoints == 0) {
-        return *this;
+        return brokenLine;
     } else if (this->countOfPoints >= polygon.countOfPoints) {
         for (const Point &point : *check) {
             long pos = find(*points, point);
             if (pos != -1) {
                 points->erase(check->begin() + pos);
                 lines->erase(lines->begin() + pos);
-                this->countOfPoints -= 1;
+                brokenLine.countOfPoints -= 1;
                 if (countOfPoints > 1 && pos < countOfPoints && pos > 0) {
                     lines->at(pos - 1).refresh(points->at(pos - 1), points->at(pos));
                 }
@@ -136,14 +137,19 @@ BrokenLine &BrokenLine::operator-(const BrokenLine &polygon) {
             if (pos != -1) {
                 points->erase(points->begin() + index);
                 lines->erase(lines->begin() + index);
-                this->countOfPoints -= 1;
+                brokenLine.countOfPoints -= 1;
                 if (countOfPoints > 1) {
                     lines->at(index - 1).refresh(points->at(index - 1), points->at(index));
                 }
             }
         }
     }
-    return *this;
+    return brokenLine;
+}
+
+BrokenLine &BrokenLine::operator-(const Point &point) {
+    BrokenLine brokenLine = *this - BrokenLine(point);
+    return brokenLine;
 }
 
 string BrokenLine::toString() {

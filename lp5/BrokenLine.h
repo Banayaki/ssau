@@ -39,19 +39,21 @@ public:
 
     BrokenLine &operator=(const BrokenLine &polygon);
 
-    BrokenLine &operator+=(const BrokenLine &polygon);
+    virtual BrokenLine &operator+=(const BrokenLine &polygon);
 
-    BrokenLine &operator-=(const BrokenLine &polygon);
+    virtual BrokenLine &operator-=(const BrokenLine &polygon);
 
-    BrokenLine &operator+(const BrokenLine &polygon);
+    virtual BrokenLine &operator+(const BrokenLine &polygon);
 
     virtual BrokenLine &operator-(const BrokenLine &polygon);
 
-    string toString();
+    virtual BrokenLine &operator-(const Point &point);
+
+    virtual string toString();
 
     static void swap(BrokenLine &first, BrokenLine &second);
 
-    unsigned long getSize() const;
+    virtual unsigned long getSize() const;
 };
 
 
