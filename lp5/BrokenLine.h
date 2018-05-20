@@ -47,7 +47,6 @@ public:
 
     BrokenLine &operator-(const BrokenLine &polygon);
 
-
     string toString();
 
     static void swap(BrokenLine &first, BrokenLine &second);

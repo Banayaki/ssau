@@ -1,4 +1,5 @@
 #include "C:\Users\Banayaki\CLionProjects\ssau\resources\MyClasses.h"
+#include <typeinfo>
 #include "BrokenLine.h"
 
 BrokenLine::BrokenLine() {
@@ -17,7 +18,9 @@ BrokenLine::BrokenLine(const unsigned long &count, const vector<Point> p, const 
 }
 
 BrokenLine::BrokenLine(const BrokenLine &polygon) {
-    *this = polygon;
+    this->countOfPoints = polygon.countOfPoints;
+    this->points.assign(polygon.points.begin(), polygon.points.end());
+    this->lines.assign(polygon.lines.begin(), polygon.lines.end());
 }
 
 BrokenLine::BrokenLine(const vector<Point> &points) {
@@ -145,17 +148,9 @@ BrokenLine &BrokenLine::operator-(const BrokenLine &polygon) {
     return *this;
 }
 
-static void BrokenLine::swap(BrokenLine &first, BrokenLine &second) {
-    auto tmp = first.countOfPoints;
-    first.countOfPoints = second.countOfPoints;
-    second.countOfPoints = tmp;
-    std::swap(first.points, second.points);
-    std::swap(first.lines, second.lines);
-}
-
 string BrokenLine::toString() {
     stringstream ss;
-    ss << "Class: \n" << "Count of point: " << countOfPoints << '\n';
+    ss << "Class: " << typeid(*this).name() << "\nCount of point: " << countOfPoints << '\n';
     ss << "Points: \n";
     int i = 1;
     for (const Point &point : points) {
@@ -194,4 +189,12 @@ long find(const vector<Point> &vec, const Point &val) {
         }
     }
     return -1;
+}
+
+void BrokenLine::swap(BrokenLine &first, BrokenLine &second) {
+    auto tmp = first.countOfPoints;
+    first.countOfPoints = second.countOfPoints;
+    second.countOfPoints = tmp;
+    std::swap(first.points, second.points);
+    std::swap(first.lines, second.lines);
 }
