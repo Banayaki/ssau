@@ -14,27 +14,11 @@ public:
 
     Shape(const Point &point);
 
-    Shape(const unsigned long &count, const vector<Point> &p, const vector<Line> &l);
-
     Shape(const BrokenLine &polygon);
 
     Shape(const vector<Point> &points);
 
     ~Shape();
-
-//    const Point &operator[](const unsigned long &n);
-//
-//    const bool operator>(const Shape &shape);
-//
-//    const bool operator<(const Shape &shape);
-//
-//    const bool operator>=(const Shape &shape);
-//
-//    const bool operator<=(const Shape &shape);
-//
-//    const bool operator==(const Shape &Shape);
-//
-//    const bool operator!=(const Shape &Shape);
 
     Shape &operator=(const Shape &shape);
 
@@ -42,11 +26,9 @@ public:
 
     Shape &operator-=(Shape &shape);
 
-    Shape &operator+(Shape &shape);
+    Shape operator+(Shape &shape);
 
-    Shape &operator-(Shape &shape);
-
-//    static void swap(Shape &first, Shape &second);
+    Shape operator-(Shape &shape);
 
     bool haveIntersection(const Shape &shape);
 
@@ -54,9 +36,5 @@ public:
 };
 
 ifstream &operator>>(ifstream &stream, Shape &shape);
-//
-//ostream &operator<<(ostream &stream, Shape &shape);
-//
-//ofstream &operator<<(ofstream &stream, Shape &shape);
 
 #endif //LP5_SHAPE_H

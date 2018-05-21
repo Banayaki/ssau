@@ -7,15 +7,13 @@
 
 class BrokenLine {
 protected:
-    unsigned long countOfPoints;
-    vector<Point> points;
-    vector<Line> lines;
+    unsigned long countOfPoints = 0;
+    vector<Point> points = {};
+    vector<Line> lines = {};
 public:
     BrokenLine();
 
     BrokenLine(const Point &point);
-
-    BrokenLine(const unsigned long &count, const vector<Point> p, const vector<Line> l);
 
     BrokenLine(const BrokenLine &polygon);
 
@@ -43,9 +41,9 @@ public:
 
     virtual BrokenLine &operator-=(const BrokenLine &polygon);
 
-    virtual BrokenLine &operator+(const BrokenLine &polygon);
+    virtual BrokenLine operator+(const BrokenLine &polygon);
 
-    virtual BrokenLine &operator-(const BrokenLine &polygon);
+    virtual BrokenLine operator-(const BrokenLine &polygon);
 
     virtual BrokenLine &operator-(const Point &point);
 
