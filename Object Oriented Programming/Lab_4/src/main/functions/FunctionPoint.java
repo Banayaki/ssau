@@ -1,12 +1,14 @@
 package functions;
 
+import java.io.Serializable;
+
 /**
  * Класс реализующий точку в декартовой системе координат
  *
  * @author Artem Mukhin #6209
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class FunctionPoint {
+public class FunctionPoint implements Serializable {
     /** Значение точки по оси OX (прообраз) */
     private double x;
     /** Значение точки по оси OY (образ) */

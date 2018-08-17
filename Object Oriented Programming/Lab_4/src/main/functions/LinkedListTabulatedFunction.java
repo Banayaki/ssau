@@ -3,6 +3,8 @@ package functions;
 import functions.exceptions.FunctionPointIndexOutOfBoundsException;
 import functions.exceptions.InappropriateFunctionPointException;
 
+import java.io.Serializable;
+
 
 /**
  * Класс реализующий табулируемую функцию в виде двусвязного циклического списка
@@ -12,7 +14,7 @@ import functions.exceptions.InappropriateFunctionPointException;
  * @see functions.TabulatedFunction
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class LinkedListTabulatedFunction implements TabulatedFunction {
+public class LinkedListTabulatedFunction implements TabulatedFunction, Serializable {
 
     /**
      * Внутренний класс - член, имеет доступ ко всем полям и методам обрабляющего класса (объекта), класс объявлен

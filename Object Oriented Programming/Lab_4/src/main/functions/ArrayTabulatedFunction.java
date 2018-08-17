@@ -3,6 +3,8 @@ package functions;
 import functions.exceptions.FunctionPointIndexOutOfBoundsException;
 import functions.exceptions.InappropriateFunctionPointException;
 
+import java.io.Serializable;
+
 /**
  * Класс - реализует табулированную функцию в виде стандартного java массива.
  *
@@ -12,7 +14,7 @@ import functions.exceptions.InappropriateFunctionPointException;
  */
 
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class ArrayTabulatedFunction implements TabulatedFunction {
+public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
     /** Массив содержащий точки функции */
     private FunctionPoint[] values;
     /** Количество точек функции */
@@ -63,11 +65,11 @@ public class ArrayTabulatedFunction implements TabulatedFunction {
      * Конструктор - создание нового объекта из массива точек
      * @param pointsArray - массив точек функции
      */
-    public ArrayTabulatedFunction(FunctionPoint[] pointsArray) {
+    public ArrayTabulatedFunction(FunctionPoint[] pointsArray, int countOfPoints) {
         if (pointsArray.length < 2) {
             throw new IllegalArgumentException("Illegal argument FunctionPoint[] - have nor right count of points");
         }
-        countOfPoints = pointsArray.length;
+        this.countOfPoints = countOfPoints;
         values = new FunctionPoint[countOfPoints + 10];
         System.arraycopy(pointsArray, 0, values, 0, countOfPoints);
     }
