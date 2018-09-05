@@ -1,12 +1,12 @@
 package functions.meta;
 
-import functions.Function;
+import functions.FunctionImpl;
 
-public class Sum implements Function {
-    private Function firstFunc;
-    private Function secondFunc;
+public class Sum implements FunctionImpl {
+    private FunctionImpl firstFunc;
+    private FunctionImpl secondFunc;
 
-    public Sum(Function firstFunc, Function secondFunc) {
+    public Sum(FunctionImpl firstFunc, FunctionImpl secondFunc) {
         this.secondFunc = secondFunc;
         this.firstFunc = firstFunc;
     }

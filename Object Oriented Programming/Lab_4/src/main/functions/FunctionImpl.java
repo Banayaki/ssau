@@ -4,7 +4,7 @@ package functions;
 /**
  * Интерфейс, определяющий действия любой функции
  */
-public interface Function {
+public interface FunctionImpl {
 
     /**
      * Метод получения левой границы области определения функции

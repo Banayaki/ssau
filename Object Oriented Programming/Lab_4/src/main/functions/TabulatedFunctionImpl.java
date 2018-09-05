@@ -5,9 +5,9 @@ import functions.exceptions.InappropriateFunctionPointException;
 /**
  * Интерфейс, определяющий поведение табулированной функции
  *
- * @see Function
+ * @see FunctionImpl
  */
-public interface TabulatedFunction extends Function{
+public interface TabulatedFunctionImpl extends FunctionImpl {
 
     /**
      * Метод получения количества точек

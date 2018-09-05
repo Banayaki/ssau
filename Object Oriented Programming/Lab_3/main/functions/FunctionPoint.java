@@ -1,5 +1,7 @@
 package functions;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Класс реализующий точку в декартовой системе координат
  *
@@ -36,7 +38,7 @@ public class FunctionPoint {
      *
      * @param point - копируемая точка
      */
-    public FunctionPoint(FunctionPoint point) {
+    public FunctionPoint(@NotNull FunctionPoint point) {
         super();
         this.x = point.getX();
         this.y = point.getY();

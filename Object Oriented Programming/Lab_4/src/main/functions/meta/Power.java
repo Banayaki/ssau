@@ -1,12 +1,12 @@
 package functions.meta;
 
-import functions.Function;
+import functions.FunctionImpl;
 
-public class Power implements Function {
-    private Function base;
+public class Power implements FunctionImpl {
+    private FunctionImpl base;
     private double degree;
 
-    public Power(Function base, double degree) {
+    public Power(FunctionImpl base, double degree) {
         this.base = base;
         this.degree = degree;
     }

@@ -1,12 +1,12 @@
 package functions.meta;
 
-import functions.Function;
+import functions.FunctionImpl;
 
-public class Composition implements Function {
-    private Function outer;
-    private Function inner;
+public class Composition implements FunctionImpl {
+    private FunctionImpl outer;
+    private FunctionImpl inner;
 
-    public Composition(Function outer, Function inner) {
+    public Composition(FunctionImpl outer, FunctionImpl inner) {
         this.outer = outer;
         this.inner = inner;
     }

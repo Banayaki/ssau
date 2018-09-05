@@ -1,7 +1,7 @@
 package functions;
 
 import functions.exceptions.InappropriateFunctionPointException;
-import org.junit.*;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -21,7 +21,7 @@ public class LinkedListTabulatedFunctionTest {
     }
 
     @Test
-    public void getTests() throws InappropriateFunctionPointException {
+    public void getTests() {
         assertEquals(5, first.getPointsCount());
         assertEquals(12, second.getPointsCount());
         assertEquals(6, third.getPointsCount());
@@ -63,9 +63,12 @@ public class LinkedListTabulatedFunctionTest {
 
     @Test
     public void copyTest() throws CloneNotSupportedException, InappropriateFunctionPointException {
-        TabulatedFunction copy = (TabulatedFunction) first.clone();
+        System.out.println(first.hashCode());
+        TabulatedFunctionImpl copy = (TabulatedFunctionImpl) first.clone();
+        System.out.println(copy.hashCode());
         assertEquals(copy, first);
         copy.addPoint(new FunctionPoint(110, 10));
+        System.out.println(copy.hashCode());
         assertNotEquals(copy, first);
         System.out.println(copy.toString());
         System.out.println(first.toString());

@@ -1,13 +1,13 @@
 package functions.meta;
 
-import functions.Function;
+import functions.FunctionImpl;
 
-public class Scale implements Function {
-    private Function funcToScale;
+public class Scale implements FunctionImpl {
+    private FunctionImpl funcToScale;
     private double scaleX;
     private double scaleY;
 
-    public Scale(Function funcToScale, double scaleX, double scaleY) {
+    public Scale(FunctionImpl funcToScale, double scaleX, double scaleY) {
         this.funcToScale = funcToScale;
         this.scaleX = scaleX;
         this.scaleY = scaleY;

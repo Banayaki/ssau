@@ -1,13 +1,13 @@
 package functions.meta;
 
-import functions.Function;
+import functions.FunctionImpl;
 
-public class Shift implements Function {
-    private Function func;
+public class Shift implements FunctionImpl {
+    private FunctionImpl func;
     private double shiftX;
     private double shiftY;
 
-    public Shift(Function func, double shiftX, double shiftY) {
+    public Shift(FunctionImpl func, double shiftX, double shiftY) {
         this.func = func;
         this.shiftX = shiftX;
         this.shiftY = shiftY;
@@ -25,6 +25,6 @@ public class Shift implements Function {
 
     @Override
     public double getFunctionValue(double x) {
-        return func.getFunctionValue(x + shiftX) + shiftY;
+        return func.getFunctionValue(x - shiftX) + shiftY;
     }
 }

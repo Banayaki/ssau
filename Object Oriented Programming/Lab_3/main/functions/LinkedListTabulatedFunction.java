@@ -298,6 +298,7 @@ public class LinkedListTabulatedFunction implements TabulatedFunction {
      * @return - возвращает значение функции в точке х
      * @see ArrayTabulatedFunction#getFunctionValue(double)
      */
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public double getFunctionValue(double x) {
         int i;
@@ -352,13 +353,20 @@ public class LinkedListTabulatedFunction implements TabulatedFunction {
     }
 
     /**
-     * @see ArrayTabulatedFunction#setPointX(int, double) t
+     * @see ArrayTabulatedFunction#setPointX(int, double)
      */
     @Override
     public void setPointX(int index, double x) throws InappropriateFunctionPointException {
+        if (index == countOfPoints - 1 && head.prev.prev.item.getX() < x) {
+            head.prev.item.setX(x);
+            return;
+        } else if (index == 0 && head.next.next.item.getX() > x) {
+            head.next.item.setX(x);
+            return;
+        }
         FunctionNode temp = getNodeByIndex(index);
         getNodeByIndex(index).item.setX(x);
-        if (temp.prev.item.getX() <= x && x <= temp.next.item.getX()) {
+        if (temp.prev.item.getX() < x && x < temp.next.item.getX()) {
             temp.item.setX(x);
         } else {
             throw new InappropriateFunctionPointException("Incorrect x = " + x +

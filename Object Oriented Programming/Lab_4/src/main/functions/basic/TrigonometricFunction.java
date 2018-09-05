@@ -1,32 +1,27 @@
 package functions.basic;
 
-import functions.Function;
+import functions.FunctionImpl;
 
 /**
  * Класс описывающий тригонометрические функции
  *
- * @see Function
+ * @see FunctionImpl
  */
-public class TrigonometricFunction implements Function {
+public abstract class TrigonometricFunction implements FunctionImpl {
     /**
-     * @see Function#getLeftDomainBorder()
+     * @see FunctionImpl#getLeftDomainBorder()
      */
-    @Override
     public double getLeftDomainBorder() {
         return Double.NEGATIVE_INFINITY;
     }
     /**
-     * @see Function#getRightDomainBorder()
+     * @see FunctionImpl#getRightDomainBorder()
      */
-    @Override
     public double getRightDomainBorder() {
         return Double.POSITIVE_INFINITY;
     }
     /**
-     * @see Function#getFunctionValue(double)
+     * @see FunctionImpl#getFunctionValue(double)
      */
-    @Override
-    public double getFunctionValue(double x) {
-        return 0;
-    }
+    public abstract double getFunctionValue(double x);
 }

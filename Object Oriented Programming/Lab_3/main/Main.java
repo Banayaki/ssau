@@ -1,24 +1,52 @@
 import functions.ArrayTabulatedFunction;
+import functions.FunctionPoint;
 import functions.LinkedListTabulatedFunction;
+import functions.TabulatedFunction;
 import functions.exceptions.InappropriateFunctionPointException;
 
 public class Main {
     private static int n;
 
     public static void main(String[] args) throws InappropriateFunctionPointException {
-        ArrayTabulatedFunction test = new ArrayTabulatedFunction(0, 10, new double[]{10.0, 15.0, 20.0, 30.0, 50.0, 100.0});
-        LinkedListTabulatedFunction third = new LinkedListTabulatedFunction(test);
-        System.out.println(third.getPoint(0).getX());
-        System.out.println(third.getPoint(0).getY());
-        System.out.println(third.getPoint(1).getX());
-        System.out.println(third.getPoint(1).getY());
-        System.out.println(third.getPoint(2).getX());
-        System.out.println(third.getPoint(2).getY());
-        System.out.println(third.getPoint(3).getX());
-        System.out.println(third.getPoint(3).getY());
-        System.out.println(third.getPoint(4).getX());
-        System.out.println(third.getPoint(4).getY());
-        System.out.println(third.getPoint(5).getX());
-        System.out.println(third.getPoint(5).getY());
+        TabulatedFunction test = new ArrayTabulatedFunction(0, 10, new double[]{10.0, 15.0, 20.0, 30.0, 50.0, 100.0});
+        try {
+            test.addPoint(new FunctionPoint(-1, 0));
+            test.addPoint(0, new FunctionPoint(10, 0));
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        try {
+            test.addPoint(6, new FunctionPoint(20, 0));
+            test.addPoint(6, new FunctionPoint(9, 0));
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        try {
+            test.setPoint(0, new FunctionPoint(99, 0));
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        try {
+            for (int i = 5; i > 0; --i) {
+                test.deletePoint(i);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        try {
+            test = new ArrayTabulatedFunction(0, 0, null);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        try {
+            test = new ArrayTabulatedFunction(0, 0, 0);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

@@ -3,7 +3,10 @@ package functions;
 import functions.exceptions.FunctionPointIndexOutOfBoundsException;
 import functions.exceptions.InappropriateFunctionPointException;
 
-import java.io.Serializable;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 import java.util.Objects;
 
 
@@ -12,10 +15,35 @@ import java.util.Objects;
  *
  * @author Artem Mukhin #6209
  * @see java.util.LinkedList
- * @see functions.TabulatedFunction
+ * @see TabulatedFunctionImpl
+ * @see FunctionImpl
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class LinkedListTabulatedFunction implements TabulatedFunction, Serializable, Cloneable {
+public class LinkedListTabulatedFunction implements FunctionImpl, TabulatedFunctionImpl, Externalizable {
+
+    @Override
+    public void writeExternal(ObjectOutput objectOutput) throws IOException {
+        FunctionPoint[] points = new FunctionPoint[countOfPoints];
+        for (int i = 0; i < countOfPoints; ++i) {
+            points[i] = this.getPoint(i);
+        }
+        objectOutput.writeObject(countOfPoints);
+        objectOutput.writeObject(points);
+    }
+
+    @Override
+    public void readExternal(ObjectInput objectInput) throws IOException, ClassNotFoundException {
+        int count = (int) objectInput.readObject();
+        FunctionPoint[] points = (FunctionPoint[]) objectInput.readObject();
+        this.firstHeadInit(points[0], points[1]);
+        for (int i = 2; i < count; i++) {
+            try {
+                this.addPoint(points[i]);
+            } catch (InappropriateFunctionPointException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     /**
      * Внутренний класс - член, имеет доступ ко всем полям и методам обрабляющего класса (объекта), класс объявлен
@@ -92,6 +120,9 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
      */
     private int cacheIndex = 0;
 
+    public LinkedListTabulatedFunction() {
+    }
+
     /**
      * Конструктор - создание нового объекта с определенным количеством точек, значения которых равны 0
      *
@@ -107,7 +138,6 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
                     + ", rightX = " + rightX);
         }
         double length = (rightX - leftX) / (pointCount - 1.);
-        countOfPoints = 2;
         firstHeadInit(new FunctionPoint(leftX, 0), new FunctionPoint(leftX + length, 0));
         for (int i = 2; i < pointCount; ++i) {
             addPoint(new FunctionPoint(leftX + length * i, 0));
@@ -130,7 +160,6 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
                     + ", rightX = " + rightX);
         }
         double length = (rightX - leftX) / (values.length - 1.);
-        countOfPoints = 2;
         firstHeadInit(new FunctionPoint(leftX, values[0]), new FunctionPoint(leftX + length, values[1]));
         for (int i = 2; i < values.length; ++i) {
             addPoint(new FunctionPoint(leftX + length * i, values[i]));
@@ -146,7 +175,6 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
      * @see ArrayTabulatedFunction
      */
     public LinkedListTabulatedFunction(ArrayTabulatedFunction arrayTabulatedFunction) throws InappropriateFunctionPointException {
-        countOfPoints = 2;
         firstHeadInit(new FunctionPoint(arrayTabulatedFunction.getPoint(0)), new FunctionPoint(arrayTabulatedFunction.getPoint(1)));
         for (int i = 2; i < arrayTabulatedFunction.getPointsCount(); ++i) {
             addPoint(new FunctionPoint(arrayTabulatedFunction.getPoint(i)));
@@ -156,13 +184,13 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
 
     /**
      * Конструктор - создание нового объекта из массива точек
+     *
      * @param pointsArray - массив точек функции
      */
     public LinkedListTabulatedFunction(FunctionPoint[] pointsArray) throws InappropriateFunctionPointException {
         if (pointsArray.length < 2) {
             throw new IllegalArgumentException("Illegal argument FunctionPoint[] - have nor right count of points");
         }
-        countOfPoints = pointsArray.length;
         firstHeadInit(new FunctionPoint(pointsArray[0]), new FunctionPoint(pointsArray[1]));
         for (int i = 2; i < countOfPoints; ++i) {
             addPoint(new FunctionPoint(pointsArray[i]));
@@ -270,6 +298,7 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
      * @param second - вторая точка функции
      */
     private void firstHeadInit(FunctionPoint first, FunctionPoint second) {
+        countOfPoints = 2;
         head = new FunctionNode();
         FunctionNode firstNode = new FunctionNode(null, first, null);
         FunctionNode secondNode = new FunctionNode(null, second, null);
@@ -296,26 +325,23 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
     }
 
     /**
-     * @see Function#getLeftDomainBorder()
+     * @see FunctionImpl#getLeftDomainBorder()
      */
-    @Override
     public double getLeftDomainBorder() {
         return head.next.item.getX();
     }
 
     /**
-     * @see Function#getRightDomainBorder()
+     * @see FunctionImpl#getRightDomainBorder()
      */
-    @Override
     public double getRightDomainBorder() {
         return head.prev.item.getX();
     }
 
     /**
-     * @see Function#getFunctionValue(double)
+     * @see FunctionImpl#getFunctionValue(double)
      */
     @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public double getFunctionValue(double x) {
         int i;
         if (this.head.next.item.getX() > x || this.head.prev.item.getX() < x) return Double.NaN;
@@ -328,25 +354,22 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
     }
 
     /**
-     * @see TabulatedFunction#getPointsCount()
+     * @see TabulatedFunctionImpl#getPointsCount()
      */
-    @Override
     public int getPointsCount() {
         return this.countOfPoints;
     }
 
     /**
-     * @see TabulatedFunction#getPoint(int)
+     * @see TabulatedFunctionImpl#getPoint(int)
      */
-    @Override
     public FunctionPoint getPoint(int index) {
         return getNodeByIndex(index).item;
     }
 
     /**
-     * @see TabulatedFunction#setPoint(int, FunctionPoint)
+     * @see TabulatedFunctionImpl#setPoint(int, FunctionPoint)
      */
-    @Override
     public void setPoint(int index, FunctionPoint point) throws InappropriateFunctionPointException {
         FunctionNode temp = getNodeByIndex(index);
         if (temp.prev.item.getX() <= point.getX() && point.getX() <= temp.next.item.getX()) {
@@ -358,17 +381,15 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
     }
 
     /**
-     * @see TabulatedFunction#getPointX(int)
+     * @see TabulatedFunctionImpl#getPointX(int)
      */
-    @Override
     public double getPointX(int index) {
         return getNodeByIndex(index).item.getX();
     }
 
     /**
-     * @see TabulatedFunction#setPointX(int, double) t
+     * @see TabulatedFunctionImpl#setPointX(int, double) t
      */
-    @Override
     public void setPointX(int index, double x) throws InappropriateFunctionPointException {
         FunctionNode temp = getNodeByIndex(index);
         getNodeByIndex(index).item.setX(x);
@@ -381,33 +402,29 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
     }
 
     /**
-     * @see TabulatedFunction#getPointY(int)
+     * @see TabulatedFunctionImpl#getPointY(int)
      */
-    @Override
     public double getPointY(int index) {
         return getNodeByIndex(index).item.getY();
     }
 
     /**
-     * @see TabulatedFunction#setPointY(int, double)
+     * @see TabulatedFunctionImpl#setPointY(int, double)
      */
-    @Override
     public void setPointY(int index, double y) {
         getNodeByIndex(index).item.setY(y);
     }
 
     /**
-     * @see TabulatedFunction#deletePoint(int)
+     * @see TabulatedFunctionImpl#deletePoint(int)
      */
-    @Override
     public void deletePoint(int index) {
         deleteNodeByIndex(index);
     }
 
     /**
-     * @see TabulatedFunction#addPoint(FunctionPoint)
+     * @see TabulatedFunctionImpl#addPoint(FunctionPoint)
      */
-    @Override
     public void addPoint(FunctionPoint point) throws InappropriateFunctionPointException {
         if (head.prev.item.getX() < point.getX()) {
             addNodeToTail().item = new FunctionPoint(point);
@@ -418,9 +435,8 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
     }
 
     /**
-     * @see TabulatedFunction#addPoint(int, FunctionPoint)
+     * @see TabulatedFunctionImpl#addPoint(int, FunctionPoint)
      */
-    @Override
     public void addPoint(int index, FunctionPoint point) throws InappropriateFunctionPointException {
         FunctionNode temp = addNodeByIndex(index);
         if (index == countOfPoints && head.prev.item.getX() < point.getX()) {
@@ -458,7 +474,28 @@ public class LinkedListTabulatedFunction implements TabulatedFunction, Serializa
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof TabulatedFunction && obj.hashCode() == this.hashCode();
+        if (this == obj) return true;
+        if (!(obj instanceof TabulatedFunctionImpl)) return false;
+        if (obj instanceof LinkedListTabulatedFunction) {
+            LinkedListTabulatedFunction aObj = (LinkedListTabulatedFunction) obj;
+            if (aObj.countOfPoints != this.countOfPoints) return false;
+            FunctionNode thisNode = this.head.next;
+            FunctionNode objNode = aObj.head.next;
+            for (int i = 0; i < this.countOfPoints; ++i) {
+                if (!thisNode.item.equals(objNode.item)) return false;
+                thisNode = thisNode.next;
+                objNode = objNode.next;
+            }
+            return true;
+        } else {
+            if (((TabulatedFunctionImpl) obj).getPointsCount() != this.getPointsCount()) return false;
+            FunctionNode thisNode = this.head.next;
+            for (int i = 0; i < this.countOfPoints; ++i) {
+                if (!((TabulatedFunctionImpl) obj).getPoint(i).equals(thisNode.item)) return false;
+                thisNode = thisNode.next;
+            }
+            return true;
+        }
     }
 
     @Override

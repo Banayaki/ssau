@@ -9,22 +9,26 @@ import java.io.Serializable;
  * Класс - реализует табулированную функцию в виде стандартного java массива.
  *
  * @author Mukhin Artem #6209
- * @see functions.TabulatedFunction
+ * @see TabulatedFunctionImpl
  * @see FunctionPoint
  */
 
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
-    /** Массив содержащий точки функции */
+public class ArrayTabulatedFunction implements FunctionImpl, TabulatedFunctionImpl, Serializable {
+    /**
+     * Массив содержащий точки функции
+     */
     private FunctionPoint[] values;
-    /** Количество точек функции */
+    /**
+     * Количество точек функции
+     */
     private int countOfPoints;
 
     /**
      * Конструктор - создание нового объекта с определенным количеством точек, значения которых равны 0
      *
-     * @param leftX - задает левую границу области определения функции
-     * @param rightX - задает правую границу области определения функции
+     * @param leftX      - задает левую границу области определения функции
+     * @param rightX     - задает правую границу области определения функции
      * @param pointCount - задает количество точек функции
      */
     public ArrayTabulatedFunction(double leftX, double rightX, int pointCount) {
@@ -43,7 +47,7 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
     /**
      * Конструктор - создаение нового объекта с определенными значениями функции
      *
-     * @param leftX - задает левую границу области определения функции
+     * @param leftX  - задает левую границу области определения функции
      * @param rightX - задает правую границу области определения функции
      * @param values - массив значений функции
      */
@@ -63,6 +67,7 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
 
     /**
      * Конструктор - создание нового объекта из массива точек
+     *
      * @param pointsArray - массив точек функции
      */
     public ArrayTabulatedFunction(FunctionPoint[] pointsArray, int countOfPoints) {
@@ -75,27 +80,24 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
     }
 
     /**
-     * @see Function#getLeftDomainBorder()
+     * @see FunctionImpl#getLeftDomainBorder()
      */
-    @Override
     public double getLeftDomainBorder() {
         return this.values[0].getX();
     }
 
     /**
-     * @see Function#getRightDomainBorder()
+     * @see FunctionImpl#getRightDomainBorder()
      */
-    @Override
     public double getRightDomainBorder() {
         return this.values[this.countOfPoints - 1].getX();
     }
 
 
     /**
-     * @see Function#getFunctionValue(double)
+     * @see FunctionImpl#getFunctionValue(double)
      */
     @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public double getFunctionValue(double x) {
         int i;
         if (this.values[0].getX() > x || this.values[this.countOfPoints - 1].getX() < x) return Double.NaN;
@@ -108,17 +110,15 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
     }
 
     /**
-     * @see TabulatedFunction#getPointsCount()
+     * @see TabulatedFunctionImpl#getPointsCount()
      */
-    @Override
     public int getPointsCount() {
         return this.countOfPoints;
     }
 
     /**
-     * @see TabulatedFunction#getPoint(int)
+     * @see TabulatedFunctionImpl#getPoint(int)
      */
-    @Override
     public FunctionPoint getPoint(int index) {
         isNotOutOfBounds(index);
         return this.values[index];
@@ -126,9 +126,8 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
 
 
     /**
-     * @see TabulatedFunction#setPoint(int, FunctionPoint)
+     * @see TabulatedFunctionImpl#setPoint(int, FunctionPoint)
      */
-    @Override
     public void setPoint(int index, FunctionPoint point) throws InappropriateFunctionPointException {
         isNotOutOfBounds(index);
         if (index == 0) {
@@ -153,45 +152,40 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
     }
 
     /**
-     * @see TabulatedFunction#getPointX(int)
+     * @see TabulatedFunctionImpl#getPointX(int)
      */
-    @Override
     public double getPointX(int index) {
         isNotOutOfBounds(index);
         return values[index].getX();
     }
 
     /**
-     * @see TabulatedFunction#setPointX(int, double)
+     * @see TabulatedFunctionImpl#setPointX(int, double)
      */
-    @Override
     public void setPointX(int index, double x) throws InappropriateFunctionPointException {
         isNotOutOfBounds(index);
         setPoint(index, new FunctionPoint(x, values[index].getY()));
     }
 
     /**
-     * @see TabulatedFunction#getPointY(int)
+     * @see TabulatedFunctionImpl#getPointY(int)
      */
-    @Override
     public double getPointY(int index) {
         isNotOutOfBounds(index);
         return values[index].getY();
     }
 
     /**
-     * @see TabulatedFunction#setPointY(int, double)
+     * @see TabulatedFunctionImpl#setPointY(int, double)
      */
-    @Override
     public void setPointY(int index, double y) {
         isNotOutOfBounds(index);
         getPoint(index).setY(y);
     }
 
     /**
-     * @see TabulatedFunction#deletePoint(int)
+     * @see TabulatedFunctionImpl#deletePoint(int)
      */
-    @Override
     public void deletePoint(int index) {
         if (this.countOfPoints < 3) {
             throw new IllegalStateException("Can't remove the point, because function must have at least two points");
@@ -203,30 +197,48 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
     }
 
     /**
-     * @see TabulatedFunction#addPoint(FunctionPoint)
+     * @see TabulatedFunctionImpl#addPoint(FunctionPoint)
      */
-    @Override
     public void addPoint(FunctionPoint point) throws InappropriateFunctionPointException {
         if (this.values.length - 1 == this.countOfPoints) {
             moveInBiggerArray();
         }
         if (this.values[countOfPoints - 1].getX() >= point.getX()) {
             throw new InappropriateFunctionPointException("Your point is to the left of rightX");
+        } else if (this.values[countOfPoints - 1].getX() == point.getX()) {
+            System.out.println("Warning: use set instead of add. X value have equal in point set");
+            this.setPoint(countOfPoints - 1, point);
+        } else {
+            this.values[countOfPoints++] = new FunctionPoint(point);
         }
-        this.values[countOfPoints++] = new FunctionPoint(point);
     }
 
     /**
-     * @see TabulatedFunction#addPoint(int, FunctionPoint)
+     * @see TabulatedFunctionImpl#addPoint(int, FunctionPoint)
      */
-    @Override
     public void addPoint(int index, FunctionPoint point) throws InappropriateFunctionPointException {
+        if (index > 0 && index > this.countOfPoints) {
+            throw new IndexOutOfBoundsException("Your index = " + index + " is out of bounds");
+        }
         if (this.values.length - 1 == this.countOfPoints) {
             moveInBiggerArray();
         }
-        if (this.values[index - 1].getX() <= point.getX() && point.getX() <= this.values[index].getX()) {
+        //noinspection ConstantConditions
+        //Сложно читаемое возможно условие.
+        //Ошибкой не считает: 1) если добавлем точку в начало и она лежил левее левой границы
+        //2) если точка добавляется в конец и лежит правее правой границы
+        //3) если точка добавляется не в края массива, и лежит между двумя соседними точками.
+        if (index == 0 && point.getX() <= this.getLeftDomainBorder() ||
+                index == this.countOfPoints && point.getX() >= this.getRightDomainBorder() ||
+                index != this.countOfPoints && index != 0 &&
+                        this.values[index - 1].getX() <= point.getX() && point.getX() <= this.values[index].getX()) {
             rightShift(index);
+            if (index != this.countOfPoints && values[index].getX() == point.getX()) {
+                System.out.println("Warning: use set instead of add. X value have equal in point set");
+                this.setPoint(index, point);
+            }
             values[index] = new FunctionPoint(point);
+            this.countOfPoints += 1;
         } else {
             throw new InappropriateFunctionPointException("Your point have incorrect X value: x = " + point.getX());
         }
@@ -234,6 +246,7 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
 
     /**
      * Метод преобразующий объект в humanreadable строку
+     *
      * @return - строка
      */
     @Override
@@ -250,7 +263,7 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
      * исключение
      *
      * @param index - проверяемый номер
-     * @exception  FunctionPointIndexOutOfBoundsException - выход за границу допустимых индексов
+     * @throws FunctionPointIndexOutOfBoundsException - выход за границу допустимых индексов
      */
     private void isNotOutOfBounds(int index) {
         if (index < 0 || index >= countOfPoints) {
@@ -260,6 +273,7 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
 
     /**
      * Метод совершающий сдвиг значений массива {@link ArrayTabulatedFunction#values} влево
+     *
      * @param index - с какого индекса начинать свдиг
      */
     private void leftShift(int index) {
@@ -270,6 +284,7 @@ public class ArrayTabulatedFunction implements TabulatedFunction, Serializable {
 
     /**
      * Метод совершающий сдвиг значений массива {@link ArrayTabulatedFunction#values} вправо
+     *
      * @param index - с какого индекса начинать свдиг
      */
     private void rightShift(int index) {
