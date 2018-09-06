@@ -1,5 +1,7 @@
 package functions;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Класс - реализует табулированную функцию в виде стандартного java массива.
  *
@@ -44,15 +46,14 @@ public class TabulatedFunction {
      * @param rightX - задает правую границу области определения функции
      * @param values - массив значений функции
      */
-    public TabulatedFunction(double leftX, double rightX, double[] values) {
-        if (values == null || values.length == 0 || Math.abs(leftX - rightX) < Utils.EPS || rightX < leftX) {
+    public TabulatedFunction(double leftX, double rightX, @NotNull double[] values) {
+        if (values.length == 0 || Math.abs(leftX - rightX) < Utils.EPS || rightX < leftX) {
             throw new IllegalArgumentException();
         }
-        int pointCount = values.length;
-        this.values = new FunctionPoint[pointCount + 10];
-        this.countOfPoints = pointCount;
-        double length = (rightX - leftX) / (pointCount - 1.);
-        for (int i = 0; i < pointCount; ++i) {
+        this.countOfPoints = values.length;
+        this.values = new FunctionPoint[countOfPoints + 10];
+        double length = (rightX - leftX) / (countOfPoints - 1.);
+        for (int i = 0; i < countOfPoints; ++i) {
             this.values[i] = new FunctionPoint(leftX + length * i, values[i]);
         }
     }
@@ -124,16 +125,20 @@ public class TabulatedFunction {
         if (index == 0) {
             if (point.getX() < this.values[index + 1].getX()) {
                 values[index] = new FunctionPoint(point);
+            } else {
+                throw new IllegalArgumentException();
             }
         } else if (index == this.countOfPoints - 1) {
             if (point.getX() >= this.values[index - 1].getX()) {
                 values[index] = new FunctionPoint(point);
+            } else {
+                throw new IllegalArgumentException();
             }
         } else {
             if (point.getX() >= this.values[index - 1].getX() && point.getX() <= this.values[index + 1].getX()) {
                 values[index] = new FunctionPoint(point);
             } else {
-                throw new IndexOutOfBoundsException();
+                throw new IllegalArgumentException();
             }
         }
     }
@@ -246,8 +251,6 @@ public class TabulatedFunction {
 
     /**
      * Сдвиг влево, спомогательный метод, используемый при удалении
-     *
-     * @param index
      */
     private void leftShift(int index) {
         for (; index < this.countOfPoints; ++index) {
@@ -255,6 +258,9 @@ public class TabulatedFunction {
         }
     }
 
+    /**
+     * Сдвиг вправо, спомогательный метод, используемый при удалении
+     */
     private void rightShift(int index) {
         for (int i = this.countOfPoints; i > index; --i) {
             this.values[i] = this.values[i - 1];

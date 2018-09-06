@@ -2,6 +2,7 @@ package functions;
 
 import functions.meta.*;
 
+@SuppressWarnings("unused")
 public final class Functions {
 
     private Functions() {

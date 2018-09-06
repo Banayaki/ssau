@@ -104,7 +104,6 @@ public class LinkedListTabulatedFunction implements TabulatedFunction {
                     + ", rightX = " + rightX);
         }
         double length = (rightX - leftX) / (pointCount - 1.);
-        countOfPoints = 2;
         firstHeadInit(new FunctionPoint(leftX, 0), new FunctionPoint(leftX + length, 0));
         for (int i = 2; i < pointCount; ++i) {
             addPoint(new FunctionPoint(leftX + length * i, 0));
@@ -127,7 +126,6 @@ public class LinkedListTabulatedFunction implements TabulatedFunction {
                     + ", rightX = " + rightX);
         }
         double length = (rightX - leftX) / (values.length - 1.);
-        countOfPoints = 2;
         firstHeadInit(new FunctionPoint(leftX, values[0]), new FunctionPoint(leftX + length, values[1]));
         for (int i = 2; i < values.length; ++i) {
             addPoint(new FunctionPoint(leftX + length * i, values[i]));
@@ -143,7 +141,6 @@ public class LinkedListTabulatedFunction implements TabulatedFunction {
      * @see ArrayTabulatedFunction
      */
     public LinkedListTabulatedFunction(ArrayTabulatedFunction arrayTabulatedFunction) throws InappropriateFunctionPointException {
-        countOfPoints = 2;
         firstHeadInit(new FunctionPoint(arrayTabulatedFunction.getPoint(0)), new FunctionPoint(arrayTabulatedFunction.getPoint(1)));
         for (int i = 2; i < arrayTabulatedFunction.getPointsCount(); ++i) {
             addPoint(new FunctionPoint(arrayTabulatedFunction.getPoint(i)));
@@ -251,6 +248,7 @@ public class LinkedListTabulatedFunction implements TabulatedFunction {
      * @param second - вторая точка функции
      */
     private void firstHeadInit(FunctionPoint first, FunctionPoint second) {
+        this.countOfPoints = 2;
         head = new FunctionNode();
         FunctionNode firstNode = new FunctionNode(null, first, null);
         FunctionNode secondNode = new FunctionNode(null, second, null);

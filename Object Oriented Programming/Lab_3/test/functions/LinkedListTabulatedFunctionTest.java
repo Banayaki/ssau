@@ -52,7 +52,6 @@ public class LinkedListTabulatedFunctionTest {
         assertEquals(14, second.getPointsCount());
         second.addPoint(0, new FunctionPoint(-1, 0));
         second.addPoint(4, new FunctionPoint(2, 10));
-//        print();
         assertEquals(0, second.getPointY(0), 0.0);
         assertEquals(2, second.getPointX(4), 0.0);
         second.deletePoint(0);

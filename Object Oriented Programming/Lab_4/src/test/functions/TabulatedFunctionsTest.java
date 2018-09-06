@@ -15,14 +15,14 @@ import java.io.*;
 public class TabulatedFunctionsTest {
 
     @Test
-    public void tabulate() throws IOException {
+    public void tabulate() throws IOException, InappropriateFunctionPointException {
         System.out.println(TabulatedFunctions.tabulate(new Sin(), 0, 2 * Math.PI, 11).toString());
         System.out.println(TabulatedFunctions.tabulate(new Cos(), 0, 2 * Math.PI, 11).toString());
         System.out.println(TabulatedFunctions.tabulate(new Sum(new Power(new Sin(), 2), new Power(new Cos(), 2)), 0, 2 * Math.PI, 11).toString());
     }
 
     @Test
-    public void outputTabulatedFunction() throws FileNotFoundException {
+    public void outputTabulatedFunction() throws FileNotFoundException, InappropriateFunctionPointException {
         String strForCheck;
 
         TabulatedFunctionImpl logFunc = TabulatedFunctions.tabulate(new Log(Math.E), 0, 10, 11);
@@ -35,7 +35,7 @@ public class TabulatedFunctionsTest {
     }
 
     @Test
-    public void writerTabulatedFunction() throws IOException {
+    public void writerTabulatedFunction() throws IOException, InappropriateFunctionPointException {
         String strForCheck;
 
         TabulatedFunctionImpl expFunc = TabulatedFunctions.tabulate(new Exp(), 0, 10, 11);

@@ -11,14 +11,4 @@ public class Sin extends TrigonometricFunction {
     public double getFunctionValue(double x) {
         return Math.sin(x);
     }
-
-    @Override
-    public double getRightDomainBorder() {
-        return super.getRightDomainBorder();
-    }
-
-    @Override
-    public double getLeftDomainBorder() {
-        return super.getLeftDomainBorder();
-    }
 }

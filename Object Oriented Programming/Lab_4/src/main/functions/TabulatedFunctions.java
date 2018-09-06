@@ -1,5 +1,7 @@
 package functions;
 
+import functions.exceptions.InappropriateFunctionPointException;
+
 import java.io.*;
 
 /**
@@ -23,7 +25,7 @@ public final class TabulatedFunctions {
      * @param pointsCount - количество точек табулированной функции
      * @return - возвращает объект табулированной функции
      */
-    public static TabulatedFunctionImpl tabulate(FunctionImpl function, double leftX, double rightX, int pointsCount) {
+    public static TabulatedFunctionImpl tabulate(FunctionImpl function, double leftX, double rightX, int pointsCount) throws InappropriateFunctionPointException {
         if (leftX < function.getLeftDomainBorder() || rightX > function.getRightDomainBorder() || pointsCount < 2) {
             throw new IllegalArgumentException("Некорректные аргументы. Проверьте значения: pointsCount = "
                     + pointsCount + ", leftX = " + leftX + ", rightX = " + rightX);
@@ -74,6 +76,8 @@ public final class TabulatedFunctions {
             return new ArrayTabulatedFunction(points, pointsCount);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        } catch (InappropriateFunctionPointException e) {
+            e.printStackTrace();
         }
         return null;
     }
@@ -118,6 +122,8 @@ public final class TabulatedFunctions {
             return new ArrayTabulatedFunction(points, pointsCount);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        } catch (InappropriateFunctionPointException e) {
+            e.printStackTrace();
         }
         return null;
     }

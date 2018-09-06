@@ -14,9 +14,8 @@ import java.io.*;
  * @see TabulatedFunctionImpl
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class LinkedListTabulatedFunction implements FunctionImpl, TabulatedFunctionImpl, Externalizable {
+public class LinkedListTabulatedFunction implements TabulatedFunctionImpl, Externalizable {
 
-    @Override
     public void writeExternal(ObjectOutput objectOutput) throws IOException {
         FunctionPoint[] points = new FunctionPoint[countOfPoints];
         for (int i = 0; i < countOfPoints; ++i) {
@@ -26,7 +25,6 @@ public class LinkedListTabulatedFunction implements FunctionImpl, TabulatedFunct
         objectOutput.writeObject(points);
     }
 
-    @Override
     public void readExternal(ObjectInput objectInput) throws IOException, ClassNotFoundException {
         int count = (int) objectInput.readObject();
         FunctionPoint[] points = (FunctionPoint[]) objectInput.readObject();

@@ -19,7 +19,7 @@ import java.util.Objects;
  * @see FunctionImpl
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class LinkedListTabulatedFunction implements FunctionImpl, TabulatedFunctionImpl, Externalizable {
+public class LinkedListTabulatedFunction implements TabulatedFunctionImpl, Externalizable {
 
     @Override
     public void writeExternal(ObjectOutput objectOutput) throws IOException {

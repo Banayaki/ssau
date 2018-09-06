@@ -10,13 +10,13 @@ public interface FunctionImpl {
      * Метод получения левой границы области определения функции
      * @return - возвращает левую границу области определения
      */
-    public double getLeftDomainBorder();
+    double getLeftDomainBorder();
 
     /**
      * Метод получения правой границы области определения функции
      * @return - возвращает правую границу области определения
      */
-    public double getRightDomainBorder();
+    double getRightDomainBorder();
 
     /**
      * Находить значение функции по заданной точке
@@ -24,5 +24,5 @@ public interface FunctionImpl {
      * @param x - аргумент, в котором нужно найти значение нашей функции
      * @return - возвращает значение функции в точке х
      */
-    public double getFunctionValue(double x);
+    double getFunctionValue(double x);
 }

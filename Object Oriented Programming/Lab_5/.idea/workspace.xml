@@ -2,160 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23a29431-5eb7-45ae-a699-96bf4dc7911d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab_2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_3/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_4/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/conf/log4j2.xml.tld" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task2/MyFirstClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/Task2/MyFirstClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task3/MyFirstClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/Task3/MyFirstClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task4/MyFirstClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/Task4/MyFirstClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task4/MySecondClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/Task4/MySecondClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task5/MyFirstClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/Task5/MyFirstClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task6/MyFirstClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task6/manifest.mf" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/Task6/manifest.mf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task6/myfirstpackage/MySecondClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task6/output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_1/Task5/myfirstpackage/MySecondClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/Task5/myfirstpackage/MySecondClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_1/Task5/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_1/myfirst.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/main/functions/FunctionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/main/functions/FunctionPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_2/main/functions/TabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/main/functions/TabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/target/classes/functions/FunctionPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/target/classes/functions/FunctionPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_2/main/functions/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/main/functions/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_2/target/classes/functions/TabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/target/classes/functions/TabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/target/test-classes/functions/TabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/target/test-classes/functions/TabulatedFunctionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_2/target/classes/functions/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/target/classes/functions/Utils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_3/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/main/functions/ArrayTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/main/functions/ArrayTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/main/functions/FunctionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/main/functions/FunctionPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_3/main/functions/LinkedListTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/main/functions/LinkedListTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/main/functions/TabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/main/functions/TabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_3/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/target/classes/functions/ArrayTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/classes/functions/ArrayTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/target/classes/functions/FunctionPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/classes/functions/FunctionPoint.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_3/target/classes/functions/LinkedListTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/classes/functions/LinkedListTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/target/classes/functions/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/classes/functions/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/target/classes/functions/exceptions/FunctionPointIndexOutOfBoundsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/classes/functions/exceptions/FunctionPointIndexOutOfBoundsException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_3/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_3/test/functions/LinkedListTabulatedFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/test/functions/LinkedListTabulatedFunctionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/serial.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/serial.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/ArrayTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/ArrayTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/FunctionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/FunctionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/FunctionImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/Functions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/LinkedListTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/LinkedListTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/TabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/TabulatedFunctionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/TabulatedFunctionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/TabulatedFunctionImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/TabulatedFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/TabulatedFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Exp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Exp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/TrigonometricFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/TrigonometricFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Composition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Composition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Mult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Mult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Power.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Power.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Scale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Shift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/meta/Sum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Cos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Cos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Sin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Sin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Tan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/main/functions/basic/Tan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/src/test/functions/TabulatedFunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/src/test/functions/TabulatedFunctionsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/ArrayTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/ArrayTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/Function.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/Functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/Functions.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/LinkedListTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/LinkedListTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/TabulatedFunction.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/TabulatedFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/TabulatedFunctions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Exp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Exp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/TrigonometricFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/TrigonometricFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Composition.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Composition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Mult.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Mult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Power.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Power.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Scale.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Scale.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Shift.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Shift.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Sum.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/meta/Sum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Cos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Cos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Sin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Sin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Tan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/basic/Tan.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4/target/test-classes/functions/TabulatedFunctionsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/target/test-classes/functions/TabulatedFunctionsTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/FunctionImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/FunctionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/FunctionPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/Functions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/TabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/TabulatedFunctionImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/basic/Exp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/basic/Exp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/basic/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/basic/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/meta/Composition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/meta/Composition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/meta/Mult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/meta/Mult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/meta/Power.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/meta/Power.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/meta/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/meta/Scale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/meta/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/meta/Shift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/meta/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/meta/Sum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/functions/basic/Cos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/basic/Cos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/functions/basic/Sin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/basic/Sin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/functions/basic/Tan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/basic/Tan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/functions/ArrayTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/ArrayTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/Function.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/FunctionPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/FunctionPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/Functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/Functions.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/functions/LinkedListTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/LinkedListTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/TabulatedFunction.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/functions/TabulatedFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/TabulatedFunctions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/basic/Exp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/basic/Exp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/basic/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/basic/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/basic/TrigonometricFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/basic/TrigonometricFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/meta/Composition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/meta/Composition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/meta/Mult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/meta/Mult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/meta/Power.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/meta/Power.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/meta/Scale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/meta/Scale.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/meta/Shift.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/meta/Shift.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/meta/Sum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/meta/Sum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/functions/basic/Cos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/basic/Cos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/functions/basic/Sin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/basic/Sin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/functions/basic/Tan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/basic/Tan.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/functions/ArrayTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/functions/ArrayTabulatedFunctionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/functions/FunctionPointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/functions/FunctionPointTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/functions/TabulatedFunctionsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/functions/TabulatedFunctionsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/GUI/MyLabel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/GUI/TabulateParamsDialog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/GUI/TabulateParamsDialog$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/GUI/TabulateParamsDialog$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/GUI/TabulateParamsDialog$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/GUI/TabulateParamsDialog$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/GUI/TabulateParamsDialog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/ArrayTabulatedFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/Function.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/FunctionPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/Functions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/LinkedListTabulatedFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/TabulatedFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/TabulatedFunctions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/Utils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Cos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Exp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Log.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Sin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Tan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/TrigonometricFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/exceptions/FunctionPointIndexOutOfBoundsException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/exceptions/InappropriateFunctionPointException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Composition.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Mult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Power.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Scale.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Shift.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Sum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/test-classes/basic/FunctionTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/test-classes/functions/ArrayTabulatedFunctionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/test-classes/functions/FunctionPointTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/target/test-classes/functions/TabulatedFunctionsTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -169,39 +70,41 @@
     <session id="1098332412">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="2" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="1793" />
+          <entry key="java" value="1799" />
+          <entry key="txt" value="9" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1793" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="JAVA" value="1799" />
+          <entry key="PLAIN_TEXT" value="13" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="7" />
-          <entry key="java" value="27" />
+          <entry key="java" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="27" />
+          <entry key="JAVA" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -212,31 +115,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/FunctionPoint.java">
+        <entry file="file://$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="541">
+              <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Exp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="70" column="42" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+            <state relative-caret-position="144">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3413">
-              <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+            <state relative-caret-position="400">
+              <caret line="75" column="35" lean-forward="true" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Cos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -244,53 +162,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctionImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Scale.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Shift.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="763">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -298,8 +180,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            <state relative-caret-position="184">
+              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -326,7 +211,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/functions/FunctionPointTest.java" />
         <option value="$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java" />
-        <option value="$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java" />
         <option value="$PROJECT_DIR$/src/main/functions/FunctionPoint.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" />
@@ -334,7 +218,12 @@
         <option value="$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java" />
         <option value="$PROJECT_DIR$/src/main/functions/TabulatedFunctionImpl.java" />
         <option value="$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/functions/basic/Cos.java" />
+        <option value="$PROJECT_DIR$/src/main/functions/basic/Sin.java" />
+        <option value="$PROJECT_DIR$/src/main/functions/basic/Tan.java" />
         <option value="$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java" />
+        <option value="$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java" />
       </list>
     </option>
   </component>
@@ -345,9 +234,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="313" />
-    <option name="width" value="1390" />
-    <option name="height" value="1002" />
+    <option name="x" value="322" />
+    <option name="y" value="49" />
+    <option name="width" value="1380" />
+    <option name="height" value="1001" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -355,6 +245,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -392,14 +283,6 @@
               <item name="Lab_5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab_5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab_5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -413,18 +296,18 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536163982618" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536224275365" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -438,7 +321,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LinkedListTabulatedFunctionTest">
+  <component name="RunManager" selected="JUnit.TabulatedFunctionsTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -545,11 +428,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LinkedListTabulatedFunctionTest" />
-        <item itemvalue="JUnit.LinkedListTabulatedFunctionTest.copyTest" />
         <item itemvalue="JUnit.TabulatedFunctionsTest" />
+        <item itemvalue="JUnit.LinkedListTabulatedFunctionTest" />
         <item itemvalue="JUnit.FunctionPointTest" />
         <item itemvalue="JUnit.ArrayTabulatedFunctionTest" />
+        <item itemvalue="JUnit.LinkedListTabulatedFunctionTest.copyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -568,26 +451,22 @@
       <workItem from="1536138425402" duration="5479000" />
       <workItem from="1536145929199" duration="610000" />
       <workItem from="1536148629264" duration="884000" />
-      <workItem from="1536161805555" duration="1796000" />
+      <workItem from="1536161805555" duration="3453000" />
+      <workItem from="1536175751174" duration="216000" />
+      <workItem from="1536219362409" duration="118000" />
+      <workItem from="1536223707943" duration="594000" />
     </task>
+    <task id="LOCAL-00001" summary="Cleanup">
+      <created>1536164271495</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1536164271496</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArrayTabulatedFunctionTest_copyTest - 2018.08.15 at 21h 27m 19s.xml">
-      <configuration name="ArrayTabulatedFunctionTest.copyTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayTabulatedFunctionTest - 2018.09.05 at 14h 12m 40s.xml">
-      <configuration name="ArrayTabulatedFunctionTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayTabulatedFunctionTest - 2018.09.05 at 14h 12m 45s.xml">
-      <configuration name="ArrayTabulatedFunctionTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FunctionPointTest - 2018.09.05 at 14h 12m 50s.xml">
-      <configuration name="FunctionPointTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LinkedListTabulatedFunctionTest - 2018.09.05 at 14h 12m 56s.xml">
-      <configuration name="LinkedListTabulatedFunctionTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TabulatedFunctionsTest - 2018.09.05 at 14h 13m 00s.xml">
       <configuration name="TabulatedFunctionsTest" configurationId="JUnit" />
     </history-entry>
@@ -603,14 +482,30 @@
     <history-entry file="LinkedListTabulatedFunctionTest - 2018.09.05 at 19h 49m 30s.xml">
       <configuration name="LinkedListTabulatedFunctionTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LinkedListTabulatedFunctionTest_copyTest - 2018.09.05 at 23h 31m 37s.xml">
+      <configuration name="LinkedListTabulatedFunctionTest.copyTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArrayTabulatedFunctionTest - 2018.09.06 at 12h 51m 05s.xml">
+      <configuration name="ArrayTabulatedFunctionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FunctionPointTest - 2018.09.06 at 12h 51m 12s.xml">
+      <configuration name="FunctionPointTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTabulatedFunctionTest - 2018.09.06 at 12h 51m 17s.xml">
+      <configuration name="LinkedListTabulatedFunctionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TabulatedFunctionsTest - 2018.09.06 at 12h 51m 20s.xml">
+      <configuration name="TabulatedFunctionsTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14306000" />
+    <option name="totallyTimeSpent" value="16891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1035" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19479166" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19479166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -676,6 +571,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -705,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/util/Objects.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -733,10 +628,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java">
+    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/lang/Object.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/FunctionPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1120">
+          <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7664">
+          <caret line="504" selection-start-line="499" selection-end-line="504" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Exp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Cos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Sin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Tan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -754,62 +708,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="144">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/FunctionPoint.java">
+    <entry file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+        <state relative-caret-position="400">
+          <caret line="75" column="35" lean-forward="true" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/lang/Object.class">
+    <entry file="file://$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="70" column="42" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3413">
-          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        <state relative-caret-position="763">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>

@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class ArrayTabulatedFunction implements FunctionImpl, TabulatedFunctionImpl, Serializable {
+public class ArrayTabulatedFunction implements TabulatedFunctionImpl, Serializable {
     /** Массив содержащий точки функции */
     private FunctionPoint[] values;
     /** Количество точек функции */
@@ -67,13 +67,16 @@ public class ArrayTabulatedFunction implements FunctionImpl, TabulatedFunctionIm
      * Конструктор - создание нового объекта из массива точек
      * @param pointsArray - массив точек функции
      */
-    public ArrayTabulatedFunction(FunctionPoint[] pointsArray, int countOfPoints) {
+    public ArrayTabulatedFunction(FunctionPoint[] pointsArray, int countOfPoints) throws InappropriateFunctionPointException {
         if (pointsArray.length < 2) {
             throw new IllegalArgumentException("Illegal argument FunctionPoint[] - have nor right count of points");
         }
-        this.countOfPoints = countOfPoints;
+        this.countOfPoints = 1;
         values = new FunctionPoint[countOfPoints + 10];
-        System.arraycopy(pointsArray, 0, values, 0, countOfPoints);
+        values[0] = pointsArray[0];
+        for (int i = 1; i < countOfPoints; ++i) {
+            this.addPoint(pointsArray[i]);
+        }
     }
 
     /**

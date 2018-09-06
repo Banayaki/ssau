@@ -11,14 +11,4 @@ public class Cos extends TrigonometricFunction {
     public double getFunctionValue(double x) {
         return Math.cos(x);
     }
-
-    @Override
-    public double getRightDomainBorder() {
-        return super.getRightDomainBorder();
-    }
-
-    @Override
-    public double getLeftDomainBorder() {
-        return super.getLeftDomainBorder();
-    }
 }

@@ -1,5 +1,6 @@
 package functions;
 
+@SuppressWarnings("WeakerAccess")
 public class Utils {
     public static final double EPS = machineEps();
 
