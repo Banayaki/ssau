@@ -2,61 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd2bd36c-b830-45ff-8448-efde237a1446" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task5/myfirstpackage/MySecondClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/Task5/myfirstpackage/MySecondClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/Task5/output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/myfirst.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/main/functions/TabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/main/functions/TabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/main/functions/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/main/functions/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/target/classes/functions/TabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/target/classes/functions/TabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/target/classes/functions/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/target/classes/functions/Utils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/main/functions/LinkedListTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/main/functions/LinkedListTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/target/classes/functions/LinkedListTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/classes/functions/LinkedListTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/test/functions/LinkedListTabulatedFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/test/functions/LinkedListTabulatedFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serial.txt" beforeDir="false" afterPath="$PROJECT_DIR$/serial.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/FunctionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/FunctionImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/TabulatedFunctionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/TabulatedFunctionImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/basic/Cos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/basic/Cos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/basic/Sin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/basic/Sin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/functions/basic/Tan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/basic/Tan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/ArrayTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/ArrayTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/Functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/Functions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/LinkedListTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/LinkedListTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/TabulatedFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/TabulatedFunctions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/basic/Cos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/basic/Cos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/basic/Sin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/basic/Sin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/functions/basic/Tan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/functions/basic/Tan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/functions/TabulatedFunctionsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/functions/TabulatedFunctionsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/main/functions/ArrayTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/src/main/functions/ArrayTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/main/functions/LinkedListTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/src/main/functions/LinkedListTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/main/functions/TabulatedFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/src/main/functions/TabulatedFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/main/functions/basic/Cos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/src/main/functions/basic/Cos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/main/functions/basic/Sin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/src/main/functions/basic/Sin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/main/functions/basic/Tan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/src/main/functions/basic/Tan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/test/functions/TabulatedFunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/src/test/functions/TabulatedFunctionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/classes/functions/ArrayTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/classes/functions/ArrayTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/classes/functions/LinkedListTabulatedFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/classes/functions/LinkedListTabulatedFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/classes/functions/TabulatedFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/classes/functions/TabulatedFunctions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/classes/functions/basic/Cos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/classes/functions/basic/Cos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/classes/functions/basic/Sin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/classes/functions/basic/Sin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/classes/functions/basic/Tan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/classes/functions/basic/Tan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/test-classes/functions/ArrayTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/test-classes/functions/ArrayTabulatedFunctionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/target/test-classes/functions/TabulatedFunctionsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/target/test-classes/functions/TabulatedFunctionsTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -78,17 +25,17 @@
     <session id="1294845916">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -108,7 +55,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="45" />
+          <entry key="java" value="57" />
           <entry key="txt" value="5" />
           <entry key="xml" value="1" />
         </counts>
@@ -116,7 +63,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="45" />
+          <entry key="JAVA" value="57" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="XML" value="1" />
         </counts>
@@ -129,61 +76,50 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Log.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
+            <state relative-caret-position="269">
+              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#330#331#0" expanded="true" />
+                <element signature="e#362#363#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+            <state relative-caret-position="777">
+              <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Cos.java">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Composition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="420">
+              <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Sin.java">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Mult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="210">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/Functions.java">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Power.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="e#46#73#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="378">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -191,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="-966">
+              <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -201,31 +137,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Tan.java">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Scale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="336">
+              <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Shift.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="84">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="626">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Sum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -307,7 +252,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -340,14 +284,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="functions" type="462c0819:PsiDirectoryNode" />
-              <item name="basic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab_4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab_4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
               <item name="meta" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -367,12 +303,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536224020705" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536234041535" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab_5" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -526,13 +463,11 @@
       <workItem from="1536175085038" duration="664000" />
       <workItem from="1536219485268" duration="601000" />
       <workItem from="1536220107335" duration="1670000" />
+      <workItem from="1536233850442" duration="327000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TabulatedFunctionsTest_tabulate - 2018.09.06 at 11h 45m 57s.xml">
-      <configuration name="TabulatedFunctionsTest.tabulate" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TabulatedFunctionsTest_tabulate - 2018.09.06 at 11h 46m 24s.xml">
       <configuration name="TabulatedFunctionsTest.tabulate" configurationId="JUnit" />
     </history-entry>
@@ -560,15 +495,17 @@
     <history-entry file="TabulatedFunctionsTest - 2018.09.06 at 12h 52m 09s.xml">
       <configuration name="TabulatedFunctionsTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TabulatedFunctionsTest - 2018.09.06 at 15h 40m 43s.xml">
+      <configuration name="TabulatedFunctionsTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38194000" />
+    <option name="totallyTimeSpent" value="38521000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1035" extended-state="6" />
-    <editor active="true" />
+    <frame x="-4" y="0" width="1928" height="1039" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15885417" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15885417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -577,7 +514,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3279396" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3275862" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.399137" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -672,32 +609,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Power.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/meta/TransmutationsTest.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Sum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Exp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="26" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -714,31 +630,10 @@
     <entry file="file://$PROJECT_DIR$/output.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Composition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/functions/FunctionPointTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Shift.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Scale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -749,24 +644,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Mult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/serial.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="3" column="85" selection-start-line="3" selection-start-column="85" selection-end-line="3" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/FunctionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -788,9 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,17 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="e#330#331#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -826,72 +693,129 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="1449">
+          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/Functions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/FunctionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="420">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Cos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Tan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="210">
           <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Sin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="147">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Cos.java">
+    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Exp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="420">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="26" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/Functions.java">
+    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Log.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="269">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
           <folding>
-            <element signature="e#46#73#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Composition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="420">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Mult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
+        <state relative-caret-position="210">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Power.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Scale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Shift.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/meta/Sum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-966">
+          <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -900,11 +824,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="626">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
         </state>
       </provider>
     </entry>

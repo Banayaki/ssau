@@ -1,12 +1,12 @@
 package functions.meta;
 
-import functions.Function;
+import functions.FunctionImpl;
 
-public class Mult implements Function {
-    private Function firstFunc;
-    private Function secondFunc;
+public class Mult implements FunctionImpl {
+    private FunctionImpl firstFunc;
+    private FunctionImpl secondFunc;
 
-    public Mult(Function firstFunc, Function secondFunc) {
+    public Mult(FunctionImpl firstFunc, FunctionImpl secondFunc) {
         this.firstFunc = firstFunc;
         this.secondFunc = secondFunc;
     }

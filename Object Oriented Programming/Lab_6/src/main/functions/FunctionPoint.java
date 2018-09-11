@@ -68,7 +68,9 @@ public class FunctionPoint implements Serializable, Cloneable {
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof FunctionPoint && this.hashCode() == obj.hashCode();
+        return obj instanceof FunctionPoint &&
+                this.getX() == ((FunctionPoint) obj).getX() &&
+                this.getY() == ((FunctionPoint) obj).getY();
     }
 
     @Override

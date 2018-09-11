@@ -1,8 +1,10 @@
 package functions;
 
 import functions.exceptions.InappropriateFunctionPointException;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 
 @SuppressWarnings("WeakerAccess")
@@ -71,10 +73,11 @@ public class ArrayTabulatedFunctionTest {
 
     @Test
     public void copyTest() throws CloneNotSupportedException, InappropriateFunctionPointException {
-        TabulatedFunction copy = (TabulatedFunction) second.clone();
+        TabulatedFunctionImpl copy = (TabulatedFunctionImpl) second.clone();
         assertEquals(copy, second);
         second.addPoint(new FunctionPoint(10, 10));
         assertNotEquals(copy, second);
         System.out.println(second.toString());
+        System.out.println(copy.toString());
     }
 }

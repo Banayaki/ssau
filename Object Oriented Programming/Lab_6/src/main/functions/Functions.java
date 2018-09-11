@@ -8,27 +8,27 @@ public final class Functions {
         throw new UnsupportedOperationException("Нельзя создать объект класса: " + Functions.class.getName());
     }
 
-    public static Function shift(Function f, double shiftX, double shiftY) {
+    public static FunctionImpl shift(FunctionImpl f, double shiftX, double shiftY) {
         return new Shift(f, shiftX, shiftY);
     }
 
-    public static Function scale(Function f, double scaleX, double scaleY) {
+    public static FunctionImpl scale(FunctionImpl f, double scaleX, double scaleY) {
         return new Scale(f, scaleX, scaleY);
     }
 
-    public static Function power(Function f, double power) {
+    public static FunctionImpl power(FunctionImpl f, double power) {
         return new Power(f, power);
     }
 
-    public static Function sum(Function f1, Function f2) {
+    public static FunctionImpl sum(FunctionImpl f1, FunctionImpl f2) {
         return new Sum(f1, f2);
     }
 
-    public static Function mult(Function f1, Function f2) {
+    public static FunctionImpl mult(FunctionImpl f1, FunctionImpl f2) {
         return new Mult(f1, f2);
     }
 
-    public static Function composition(Function f1, Function f2) {
+    public static FunctionImpl composition(FunctionImpl f1, FunctionImpl f2) {
         return new Composition(f1, f2);
     }
 }

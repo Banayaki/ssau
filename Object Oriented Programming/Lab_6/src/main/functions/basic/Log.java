@@ -1,13 +1,13 @@
 package functions.basic;
 
-import functions.Function;
+import functions.FunctionImpl;
 
 /**
  * Класс описывающий логарифмическую функцию
  *
- * @see Function
+ * @see FunctionImpl
  */
-public class Log implements Function {
+public class Log implements FunctionImpl {
     /**
      * 2.718...
      */
@@ -21,7 +21,7 @@ public class Log implements Function {
     }
 
     /**
-     * @see Function#getLeftDomainBorder()
+     * @see FunctionImpl#getLeftDomainBorder()
      */
     @Override
     public double getLeftDomainBorder() {
@@ -29,7 +29,7 @@ public class Log implements Function {
     }
 
     /**
-     * @see Function#getRightDomainBorder()
+     * @see FunctionImpl#getRightDomainBorder()
      */
     @Override
     public double getRightDomainBorder() {
@@ -37,7 +37,7 @@ public class Log implements Function {
     }
 
     /**
-     * @see Function#getFunctionValue(double)
+     * @see FunctionImpl#getFunctionValue(double)
      */
     @Override
     public double getFunctionValue(double x) {

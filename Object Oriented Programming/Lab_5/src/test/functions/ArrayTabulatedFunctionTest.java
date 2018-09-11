@@ -78,5 +78,6 @@ public class ArrayTabulatedFunctionTest {
         second.addPoint(new FunctionPoint(10, 10));
         assertNotEquals(copy, second);
         System.out.println(second.toString());
+        System.out.println(copy.toString());
     }
 }
