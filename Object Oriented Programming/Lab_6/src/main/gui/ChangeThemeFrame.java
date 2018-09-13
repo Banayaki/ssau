@@ -25,8 +25,9 @@ public class ChangeThemeFrame extends JFrame {
         });
         add(buttonPanel);
         pack();
+        setResizable(false);
         setTitle("Themes");
-        this.setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
