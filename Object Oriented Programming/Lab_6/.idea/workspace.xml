@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/gui/MainWindow.java" line="262" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/gui/MainWindow.java" line="263" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9c22e59-a26d-4fb5-bb48-8f11b096ff97" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/ChangeThemeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/ChangeThemeFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/CreateCustomFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/CreateCustomFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/FunctionParamsDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/FunctionParamsDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/StartupFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/resources/languagePackage_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/resources/languagePackage_en_US.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/resources/languagePackage_ru_RU.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/resources/languagePackage_ru_RU.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/FunctionClassLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/FunctionClassLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/FunctionTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/FunctionTableModel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,7 +23,7 @@
     <session id="901818908">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -54,29 +40,29 @@
         <counts>
           <entry key="class" value="1" />
           <entry key="dummy" value="5" />
-          <entry key="java" value="18363" />
+          <entry key="java" value="19473" />
           <entry key="languagePackage_en_EN" value="93" />
           <entry key="languagePackage_ru_RU" value="52" />
           <entry key="properties" value="1739" />
           <entry key="tld" value="14" />
-          <entry key="txt" value="47" />
-          <entry key="xml" value="55" />
+          <entry key="txt" value="69" />
+          <entry key="xml" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="18363" />
-          <entry key="PLAIN_TEXT" value="52" />
+          <entry key="JAVA" value="19473" />
+          <entry key="PLAIN_TEXT" value="74" />
           <entry key="Properties" value="1884" />
-          <entry key="XML" value="69" />
+          <entry key="XML" value="89" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="15" />
           <entry key="form" value="12" />
-          <entry key="java" value="83" />
+          <entry key="java" value="85" />
           <entry key="languagePackage_en_EN" value="1" />
           <entry key="languagePackage_ru_RU" value="1" />
           <entry key="null" value="1" />
@@ -91,7 +77,7 @@
         <counts>
           <entry key="CLASS" value="15" />
           <entry key="GUI_DESIGNER_FORM" value="12" />
-          <entry key="JAVA" value="83" />
+          <entry key="JAVA" value="85" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Properties" value="15" />
           <entry key="XML" value="6" />
@@ -107,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10">
-              <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
+            <state relative-caret-position="-3089">
+              <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1869#2056#0" expanded="true" />
@@ -123,10 +109,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionTableModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+            <state relative-caret-position="359">
+              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#884#885#0" expanded="true" />
+                <element signature="e#926#927#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+                <element signature="e#1010#1011#0" expanded="true" />
+                <element signature="e#1079#1080#0" expanded="true" />
+                <element signature="e#1114#1115#0" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
+                <element signature="e#1241#1242#0" expanded="true" />
+                <element signature="e#1313#1314#0" expanded="true" />
+                <element signature="e#1340#1341#0" expanded="true" />
+                <element signature="e#1407#1408#0" expanded="true" />
+                <element signature="e#1459#1460#0" expanded="true" />
+                <element signature="e#1539#1540#0" expanded="true" />
+                <element signature="e#1592#1593#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,35 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/gui/ChangeThemeFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="2" selection-start-column="2" selection-end-column="2" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="437">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -177,8 +153,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+            <state relative-caret-position="200">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#90#91#0" expanded="true" />
                 <element signature="e#142#143#0" expanded="true" />
@@ -208,7 +184,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionParamsDialog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="625">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#1942#2109#0" expanded="true" />
                 <element signature="e#2108#2109#0" expanded="true" />
@@ -292,7 +268,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/languagePackage_ru_RU" />
         <option value="$PROJECT_DIR$/src/main/gui/aaa.java" />
         <option value="$PROJECT_DIR$/src/main/gui/FunctionParamsDialog.form" />
-        <option value="$PROJECT_DIR$/src/main/gui/FunctionTableModel.java" />
         <option value="$PROJECT_DIR$/src/main/gui/MainWindow.form" />
         <option value="$PROJECT_DIR$/src/main/gui/ExpressionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/gui/CreateFunctioDialog.java" />
@@ -306,8 +281,6 @@
         <option value="$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java" />
         <option value="$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java" />
         <option value="$PROJECT_DIR$/src/main/gui/TabulatedFunctionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/gui/FunctionClassLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/gui/ChangeThemeFrame.java" />
         <option value="$PROJECT_DIR$/src/main/gui/ExitDialog.java" />
         <option value="$PROJECT_DIR$/src/main/gui/resources/languagePackage_ru_RU.properties" />
         <option value="$PROJECT_DIR$/src/main/gui/resources/languagePackage_en_US.properties" />
@@ -317,6 +290,9 @@
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/Runner.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/gui/ChangeThemeFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/FunctionClassLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/FunctionTableModel.java" />
       </list>
     </option>
   </component>
@@ -380,7 +356,20 @@
             <path>
               <item name="Lab_6" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab_6" type="462c0819:PsiDirectoryNode" />
-              <item name="saves" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab_6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab_6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab_6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab_6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,7 +384,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="319" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536862135683" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536865116601" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -416,7 +405,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainWindow">
+  <component name="RunManager" selected="Application.Runner">
     <configuration name="CreateCustomFunction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.CreateCustomFunction" />
       <module name="Lab_6" />
@@ -462,7 +451,6 @@
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="Lab_6" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -510,10 +498,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Runner" />
         <item itemvalue="Application.MainWindow" />
         <item itemvalue="Application.CreateCustomFunction" />
         <item itemvalue="Application.FunctionParamsDialog" />
-        <item itemvalue="Application.Runner" />
         <item itemvalue="Application.aaa" />
       </list>
     </recent_temporary>
@@ -538,7 +526,7 @@
       <workItem from="1536480623769" duration="56345000" />
       <workItem from="1536684241335" duration="8329000" />
       <workItem from="1536733001879" duration="4314000" />
-      <workItem from="1536848512302" duration="12172000" />
+      <workItem from="1536848512302" duration="14269000" />
     </task>
     <task id="LOCAL-00001" summary="Internationalize is working">
       <created>1536696668924</created>
@@ -547,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536696668925</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="I think it's ready">
+      <created>1536862190902</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1536862190902</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -556,13 +551,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111725000" />
+    <option name="totallyTimeSpent" value="113822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-29" width="1920" height="1064" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16614583" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16614583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -571,7 +565,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32740587" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32635984" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32635984" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39853558" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -602,7 +596,8 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="For restore" />
     <MESSAGE value="Internationalize is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Internationalize is working" />
+    <MESSAGE value="I think it's ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="I think it's ready" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -707,13 +702,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionParamsDialog.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="139" column="59" selection-start-line="139" selection-start-column="59" selection-end-line="139" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/functions/FunctionPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -814,36 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/gui/ChangeThemeFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/gui/StartupFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -877,7 +835,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionParamsDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#1942#2109#0" expanded="true" />
             <element signature="e#2108#2109#0" expanded="true" />
@@ -917,10 +875,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/ChangeThemeFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#917#1070#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2112">
+          <caret line="139" column="46" lean-forward="true" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="111" selection-start-line="11" selection-start-column="111" selection-end-line="11" selection-end-column="111" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#90#91#0" expanded="true" />
+            <element signature="e#142#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/gui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
+        <state relative-caret-position="-3089">
+          <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1869#2056#0" expanded="true" />
@@ -931,31 +939,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Runner.java">
+    <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+        <state relative-caret-position="359">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
           <folding>
-            <element signature="e#90#91#0" expanded="true" />
-            <element signature="e#142#143#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#926#927#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1010#1011#0" expanded="true" />
+            <element signature="e#1079#1080#0" expanded="true" />
+            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1313#1314#0" expanded="true" />
+            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1539#1540#0" expanded="true" />
+            <element signature="e#1592#1593#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="437">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
         </state>
       </provider>
     </entry>

@@ -5,12 +5,21 @@ import functions.TabulatedFunctionImpl;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
+/**
+ * Класс задающий модель таблицы точек
+ *
+ * @see DefaultTableModel
+ */
 public class FunctionTableModel extends DefaultTableModel {
 
+    /** Хедер таблицы */
     private static final String[] col_names = {"X", "Y"};
     @SuppressWarnings("FieldCanBeLocal")
+    /** Количество столбцов */
     private final int COLUMN_COUNT = 2;
+    /** Родительский компонент */
     private Component parent;
+    /** Функция*/
     private TabulatedFunctionImpl function;
 
     public FunctionTableModel(Component parent) {
