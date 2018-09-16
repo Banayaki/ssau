@@ -43,18 +43,6 @@ public final class Functions {
         double m = (function.getFunctionValue(x) + function.getFunctionValue(x2)) / 2;
         total += dx * m;
         return total;
-//        int repeats = (int) Math.ceil((function.getRightDomainBorder() - function.getLeftDomainBorder()) / step);
-//        double left = function.getLeftDomainBorder();
-//        double results = 0;
-//
-//        for (int i = 0; i < repeats; ++i) {
-//            results += (function.getFunctionValue(left) + function.getFunctionValue(left + step)) / 2 * step;
-//            left += step;
-//        }
-//        results += (function.getFunctionValue(left) + function.getFunctionValue(function.getRightDomainBorder())) / 2 *
-//                (function.getRightDomainBorder() - left);
-//
-//        return results;
     }
 
     public static double adaptiveIntegrate(FunctionImpl function, double x1, double x2, double dx) {

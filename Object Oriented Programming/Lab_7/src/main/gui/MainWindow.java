@@ -1,6 +1,11 @@
 package gui;
 
+import functions.basic.Log;
 import functions.exceptions.InappropriateFunctionPointException;
+import threads.Generator;
+import threads.SimpleGenerator;
+import threads.SimpleIntegrator;
+import threads.Task;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -13,7 +18,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.concurrent.Semaphore;
 
 @SuppressWarnings({"BoundFieldAssignment", "Duplicates"})
 public class MainWindow extends JFrame {
@@ -55,6 +62,11 @@ public class MainWindow extends JFrame {
     private JMenuItem checkForUpdatesItem;
     private JMenuItem aboutMenuItem;
 
+    private JMenu testMenu;
+    private JMenuItem nonThreadTestItem;
+    private JMenuItem simpleThreadTestItem;
+    private JMenuItem semaphoreTestItem;
+
     private TabulatedFunctionHandler functionHandler;
     private Locale russianLocale;
 
@@ -92,8 +104,25 @@ public class MainWindow extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        MainWindow window = new MainWindow();
+//    public static void main(String[] args) {
+//        MainWindow window = new MainWindow();
+//    }
+
+    private void testInit(JMenuBar menuBar) {
+        testMenu = new JMenu(setUpText("menu.test"));
+        nonThreadTestItem = new JMenuItem(setUpText("menu.test.nonthread"));
+        nonThreadTestItem.addActionListener(actionEvent -> nonThreadTest());
+
+        simpleThreadTestItem = new JMenuItem(setUpText("menu.test.simplethread"));
+        simpleThreadTestItem.addActionListener(actionEvent -> simpleThreadTest());
+
+        semaphoreTestItem = new JMenuItem(setUpText("menu.test.semaphore"));
+        semaphoreTestItem.addActionListener(actionEvent -> semaphoreThreadTest());
+
+        testMenu.add(nonThreadTestItem);
+        testMenu.add(simpleThreadTestItem);
+        testMenu.add(semaphoreTestItem);
+        menuBar.add(testMenu);
     }
 
     private void menuInit() {
@@ -102,6 +131,7 @@ public class MainWindow extends JFrame {
         tabulateMenuInit(menuBar);
         optionsMenuInit(menuBar);
         helpMenuInit(menuBar);
+        testInit(menuBar);
     }
 
     private void optionsMenuInit(JMenuBar parent) {
@@ -435,6 +465,48 @@ public class MainWindow extends JFrame {
         yPointLabel.setText(setUpText("new.point.y"));
         addPointButton.setText(setUpText("add.point.btn"));
         deletePointButton.setText(setUpText("delete.point.btn"));
+    }
+
+    private void nonThreadTest() {
+        int countOfTasks = 20000;
+        Random generator = new Random();
+        for (int i = 0; i < countOfTasks; ++i) {
+            double base = Math.abs(generator.nextGaussian() * 10);
+            double leftX = generator.nextDouble() * 100;
+            double rightX = generator.nextDouble() * 100 + 100;
+            double step = generator.nextDouble();
+            System.out.println("Source: {LeftBorder = " + leftX + ", RightBorder = " + rightX +
+                    ", SamplingStep = " + step + ", base = " + base + "}");
+            Task task = new Task(new Log(base), leftX, rightX, step);
+            double result = task.work();
+            System.out.println("Result: {" + result + "}");
+        }
+    }
+
+    private void simpleThreadTest() {
+        Thread thread = new Thread(new SimpleGenerator(new Task(), 2000));
+        thread.start();
+        try {
+            Thread.sleep(20);
+            thread.interrupt();
+            System.err.println("Thread interrupt signal");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void semaphoreThreadTest() {
+        Semaphore semaphore = new Semaphore(1);
+        Thread thread = new Generator(new Task(), semaphore, 2000);
+        thread.start();
+        try {
+            Thread.sleep(20);
+            thread.interrupt();
+            System.err.println("Thread interrupt signal");
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private void createUIComponents() {

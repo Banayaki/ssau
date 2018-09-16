@@ -12,6 +12,7 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 import javax.swing.*;
 import javax.swing.table.TableModel;
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
@@ -20,14 +21,14 @@ import java.util.ResourceBundle;
 
 public class CalculateDialog extends JDialog {
     private final String PATH_TO_RESOURCES = "gui/resources/languagePackage";
-
+    Icon errorIcon = new ImageIcon("./src/main/gui/resources/sad_cat.png");
 
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JPanel drawPanel;
-    private JLabel leftBorder;
-    private JLabel rightBorder;
+    private JLabel leftBorderLabel;
+    private JLabel rightBorderLabel;
     private JTextField leftBorderField;
     private JTextField rightBorderField;
     private JTextField samplingStepField;
@@ -37,14 +38,20 @@ public class CalculateDialog extends JDialog {
     private TableModel tableModel;
     private TabulatedFunctionImpl function;
     private Double result = null;
+    private double leftBorder;
+    private double rightBorder;
 
     public CalculateDialog(TableModel tableModel, TabulatedFunctionImpl function) {
         this.tableModel = tableModel;
         this.function = function;
+        drawPanel.add(draw());
 
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+        setMinimumSize(new Dimension(720, 620));
+        setResizable(false);
+        setIconImage((new ImageIcon("./src/main/gui/resources/icon.png")).getImage());
 
         buttonOK.addActionListener(e -> onOK());
 
@@ -70,7 +77,18 @@ public class CalculateDialog extends JDialog {
     private void onOK() {
         double x1 = Double.parseDouble(leftBorderField.getText());
         double x2 = Double.parseDouble(rightBorderField.getText());
+        if (x1 < leftBorder) {
+            String text = ResourceBundle.getBundle(PATH_TO_RESOURCES).getString("error.leftx");
+            JOptionPane.showMessageDialog(this, text, "Warning", JOptionPane.WARNING_MESSAGE, errorIcon);
+            return;
+        } else if (x2 > rightBorder) {
+            String text = ResourceBundle.getBundle(PATH_TO_RESOURCES).getString("error.rightx");
+            JOptionPane.showMessageDialog(this, text, "Warning", JOptionPane.WARNING_MESSAGE, errorIcon);
+            return;
+        }
+
         double sampling = Double.parseDouble(samplingStepField.getText());
+        if (sampling < 1E-5) sampling = 1E-5;
         if (integrateComboBox.getSelectedIndex() == 0) {
             result = Functions.adaptiveIntegrate(function, x1, x2, sampling);
         } else if (integrateComboBox.getSelectedIndex() == 1) {
@@ -91,11 +109,11 @@ public class CalculateDialog extends JDialog {
 
     private void filesInit() {
         int count = tableModel.getRowCount();
-        double x1 = (double) tableModel.getValueAt(0, 0);
-        double x2 = (double) tableModel.getValueAt(count - 1, 0);
-        double dx = (x2 - x1) / count;
-        leftBorderField.setText(String.valueOf(x1));
-        rightBorderField.setText(String.valueOf(x2));
+        leftBorder = (double) tableModel.getValueAt(0, 0);
+        rightBorder = (double) tableModel.getValueAt(count - 1, 0);
+        double dx = (rightBorder - leftBorder) / count;
+        leftBorderField.setText(String.valueOf(leftBorder));
+        rightBorderField.setText(String.valueOf(rightBorder));
         samplingStepField.setText(String.valueOf(dx));
 
         leftBorderField.addKeyListener(new KeyAdapter() {
@@ -158,6 +176,5 @@ public class CalculateDialog extends JDialog {
 
     private void createUIComponents() {
         drawPanel = new JPanel();
-        drawPanel.add(draw());
     }
 }
