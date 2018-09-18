@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e081c00f-3cb6-4d00-a681-4cb0aa2abeba" name="Default Changelist" comment="Work on lab7 starts. Added calcIntegral window">
+      <change afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/FunctionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_4/target/classes/functions/TabulatedFunctionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_5/target/classes/functions/FunctionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_5/target/classes/functions/TabulatedFunctionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/serial.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/Lab_6-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/Runner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/css/grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/css/normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/font-awesome/font/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/font-awesome/font/fontawesome-webfontd41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/font-awesome/font/fontawesome-webfontf77b.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/font-awesome/font/fontawesome-webfontf77b.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/font-awesome/font/fontawesome-webfontf77b.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/backstretch.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/big-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/big-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/big-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/big-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/big-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/big-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/thumb-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/thumb-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/thumb-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/thumb-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/thumb-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/img/thumb-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/easy-pie/jquery.easy-pie-chart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/easy-pie/jquery.easy-pie-chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery-1.10.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery-migrate-1.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery.backstretch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery.form.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery.mixitup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery.nav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery.scrollto.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery.sticky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery.validate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/jquery.validation.settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/magnific/jquery.magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/magnific/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/assets/js/respond.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/aboutpage/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/ArrayTabulatedFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/CustomTabulatedFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/ExpressionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/FunctionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/FunctionPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/Functions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/LinkedListTabulatedFunction$FunctionNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/LinkedListTabulatedFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/TabulatedFunctionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/TabulatedFunctions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/Utils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Cos.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Exp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Log.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Sin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/Tan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/basic/TrigonometricFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/exceptions/FunctionPointIndexOutOfBoundsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/exceptions/InappropriateFunctionPointException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Composition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Mult.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Power.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Scale.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Shift.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/functions/meta/Sum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/ChangeThemeFrame$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/ChangeThemeFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/CreateCustomFunction$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/CreateCustomFunction$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/CreateCustomFunction$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/CreateCustomFunction$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/CreateCustomFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/FunctionClassLoader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/FunctionParamsDialog$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/FunctionParamsDialog$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/FunctionParamsDialog$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/FunctionParamsDialog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/FunctionTableModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/MainWindow$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/MainWindow$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/MainWindow$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/MainWindow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/NumberFilterForFields.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/TabulatedFunctionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/resources/exit.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/resources/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/resources/languagePackage_en_US.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/resources/languagePackage_ru_RU.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/classes/gui/resources/sad_cat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_6/writer.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/threads/Generator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/threads/Integrator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/threads/SimpleGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/threads/SimpleIntegrator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/threads/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saves/xPOW3" beforeDir="false" afterPath="$PROJECT_DIR$/saves/xPOW3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/functions/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions/Functions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/CalculateDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/CalculateDialog.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/CalculateDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/CalculateDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/resources/languagePackage_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/resources/languagePackage_en_US.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/resources/languagePackage_ru_RU.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/resources/languagePackage_ru_RU.properties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="705305404">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="7977" />
+          <entry key="properties" value="42" />
+          <entry key="txt" value="51" />
+          <entry key="xml" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="7977" />
+          <entry key="PLAIN_TEXT" value="51" />
+          <entry key="Properties" value="42" />
+          <entry key="XML" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="7" />
+          <entry key="form" value="3" />
+          <entry key="java" value="20" />
+          <entry key="png" value="1" />
+          <entry key="properties" value="1" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="7" />
+          <entry key="GUI_DESIGNER_FORM" value="3" />
+          <entry key="Image" value="1" />
+          <entry key="JAVA" value="20" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/gui/CalculateDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6226#6227#0" expanded="true" />
+                <element signature="e#6266#6267#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/threads/Task.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#659#660#0" expanded="true" />
+                <element signature="e#690#691#0" expanded="true" />
+                <element signature="e#744#745#0" expanded="true" />
+                <element signature="e#784#785#0" expanded="true" />
+                <element signature="e#821#822#0" expanded="true" />
+                <element signature="e#854#855#0" expanded="true" />
+                <element signature="e#906#907#0" expanded="true" />
+                <element signature="e#950#951#0" expanded="true" />
+                <element signature="e#988#989#0" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1076#1077#0" expanded="true" />
+                <element signature="e#1122#1123#0" expanded="true" />
+                <element signature="e#1161#1162#0" expanded="true" />
+                <element signature="e#1196#1197#0" expanded="true" />
+                <element signature="e#1252#1253#0" expanded="true" />
+                <element signature="e#1300#1301#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/gui/MainWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="491" column="55" selection-start-line="491" selection-start-column="55" selection-end-line="491" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/threads/SimpleGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/threads/Generator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#112#143#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/threads/Integrator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/gui/TabulatedFunctionHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
+              <folding>
+                <element signature="e#1146#1147#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/threads/SimpleIntegrator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="16" column="5" selection-start-line="3" selection-start-column="3" selection-end-line="16" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>saveAs</find>
+      <find>setu</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/IdeaProjects/technoSpheraJava/atom" value="PREVIEW" />
+        <entry key="$USER_HOME$/IdeaProjects/technoSpheraJava/atom/lecture02" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/gui/resources/languagePackage_ru_RU.properties" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/gui/GraphicSeriesDataset.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/FunctionTableModel.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/TabulatedFunctionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/MainWindow.form" />
+        <option value="$PROJECT_DIR$/src/main/functions/Functions.java" />
+        <option value="$PROJECT_DIR$/src/main/threads/Simplegenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/CalculateDialog.form" />
+        <option value="$PROJECT_DIR$/src/main/gui/CalculateDialog.java" />
+        <option value="$PROJECT_DIR$/src/main/threads/Task.java" />
+        <option value="$PROJECT_DIR$/src/main/threads/SimpleIntegrator.java" />
+        <option value="$PROJECT_DIR$/src/main/threads/Integrator.java" />
+        <option value="$PROJECT_DIR$/src/main/threads/SimpleGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/threads/Generator.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/MainWindow.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-133" />
+    <option name="y" value="42" />
+    <option name="width" value="1360" />
+    <option name="height" value="999" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Lab_7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab_7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab_7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab_7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab_7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab_7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab_7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab_7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab_7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab_7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="threads" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537080220309" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Runner">
+    <configuration name="CalculateDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.CalculateDialog" />
+      <module name="Lab_7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphicSeriesDataset" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.GraphicSeriesDataset" />
+      <module name="Lab_7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Runner" />
+      <module name="Lab_7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Runner" />
+      <item itemvalue="Application.GraphicSeriesDataset" />
+      <item itemvalue="Application.CalculateDialog" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Runner" />
+        <item itemvalue="Application.CalculateDialog" />
+        <item itemvalue="Application.GraphicSeriesDataset" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e081c00f-3cb6-4d00-a681-4cb0aa2abeba" name="Default Changelist" comment="" />
+      <created>1536865139793</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1536865139793</updated>
+      <workItem from="1536865142941" duration="977000" />
+      <workItem from="1536905857025" duration="3275000" />
+      <workItem from="1536950666445" duration="2527000" />
+      <workItem from="1537003835250" duration="11137000" />
+      <workItem from="1537015044678" duration="7490000" />
+      <workItem from="1537034009749" duration="7804000" />
+    </task>
+    <task id="LOCAL-00001" summary="Work on lab7 starts. Added calcIntegral window">
+      <created>1537014684800</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1537014684801</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="33210000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1035" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20104167" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32901832" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.399137" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32901832" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32901832" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="Work on lab7 starts. Added calcIntegral window" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on lab7 starts. Added calcIntegral window" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/gui/CalculateDialog.java</url>
+          <line>152</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/gui/MainWindow.java</url>
+          <line>375</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/gui/MainWindow.java</url>
+          <line>490</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/threads/SimpleGenerator.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/gui/MainWindow.java</url>
+          <line>503</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/lang/Math.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/resources/sad_cat.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/exceptions/FunctionPointIndexOutOfBoundsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/resources/languagePackage_ru_RU.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.desktop/javax/swing/JOptionPane.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/chart/ChartFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="840" column="29" selection-start-line="840" selection-start-column="29" selection-end-line="840" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Algorithms_examples/TimeSeriesChartDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1067">
+          <caret line="144" column="5" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="144" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/GraphicSeriesDataset.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionParamsDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1445">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/FunctionTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="747">
+          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Log.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/util/ResourceBundle.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/FunctionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/CalculateDialog.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.desktop/java/awt/Container.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1312">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/threads/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+            <element signature="e#906#907#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1161#1162#0" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1252#1253#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/lang/Object.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/TabulatedFunctionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#1146#1147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/MainWindow.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/lang/Thread.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="161" column="11" selection-start-line="161" selection-start-column="11" selection-end-line="161" selection-end-column="11" />
+          <folding>
+            <element signature="e#5661#5662#0" expanded="true" />
+            <element signature="e#5746#5747#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/Functions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/CalculateDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6226#6227#0" expanded="true" />
+            <element signature="e#6266#6267#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/threads/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#112#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/threads/Integrator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/threads/SimpleIntegrator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="5" selection-start-line="3" selection-start-column="3" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/threads/SimpleGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="491" column="55" selection-start-line="491" selection-start-column="55" selection-end-line="491" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
