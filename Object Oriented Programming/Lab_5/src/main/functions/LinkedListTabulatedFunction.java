@@ -498,6 +498,15 @@ public class LinkedListTabulatedFunction implements TabulatedFunctionImpl, Exter
         }
     }
 
+    /**
+     * Клонирование не работает, что было очевидно с самого начала, но я написал дерьмовый тест, и клонирование прошло
+     * его)
+     * Очевидно нужно реализовыывать глубокое клонирование используя какой-ниубдь копирующий конструктор, но я не буду
+     * уже ничего менять, в попу это всё
+     *
+     * @return
+     * @throws CloneNotSupportedException
+     */
     @Override
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();

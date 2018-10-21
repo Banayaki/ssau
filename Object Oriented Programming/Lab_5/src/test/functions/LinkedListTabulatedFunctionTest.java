@@ -67,6 +67,7 @@ public class LinkedListTabulatedFunctionTest {
         TabulatedFunctionImpl copy = (TabulatedFunctionImpl) first.clone();
         System.out.println(copy.hashCode());
         assertEquals(copy, first);
+        copy.deletePoint(1);
         copy.addPoint(new FunctionPoint(110, 10));
         System.out.println(copy.hashCode());
         assertNotEquals(copy, first);

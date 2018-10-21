@@ -2,54 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23a29431-5eb7-45ae-a699-96bf4dc7911d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/CustomTabulatedFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/ExpressionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/ChangeThemeFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/CreateCustomFunction.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/CreateCustomFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/FunctionClassLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/FunctionParamsDialog.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/FunctionParamsDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/FunctionTableModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/MainWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/MainWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/NumberFilterForFields.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/StartupFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/TabulatedFunctionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/resources/languagePackage_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_6/src/main/gui/resources/languagePackage_ru_RU.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/functions/ArrayTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/functions/ArrayTabulatedFunctionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/ArrayTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/ArrayTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/FunctionImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/FunctionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/FunctionPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/LinkedListTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/LinkedListTabulatedFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/TabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/TabulatedFunctionImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/TabulatedFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/TabulatedFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Cos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Cos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Exp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Exp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Sin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Sin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Tan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/Tan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/TrigonometricFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/basic/TrigonometricFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Composition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Composition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Mult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Mult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Power.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Power.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Scale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Shift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/main/functions/meta/Sum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/test/functions/ArrayTabulatedFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/test/functions/ArrayTabulatedFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/test/functions/LinkedListTabulatedFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/test/functions/LinkedListTabulatedFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/test/functions/TabulatedFunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/test/functions/TabulatedFunctionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,7 +19,7 @@
     <session id="1098332412">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.15" value="1" />
@@ -71,20 +27,21 @@
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="1813" />
+          <entry key="java" value="1827" />
           <entry key="txt" value="9" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1813" />
+          <entry key="JAVA" value="1827" />
           <entry key="PLAIN_TEXT" value="13" />
           <entry key="XML" value="2" />
         </counts>
@@ -110,11 +67,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1040">
-              <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+            <state relative-caret-position="600">
+              <caret line="73" column="37" lean-forward="true" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -149,15 +106,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
+            <state relative-caret-position="832">
               <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docs/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -222,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/test/functions/FunctionPointTest.java" />
         <option value="$PROJECT_DIR$/src/main/functions/FunctionPoint.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" />
         <option value="$PROJECT_DIR$/src/main/functions/meta/Shift.java" />
         <option value="$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java" />
         <option value="$PROJECT_DIR$/src/main/functions/TabulatedFunctionImpl.java" />
@@ -234,6 +185,7 @@
         <option value="$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java" />
         <option value="$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java" />
         <option value="$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java" />
+        <option value="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" />
       </list>
     </option>
   </component>
@@ -255,17 +207,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Lab_5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab_5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab_5" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lab_5" type="b2602c69:ProjectViewProjectNode" />
@@ -311,14 +260,12 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536234411160" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539934565747" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab_6" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -336,7 +283,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ArrayTabulatedFunctionTest.copyTest">
+  <component name="RunManager" selected="JUnit.LinkedListTabulatedFunctionTest.copyTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -445,8 +392,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ArrayTabulatedFunctionTest.copyTest" />
         <item itemvalue="JUnit.LinkedListTabulatedFunctionTest.copyTest" />
+        <item itemvalue="JUnit.ArrayTabulatedFunctionTest.copyTest" />
         <item itemvalue="JUnit.TabulatedFunctionsTest" />
         <item itemvalue="JUnit.LinkedListTabulatedFunctionTest" />
         <item itemvalue="JUnit.FunctionPointTest" />
@@ -475,6 +422,7 @@
       <workItem from="1536234179493" duration="260000" />
       <workItem from="1536345442673" duration="23000" />
       <workItem from="1536586666313" duration="62000" />
+      <workItem from="1539934460017" duration="129000" />
     </task>
     <task id="LOCAL-00001" summary="Cleanup">
       <created>1536164271495</created>
@@ -487,15 +435,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LinkedListTabulatedFunctionTest_copyTest - 2018.09.05 at 19h 49m 25s.xml">
-      <configuration name="LinkedListTabulatedFunctionTest.copyTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LinkedListTabulatedFunctionTest - 2018.09.05 at 19h 49m 30s.xml">
-      <configuration name="LinkedListTabulatedFunctionTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LinkedListTabulatedFunctionTest_copyTest - 2018.09.05 at 23h 31m 37s.xml">
-      <configuration name="LinkedListTabulatedFunctionTest.copyTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ArrayTabulatedFunctionTest - 2018.09.06 at 12h 51m 05s.xml">
       <configuration name="ArrayTabulatedFunctionTest" configurationId="JUnit" />
     </history-entry>
@@ -517,14 +456,24 @@
     <history-entry file="ArrayTabulatedFunctionTest_copyTest - 2018.09.06 at 15h 46m 56s.xml">
       <configuration name="ArrayTabulatedFunctionTest.copyTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LinkedListTabulatedFunctionTest_copyTest - 2018.10.19 at 11h 35m 22s.xml">
+      <configuration name="LinkedListTabulatedFunctionTest.copyTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTabulatedFunctionTest_copyTest - 2018.10.19 at 11h 35m 56s.xml">
+      <configuration name="LinkedListTabulatedFunctionTest.copyTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTabulatedFunctionTest_copyTest - 2018.10.19 at 11h 36m 13s.xml">
+      <configuration name="LinkedListTabulatedFunctionTest.copyTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17236000" />
+    <option name="totallyTimeSpent" value="17365000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1035" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.178125" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.178125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -533,7 +482,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286638" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32765958" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39870688" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -666,10 +615,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/index.html" />
     <entry file="file://$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+        <state relative-caret-position="600">
+          <caret line="73" column="37" lean-forward="true" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -691,6 +641,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7280">
           <caret line="480" column="71" selection-start-line="480" selection-start-column="71" selection-end-line="480" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -724,16 +681,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
