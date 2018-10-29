@@ -99,7 +99,7 @@ public class LinkedListTabulatedFunction implements TabulatedFunction {
      * @see ArrayTabulatedFunction#ArrayTabulatedFunction(double, double, int)
      */
     public LinkedListTabulatedFunction(double leftX, double rightX, int pointCount) throws InappropriateFunctionPointException {
-        if (rightX < leftX || pointCount < 2 || Math.abs(leftX - rightX) < Utils.EPS) {
+        if (rightX < leftX || pointCount < 2 || Double.compare(leftX, rightX) == 0) {
             throw new IllegalArgumentException("Illegal argument: pointCount = " + pointCount + ", leftX = " + leftX
                     + ", rightX = " + rightX);
         }
@@ -121,7 +121,7 @@ public class LinkedListTabulatedFunction implements TabulatedFunction {
      * @see ArrayTabulatedFunction#ArrayTabulatedFunction(double, double, double[])
      */
     public LinkedListTabulatedFunction(double leftX, double rightX, double[] values) throws InappropriateFunctionPointException {
-        if (rightX < leftX || values.length < 2 || Math.abs(leftX - rightX) < Utils.EPS) {
+        if (rightX < leftX || values.length < 2 || Double.compare(leftX, rightX) == 0) {
             throw new IllegalArgumentException("Illegal argument: pointCount = " + values.length + ", leftX = " + leftX
                     + ", rightX = " + rightX);
         }

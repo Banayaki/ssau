@@ -31,7 +31,7 @@ public class ArrayTabulatedFunction implements TabulatedFunction {
      * @param pointCount - задает количество точек функции
      */
     public ArrayTabulatedFunction(double leftX, double rightX, int pointCount) {
-        if (pointCount < 2 || Math.abs(leftX - rightX) < Utils.EPS || rightX < leftX) {
+        if (pointCount < 2 || Double.compare(leftX, rightX) == 0 || rightX < leftX) {
             throw new IllegalArgumentException("Illegal argument, check them: pointCount = " + pointCount + ", leftX = " + leftX
                     + ", rightX = " + rightX);
         }
@@ -51,7 +51,7 @@ public class ArrayTabulatedFunction implements TabulatedFunction {
      * @param values - массив значений функции
      */
     public ArrayTabulatedFunction(double leftX, double rightX, @NotNull double[] values) {
-        if (values.length == 0 || Math.abs(leftX - rightX) < 10e-14 || rightX < leftX) {
+        if (values.length == 0 || Double.compare(leftX, rightX) == 0 || rightX < leftX) {
             throw new IllegalArgumentException("Illegal argument: leftX = " + leftX + ", rightX = " + rightX
                     + ", values[] - watch yourself");
         }

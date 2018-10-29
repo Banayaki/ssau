@@ -509,6 +509,16 @@ public class LinkedListTabulatedFunction implements TabulatedFunctionImpl, Exter
      */
     @Override
     protected Object clone() throws CloneNotSupportedException {
+        var length = this.getPointsCount();
+        FunctionPoint[] fps = new FunctionPoint[this.getPointsCount()];
+        for (int i = 0; i < length; ++i) {
+            fps[i] = new FunctionPoint(this.getPoint(i));
+        }
+        try {
+            return new LinkedListTabulatedFunction(fps);
+        } catch (InappropriateFunctionPointException e) {
+            e.printStackTrace();
+        }
         return super.clone();
     }
 }
