@@ -19,7 +19,7 @@ private:
     Polynom secondDerivative;
     double rootRadius;
 
-    MyVector<MyVector<double>> splitRoots();
+    MyVector<double> splitRoots();
 
     void derivativePolynom();
 

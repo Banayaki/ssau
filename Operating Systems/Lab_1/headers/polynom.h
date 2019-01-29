@@ -10,6 +10,8 @@ private:
 public:
     Polynom(double &coefficients, const int &countOfCoef);
 
+    Polynom();
+
     bool isHeterogeneity();
 
     int getDegreeOfPolynom();
@@ -19,6 +21,8 @@ public:
     MyVector<double> getAllCoefficients();
 
     void normalize();
+
+    double value(const double &x);
 
     string toString();
 };

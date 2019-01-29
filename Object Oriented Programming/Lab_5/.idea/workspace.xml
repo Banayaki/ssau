@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23a29431-5eb7-45ae-a699-96bf4dc7911d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Lab_1/Task2/MyFirstProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/Task2/MyFirstProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_2/.idea/libraries/Arquillian_JUnit_Release.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/.idea/libraries/Arquillian_JUnit_Release.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab_5.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/functions/LinkedListTabulatedFunctionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_6/saves/xPOW2-5x+10" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/saves/xPOW2-5x+10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_7/saves/xPOW2-5x+10" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_7/saves/xPOW2-5x+10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/src/main/functions/ArrayTabulatedFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/src/main/functions/ArrayTabulatedFunction.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,138 +22,29 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1098332412">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="13" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.17" value="2" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.20" value="2" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="13" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="4" />
-          <entry key="java" value="1827" />
-          <entry key="txt" value="9" />
-          <entry key="xml" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1827" />
-          <entry key="PLAIN_TEXT" value="13" />
-          <entry key="XML" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="7" />
-          <entry key="html" value="1" />
-          <entry key="java" value="35" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="7" />
-          <entry key="HTML" value="1" />
-          <entry key="JAVA" value="35" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.spring.boot.run.usages" />
-      <usages-collector id="statistics.spring.boot.mvc.usages" />
-      <usages-collector id="statistics.js.language.service.starts" />
-    </session>
+  <component name="CheckStyle-IDEA-workspace">
+    <option name="configuration">
+      <map>
+        <entry key="last-active-plugin-version" value="5.23.0" />
+      </map>
+    </option>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/functions/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="73" column="37" lean-forward="true" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Exp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4352">
-              <caret line="283" column="39" selection-start-line="283" selection-start-column="34" selection-end-line="283" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7280">
-              <caret line="480" column="71" selection-start-line="480" selection-start-column="71" selection-end-line="480" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/Cos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="631">
+              <caret line="499" lean-forward="true" selection-start-line="499" selection-end-line="499" />
             </state>
           </provider>
         </entry>
@@ -155,14 +53,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="$USER_HOME$/IdeaProjects/technoSpheraJava/atom" value="PREVIEW" />
-        <entry key="$USER_HOME$/IdeaProjects/technoSpheraJava/atom/lecture02" value="PREVIEW" />
-      </map>
-    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java" root0="FORCE_HIGHLIGHTING" />
@@ -177,7 +67,6 @@
         <option value="$PROJECT_DIR$/src/main/functions/meta/Shift.java" />
         <option value="$PROJECT_DIR$/src/main/functions/basic/TrigonometricFunction.java" />
         <option value="$PROJECT_DIR$/src/main/functions/TabulatedFunctionImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java" />
         <option value="$PROJECT_DIR$/src/main/functions/basic/Cos.java" />
         <option value="$PROJECT_DIR$/src/main/functions/basic/Sin.java" />
         <option value="$PROJECT_DIR$/src/main/functions/basic/Tan.java" />
@@ -186,14 +75,9 @@
         <option value="$PROJECT_DIR$/src/test/functions/TabulatedFunctionsTest.java" />
         <option value="$PROJECT_DIR$/src/test/functions/ArrayTabulatedFunctionTest.java" />
         <option value="$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="322" />
@@ -207,8 +91,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,32 +116,13 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="functions" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Lab_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab_5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-              <item name="basic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab_5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab_5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,6 +132,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab_6" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
@@ -375,7 +241,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="TestNG">
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -423,6 +289,8 @@
       <workItem from="1536345442673" duration="23000" />
       <workItem from="1536586666313" duration="62000" />
       <workItem from="1539934460017" duration="129000" />
+      <workItem from="1540111037106" duration="331000" />
+      <workItem from="1544963757557" duration="147000" />
     </task>
     <task id="LOCAL-00001" summary="Cleanup">
       <created>1536164271495</created>
@@ -431,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536164271496</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Cleanup">
+      <created>1540111210728</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540111210728</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -467,19 +342,20 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17365000" />
+    <option name="totallyTimeSpent" value="17843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.178125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.178125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="CheckStyle" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32765958" />
@@ -492,6 +368,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32901832" />
+      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -505,9 +382,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
@@ -618,8 +492,8 @@
     <entry file="file://$PROJECT_DIR$/docs/index.html" />
     <entry file="file://$PROJECT_DIR$/src/test/functions/LinkedListTabulatedFunctionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="73" column="37" lean-forward="true" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+        <state relative-caret-position="1104">
+          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -627,20 +501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4352">
-          <caret line="283" column="39" selection-start-line="283" selection-start-column="34" selection-end-line="283" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7280">
-          <caret line="480" column="71" selection-start-line="480" selection-start-column="71" selection-end-line="480" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -672,6 +532,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/ArrayTabulatedFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="283" column="39" selection-start-line="283" selection-start-column="34" selection-end-line="283" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/functions/TabulatedFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -682,5 +549,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/functions/LinkedListTabulatedFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="499" lean-forward="true" selection-start-line="499" selection-end-line="499" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>jquery</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Lab_5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

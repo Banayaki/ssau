@@ -26,11 +26,50 @@ MyVector<Root> PolynomResolver::solvePolynom() {
 
 }
 
-MyVector<MyVector<double>> PolynomResolver::splitRoots() {
+MyVector<double> PolynomResolver::splitRoots() {
+    auto spliters = MyVector<double>();
     double radius = this->rootRadius;
     double degree = this->polynom->getDegreeOfPolynom();
+    //todo оптимальный выбор
+    double dx = 10e-2;
+    double length = (radius + radius) / degree;
+    double left = radius;
+    double leftVal = 0;
+    double rightVal = 0;
+    double leftBorder;
+    double right = 0;
+    for (int i = 0; i <= degree; ++i) {
+        while (true) {
+            right = left + length;
+            leftBorder = left;
+
+            leftVal = this->polynom->value(left);
+            rightVal = this->polynom->value(right);
+//            Как минимум один корень на промежутке, возможно нужно что бы на промежутке он был единственный
+            if ((leftVal < 0 && rightVal > 0) || (leftVal > 0 && rightVal < 0)) {
+                leftVal = this->firstDerivative.value(left);
+                while (left < right) {
+                    rightVal = this->firstDerivative.value(left + dx);
+                    if ((leftVal < 0 && rightVal > 0) || (leftVal > 0 && rightVal < 0)) {
+                        //монотонна слева
+                        left = right;
+                        break;
+                    }
+                    leftVal = rightVal;
+                    left += dx;
+                }
+                break;
+
+            } else {
+                left = right;
+            }
+        }
 
 
+        spliters.push_back(leftBorder);
+        spliters.push_back(left);
+    }
+    return spliters;
 }
 
 /**
