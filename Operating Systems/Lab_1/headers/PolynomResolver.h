@@ -1,23 +1,25 @@
 #ifndef LAB_1_POLYNOMRESOLVER_H
 #define LAB_1_POLYNOMRESOLVER_H
 
-#include "polynom.h"
+#include "Polynom.h"
 
 class PolynomResolver {
 public:
-    PolynomResolver(Polynom &polynom);
+    PolynomResolver();
 
-    bool hasTrivialSolution();
+    PolynomResolver(const Polynom &polynom);
 
-    MyVector<Root> onlyRealRoots();
+    MyVector<double> solvePolynom();
 
-    MyVector<Root> solvePolynom();
+    void target(const Polynom &polynom);
+
+    string toString();
 
 private:
-    Polynom *polynom;
+    Polynom polynom;
     Polynom firstDerivative;
-    Polynom secondDerivative;
     double rootRadius;
+    double EPS = 10e-6;
 
     MyVector<double> splitRoots();
 

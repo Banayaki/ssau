@@ -4,11 +4,11 @@
 class Polynom {
 private:
     MyVector<double> coefficients;
-    const int *degree;
+    int degree;
 
 
 public:
-    Polynom(double &coefficients, const int &countOfCoef);
+    Polynom(double *coefficients, const int &countOfCoef);
 
     Polynom();
 

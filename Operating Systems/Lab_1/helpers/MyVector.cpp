@@ -1,16 +1,21 @@
+
+
+#include <string>
+
 template<class T>
 class MyVector {
 private:
     T *vector;
-    int vectorSize;
+    int vectorSize{};
 public:
     MyVector() {
         this->vectorSize = 0;
         this->vector = new T[this->vectorSize];
     }
 
-    MyVector(const T &content, const int &size) {
-        this->vectorSize = size;
+    MyVector(const T *content, const int &size) {
+        this->vectorSize = 0;
+        vector = new T[1];
         for (int i = 0; i < size; ++i) {
             this->push_back(content[i]);
         }
@@ -49,5 +54,13 @@ public:
 
     bool isEmpty() {
         return this->size() == 0;
+    }
+
+    std::string toString() {
+        std::string str = "";
+        for (int i = 0; i < this->vectorSize; ++i) {
+            str += to_string(this->vector[i]) + " ";
+        }
+        return str;
     }
 };

@@ -12,10 +12,12 @@
 #include <iomanip>
 #include <time.h>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
 const string WAITING_PAIR_XY = "Waiting for pair (x,y), where x, y is coordinates of a point";
+const string ERROR = "Error";
 const string FILE_FORMAT = ".txt";
 const string OUT_OF_BOUNDS = "index: out of bounds.";
 const string INCORRECT_INPUT = "Incorrect input, try again.";
@@ -33,9 +35,8 @@ const char NO = 'n';
 
 #include "../helpers/Executor.cpp"
 #include "../helpers/MyVector.cpp"
-#include "../helpers/LinkedList.cpp"
 #include "Root.h"
 #include "PolynomResolver.h"
-#include "polynom.h"
+#include "Polynom.h"
 
-#endif //SSAU_MYCLASSES_H
+#endif //MYCLASSES_H

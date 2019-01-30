@@ -1,5 +1,4 @@
 #pragma once
-
 #include "../headers/GeneralHeader.h"
 
 class Executor {
@@ -21,9 +20,9 @@ private:
 
     string readFileName() {
         string line;
-        cout << R"(Enter a name of txt file from C:\Users\Banayaki\Desktop\tests\ )" << endl;
+        cout << R"(Enter a name of txt file)" << endl;
         cin >> line;
-        while (line == "output.txt") { //При некорректном вводе запрашиваем ввод повторно, перед этим очищая поток
+        while (line == "output.txt") {
             cout << INCORRECT_INPUT << endl;
             clearInputStream(cin);
             cin >> line;
@@ -35,6 +34,7 @@ public:
         while (1.0 + this->EPS != 1.0) {
             this->EPS /= 2.0;
         }
+        fout.open("../out/output.txt");
     }
 
     ~Executor() {
@@ -72,52 +72,12 @@ public:
         cout << "Do you wish to continue? (y or n)" << endl;
         char wish;
         cin >> wish;
-        while (!cin || seek(cin) != EOL || wish != YES && wish != NO) {
+        while (!cin || seek(cin) != EOL || (wish != YES && wish != NO)) {
             clearInputStream(cin);
             cout << INCORRECT_INPUT << endl;
             cin >> wish;
         }
         return wish == YES;
-    }
-
-    void openFile() {
-        string path;
-        path = R"(C:\Users\Banayaki\Desktop\tests\)";
-        string fileName = readFileName();
-        path += fileName;
-        fin.open(path);
-        deleteSpaces();
-        if (!checkFormat(path)) {
-            cout << "Incorrect file format. You need .txt file" << endl;
-            fin.close();
-        } else if (!fin.is_open()) {
-            cout << "File does not exist, try again" << endl;
-            fin.close();
-        } else if (fin.eof()) {
-            cout << "Empty file, try again" << endl;
-            fin.close();
-        } else printAll("File: " + fileName + " is opened");
-    }
-
-    void openFile(const string &fileName) {
-        if (fin.is_open()) fin.close();
-        string path = R"(C:\Users\Banayaki\Desktop\tests\)";
-        path += fileName;
-        fin.open(path);
-        deleteSpaces();
-        if (!checkFormat(path)) {
-            cout << "Incorrect file format. You need .txt file" << endl;
-            fin.close();
-            throw ERROR;
-        } else if (!fin.is_open()) {
-            cout << "File does not exist" << endl;
-            fin.close();
-            throw ERROR;
-        } else if (fin.eof()) {
-            cout << "Empty file" << endl;
-            fin.close();
-            throw ERROR;
-        } else printAll("File: " + fileName + " is opened");
     }
 
     ifstream &getFin() {
@@ -126,9 +86,5 @@ public:
 
     ofstream &getFout() {
         return this->fout;
-    }
-
-    double getEps() {
-        return this->EPS;
     }
 };
