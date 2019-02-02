@@ -1,0 +1,18 @@
+Данная программа является результатом выполнения лабораторной работы курса "Операционные системы".\r\n
+
+NAME
+    Server.py
+SYNOPSIS
+    Server.py [n]
+    Where 'n' - count of clients
+
+Сервер генерирует n клиентов и для каждого из них свобственную fifos,
+клиенты в свою очередь открывают терминал и ожидают поступления в fifos команд.
+
+COMMANDS
+    help - displays information about script
+    quit - closing the server and destroy all clients
+    color [n] - choose random color for clients terminal with id 'n'
+    default [n] - switch color clients terminal with id 'n' on default
+    client_list - shows ids of generated clients
+    theme_list - shows list of available themes
