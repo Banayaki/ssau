@@ -1,8 +1,10 @@
 package banayaki.HotelLifeEmulator.gui.main;
 
+import banayaki.HotelLifeEmulator.gui.map.MapView;
+
 import javax.swing.*;
 
-public class MainPanel extends JPanel {
+public class MainPanel {
 
     private JPanel leftGroupPanel;
     private JPanel rightGroupPanel;
@@ -13,12 +15,25 @@ public class MainPanel extends JPanel {
     private JPanel controlButtonsPanel;
     private JPanel threadInfoPanel;
     private JList eventList;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
+    private JButton pauseButton;
+    private JButton stopButton;
+    private JButton startButton;
     private JTable hotelInfoTable;
     private JTable threadInfoTable;
     private JScrollPane hotelInfoScrollPane;
     private JScrollPane eventListScrollPane;
     private JScrollPane threadInfoScrollPane;
+    public JPanel rootPanel;
+
+    public MainPanel() {
+
+    }
+
+
+    public static void main(String[] args) {
+    }
+
+    private void createUIComponents() {
+        mapPanel = new MapView();
+    }
 }

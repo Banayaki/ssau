@@ -14,15 +14,16 @@ public class MainWindow extends JFrame {
 
     private void setupView() {
         setTitle("Hotel Life Emulator");
-        setResizable(false);
+        setResizable(true);
 //        setIconImage();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-//        setSize(new Dimension(300, 400));
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        setSize(new Dimension(300, 400));
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
     }
 
     private void setupComponents() {
-        add(new MainPanel());
+        setContentPane(new MainPanel().rootPanel);
     }
 
     public static void main(String[] args) {
