@@ -5,7 +5,10 @@ private:
     Executor executor;
 
     void solve(int degree, double *coefs) {
-        PolynomResolver polynomResolver;
+        double dx = 10e-6;
+        double length = 10e-5;
+
+        PolynomResolver polynomResolver(dx, length);
 
         auto *polynom = new Polynom(coefs, degree);
         polynomResolver.target(*polynom);
@@ -56,10 +59,6 @@ public:
 
         coefs = new double[6]{3, -5, -7, -4, -10};
         solve(degree, coefs);
-    }
-
-    void userTest() {
-
     }
 };
 

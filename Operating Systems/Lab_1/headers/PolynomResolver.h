@@ -4,8 +4,12 @@
 #include "Polynom.h"
 
 class PolynomResolver {
+private:
+    double dx;
+    double length;
+
 public:
-    PolynomResolver();
+    PolynomResolver(const double &dx, const double &length);
 
     PolynomResolver(const Polynom &polynom);
 

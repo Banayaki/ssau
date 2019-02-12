@@ -1,5 +1,7 @@
 package banayaki.HotelLifeEmulator.gui.main;
 
+import banayaki.HotelLifeEmulator.gui.helpers.ThreadsSpawner;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -27,7 +29,9 @@ public class MainWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        new MainWindow();
+        EventQueue.invokeLater(MainWindow::new);
+        ThreadsSpawner spawner = new ThreadsSpawner();
+        spawner.run();
     }
 
 }

@@ -13,7 +13,8 @@ class Server:
         "Breeze",
         "Maia",
         "Oxygen",
-        "RedOnBlack"
+        "RedOnBlack",
+        "Solorized"
     ]
 
     atomicInteger = 0
@@ -39,10 +40,10 @@ class Server:
     def print_list_of_clients(self):
         print(self.id_list)
 
-    def change_client_color(self, user_id: int):
+    def change_client_color(self, user_id: int, theme: int):
         name = self.prefix + str(user_id)
         f = open(name, 'w')
-        f.write("colors=" + random.choice(self.listOfThemes))
+        f.write("colors=" + self.listOfThemes[theme])
         f.close()
         pass
 
@@ -95,11 +96,12 @@ if __name__ == "__main__":
                 print(f.read())
                 f.close()
 
-            elif re.match(r'^color \d*$', string):
+            elif re.match(r'^color \d \d$', string):
                 pid = int(string.split(' ')[1])
+                theme = int(string.split(' ')[2])
                 print("Sending message to " + str(pid))
                 if pid in server.id_list:
-                    server.change_client_color(pid)
+                    server.change_client_color(pid, theme)
                     print("Color should be changed")
                 else:
                     print("Unknown id: call 'client_list' command")

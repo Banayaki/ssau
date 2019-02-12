@@ -2,13 +2,12 @@ package banayaki.HotelLifeEmulator.gui.cells;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 public class HotelView extends View {
 
-    private static final String PATH = "/home/banayaki/PreFire/ssau/Operating Systems/Lab_3_4/src/main/resources/hotel.png";
+    private static final String PATH = "src/main/resources/hotel.png";
 
     public HotelView() {
 

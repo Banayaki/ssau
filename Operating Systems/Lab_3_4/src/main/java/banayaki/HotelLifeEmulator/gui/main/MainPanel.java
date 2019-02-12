@@ -1,5 +1,8 @@
 package banayaki.HotelLifeEmulator.gui.main;
 
+import banayaki.HotelLifeEmulator.gui.info.EventListModel;
+import banayaki.HotelLifeEmulator.gui.info.HotelInfoTableModel;
+import banayaki.HotelLifeEmulator.gui.info.ThreadsTableModel;
 import banayaki.HotelLifeEmulator.gui.map.MapView;
 
 import javax.swing.*;
@@ -14,7 +17,7 @@ public class MainPanel {
     private JPanel mapPanel;
     private JPanel controlButtonsPanel;
     private JPanel threadInfoPanel;
-    private JList eventList;
+    private JList<String> eventList;
     private JButton pauseButton;
     private JButton stopButton;
     private JButton startButton;
@@ -25,15 +28,24 @@ public class MainPanel {
     private JScrollPane threadInfoScrollPane;
     public JPanel rootPanel;
 
-    public MainPanel() {
-
-    }
-
-
-    public static void main(String[] args) {
+    MainPanel() {
+        setupTables();
+        setupEventList();
     }
 
     private void createUIComponents() {
         mapPanel = new MapView();
+    }
+
+
+    private void setupTables() {
+        hotelInfoTable.setModel(new HotelInfoTableModel(hotelInfoScrollPane));
+        threadInfoTable.setModel(new ThreadsTableModel(threadInfoScrollPane));
+    }
+
+    private void setupEventList() {
+        eventList.setDragEnabled(false);
+        eventList.setAutoscrolls(true);
+        eventList.setModel(new EventListModel());
     }
 }

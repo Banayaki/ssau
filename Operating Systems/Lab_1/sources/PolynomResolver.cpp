@@ -1,7 +1,8 @@
 #include "../headers/GeneralHeader.h"
 
-PolynomResolver::PolynomResolver() {
-
+PolynomResolver::PolynomResolver(const double &dx, const double &length) {
+    this->dx = dx;
+    this->length = length;
 }
 
 PolynomResolver::PolynomResolver(const Polynom &polynom) {
@@ -31,10 +32,10 @@ MyVector<double> PolynomResolver::solvePolynom() {
 
     double x = 0;
     double approxRoot = 0;
-    bool isRoot = true;
+    bool isRoot;
     for (int i = 0; i < delimiters.size(); i += 2) {
         isRoot = true;
-        x = delimiters[i];
+        x = (delimiters[i] + delimiters[i + 1]) / 2;
         approxRoot = x - (this->polynom.value(x) / this->firstDerivative.value(x));
         while (abs(x - approxRoot) > this->EPS) {
             x = approxRoot;
@@ -54,8 +55,8 @@ MyVector<double> PolynomResolver::solvePolynom() {
 
 MyVector<double> PolynomResolver::splitRoots() {
     //Precision parameters
-    double dx = 10e-6;
-    double length = 10e-5;
+    double dx = this->dx;
+    double length = this->length;
 
     MyVector<double> delimiters;
     double radius = this->rootRadius;
