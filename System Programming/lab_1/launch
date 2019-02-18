@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# nasm -f elf first_lab.asm
+# gcc -m32 -o runner first_lab.o
+# ./runner
+
+string="$1"
+# echo ${string/asm/o}
+nasm -f elf $string
+gcc -m32 -o ${string/o/} ${string/asm/o}
+./${string/o/}
