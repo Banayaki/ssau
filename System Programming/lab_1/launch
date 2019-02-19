@@ -5,7 +5,11 @@
 # ./runner
 
 string="$1"
+
+# echo $string
 # echo ${string/asm/o}
+# echo ${string/.asm/}
+
 nasm -f elf $string
-gcc -m32 -o ${string/o/} ${string/asm/o}
-./${string/o/}
+gcc -m32 -o ${string/.asm/} ${string/asm/o}
+./${string/.asm/}
