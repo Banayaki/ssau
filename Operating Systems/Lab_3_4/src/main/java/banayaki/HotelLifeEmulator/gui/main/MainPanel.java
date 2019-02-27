@@ -1,6 +1,5 @@
 package banayaki.HotelLifeEmulator.gui.main;
 
-import banayaki.HotelLifeEmulator.gui.info.EventListModel;
 import banayaki.HotelLifeEmulator.gui.info.HotelInfoTableModel;
 import banayaki.HotelLifeEmulator.gui.info.ThreadsTableModel;
 import banayaki.HotelLifeEmulator.gui.map.MapView;
@@ -11,8 +10,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import javax.swing.*;
-import javax.swing.table.TableModel;
-import java.util.concurrent.BlockingQueue;
 
 @Component("mainPanel")
 public class MainPanel {
@@ -38,22 +35,18 @@ public class MainPanel {
     private JScrollPane threadInfoScrollPane;
     public JPanel rootPanel;
 
-    MainPanel() { }
+    MainPanel() {
+        logger.info("Creating mainPanel");
+    }
 
     private void createUIComponents() {
         mapPanel = new MapView();
     }
 
-
-    private void setupTables() {
-//        hotelInfoTable.setModel(new HotelInfoTableModel(hotelInfoScrollPane));
-//        threadInfoTable.setModel(new ThreadsTableModel(threadInfoScrollPane));
-    }
-
     @Autowired
     @Resource(name = "eventModel")
     public void setEventModel(ListModel model) {
-        logger.info("Set eventModel");
+        logger.info("Set <eventModel> in mainPanel");
         eventList.setDragEnabled(false);
         eventList.setAutoscrolls(true);
         eventList.setModel(model);
@@ -62,20 +55,15 @@ public class MainPanel {
     @Autowired
     @Resource(name = "hotelModel")
     public void setHotelModel(HotelInfoTableModel model) {
-        logger.info("Set hotelModel");
+        logger.info("Set <hotelModel> in mainPanel");
         hotelInfoTable.setModel(model);
     }
 
     @Autowired
     @Resource(name = "threadModel")
     public void setThreadModel(ThreadsTableModel model) {
-        logger.info("Set threadModel");
+        logger.info("Set <threadModel> in mainPanel");
         threadInfoTable.setModel(model);
     }
 
-    void setQueues(BlockingQueue eventInfo, BlockingQueue hotelInfo, BlockingQueue threadInfo) {
-        ((EventListModel) eventList.getModel()).setEventInfoQueue(eventInfo);
-        ((HotelInfoTableModel) hotelInfoTable.getModel()).setHotelInfoQueue(hotelInfo);
-        ((ThreadsTableModel) threadInfoTable.getModel()).setThreadInfoQueue(threadInfo);
-    }
 }

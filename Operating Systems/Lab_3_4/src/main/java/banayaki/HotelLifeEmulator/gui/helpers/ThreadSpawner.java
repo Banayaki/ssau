@@ -1,17 +1,18 @@
 package banayaki.HotelLifeEmulator.gui.helpers;
 
 import banayaki.HotelLifeEmulator.logic.entityes.HumanEntity;
-import org.apache.logging.log4j.LogManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
-public class ThreadsSpawner extends ThreadGroup implements Runnable {
-    private static final Logger logger = LoggerFactory.getLogger(ThreadsSpawner.class);
+@Service("threadSpawner")
+public class ThreadSpawner extends ThreadGroup implements Runnable {
+    private static final Logger logger = LoggerFactory.getLogger(ThreadSpawner.class);
     private Thread thread;
 
-    public ThreadsSpawner() {
+    public ThreadSpawner() {
         super("Guests thread group");
         thread = new Thread((Runnable) this, "Guest Thread Spawner");
     }

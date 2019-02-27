@@ -5,13 +5,12 @@ import banayaki.HotelLifeEmulator.gui.info.HotelInfoTableModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 @SuppressWarnings("unchecked")
 @Service("threadController")
 public class ThreadsController {
-    private ThreadsSpawner spawner;
+    private ThreadSpawner spawner;
     private BlockingQueue eventInfoQueue;
     private BlockingQueue hotelInfoQueue;
     private BlockingQueue threadsInfoQueue;
@@ -28,12 +27,12 @@ public class ThreadsController {
         this.threadsInfoQueue = threadsInfoQueue;
     }
 
-    public ThreadsController() {
-        spawner = new ThreadsSpawner();
+    @Autowired
+    public void setSpawner(ThreadSpawner spawner) {
+        this.spawner = spawner;
     }
 
     public void startEndlessSpawn() {
-        eventInfoQueue.add("asdsafasfdf");
         spawner.getThread().start();
     }
 

@@ -1,9 +1,14 @@
 package banayaki.HotelLifeEmulator.logic.entityes;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 import java.util.StringJoiner;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Component
+@Scope(value = "prototype")
 public class HumanEntity extends Thread {
 
     private static final AtomicInteger ID = new AtomicInteger();
@@ -27,7 +32,6 @@ public class HumanEntity extends Thread {
 
     public void live() {
         try {
-
             boolean isInHotel = hotel.toServe(this);
             if (isInHotel) {
                 Thread.sleep(timeToLive);
