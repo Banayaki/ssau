@@ -39,6 +39,16 @@ public class HotelEntity {
         return isInHotel;
     }
 
+    public void toEvict(HumanEntity humanEntity, RoomEntity roomEntity) {
+        try {
+            semaphore.acquire();
+            roomEntity.evict(humanEntity);
+            semaphore.release();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private RoomEntity checkFreeRoom(char gender) {
         String target;
@@ -48,7 +58,7 @@ public class HotelEntity {
             target = RoomEntity.ENGAGE_BY_MAN;
 
         RoomEntity result = null;
-        RoomEntity room = null;
+        RoomEntity room;
 
         for (RoomEntity doubleRoom : doubleRooms) {
             room = doubleRoom;
@@ -58,7 +68,7 @@ public class HotelEntity {
                 result = room;
         }
         if (result != null)
-            return room;
+            return result;
         else {
             for (RoomEntity soloRoom : soloRooms) {
                 if (soloRoom.engageBy().equals(RoomEntity.NOT_ENGAGED)) {
@@ -67,18 +77,19 @@ public class HotelEntity {
             }
         }
 
-        return room;
+        return result;
     }
 
     private void generateRooms() {
         soloRooms = new HashSet<>();
-        for (int i = 0; i < doubleRoomsCount; ++i) {
+        for (int i = 0; i < soloRoomsCount; ++i) {
             soloRooms.add(new RoomEntity(1));
         }
 
         doubleRooms = new HashSet<>();
-        for (int i = 0; i < soloRoomsCount; ++i) {
+        for (int i = 0; i < doubleRoomsCount; ++i) {
             doubleRooms.add(new RoomEntity(2));
         }
     }
+
 }

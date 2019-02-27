@@ -1,5 +1,8 @@
 package banayaki.HotelLifeEmulator.logic.entityes;
 
+import java.util.Arrays;
+import java.util.StringJoiner;
+
 public class RoomEntity {
 
     public static final String ENGAGE_BY_MAN = "man";
@@ -44,7 +47,7 @@ public class RoomEntity {
                 returnVal = ENGAGE_BY_MAN;
             }
 
-            if (freePlaces[i] != null && freePlaces[i].getGender() == HumanEntity.MAN_GENDER) {
+            if (freePlaces[i] != null && freePlaces[i].getGender() == HumanEntity.WOMAN_GENDER) {
                 ++counter;
                 returnVal = ENGAGE_BY_WOMAN;
             }
@@ -54,5 +57,11 @@ public class RoomEntity {
         return returnVal;
     }
 
-
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", RoomEntity.class.getSimpleName() + "[", "]")
+                .add("countOfPlaces=" + countOfPlaces)
+                .add("freePlaces=" + Arrays.toString(freePlaces))
+                .toString();
+    }
 }

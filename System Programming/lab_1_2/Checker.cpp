@@ -20,13 +20,18 @@ int function(int a, int b, int c) {
 int main() {
     try {
         int a, b, c;
-        executor.openFile("Props.txt");
-        executor.getFin() >> a;
-        executor.getFin() >> b;
-        executor.getFin() >> c;
-        executor.printAll("Calculating the expression with params: a = " + to_string(a) + ", b = " + to_string(b) +
-                          ", c = " + to_string(c));
-        executor.printAll(to_string(function(a, b, c)));
+        while (true) {
+            a = executor.getInteger();
+            b = executor.getInteger();
+            c = executor.getInteger();
+            executor.openFile("Props.txt");
+            executor.printAll("Calculating the expression with params: a = " + to_string(a) + ", b = " + to_string(b) +
+                              ", c = " + to_string(c));
+            executor.printAll(to_string(function(a, b, c)));
+            if (!executor.wishToContinue())
+                return 0;
+        }
+
     } catch (exception &e) {
         cout << "Exception thrown: " + string(e.what());
     }

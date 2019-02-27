@@ -1,8 +1,10 @@
 package banayaki.HotelLifeEmulator.logic.entityes;
 
+import java.util.Random;
+import java.util.StringJoiner;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class    HumanEntity extends Thread {
+public class HumanEntity extends Thread {
 
     private static final AtomicInteger ID = new AtomicInteger();
     private final HotelEntity hotel = HotelEntity.getInstance();
@@ -12,6 +14,7 @@ public class    HumanEntity extends Thread {
 
     private char gender;
     private RoomEntity room;
+    private int timeToLive = 5000 + new Random().nextInt(5000);
 
     public HumanEntity(ThreadGroup group, char gender) {
         super(group, HumanEntity.class.getName() + ID.addAndGet(1));
@@ -23,14 +26,12 @@ public class    HumanEntity extends Thread {
     }
 
     public void live() {
-        System.out.println(this.getName() + " alive");
         try {
+
             boolean isInHotel = hotel.toServe(this);
             if (isInHotel) {
-                System.out.println(this.getName() + " live in hotel");
-                Thread.sleep(1000);
-                room.evict(this);
-                System.out.println(this.getName() + " not in hotel now");
+                Thread.sleep(timeToLive);
+                hotel.toEvict(this, room);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -41,6 +42,14 @@ public class    HumanEntity extends Thread {
         this.room = room;
     }
 
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", HumanEntity.class.getSimpleName() + "[", "]")
+                .add("name=" + this.getName())
+                .add("gender=" + gender)
+                .add("liveTime=" + timeToLive + "ms")
+                .toString();
+    }
 
     @Override
     public void run() {

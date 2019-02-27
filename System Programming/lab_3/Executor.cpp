@@ -95,6 +95,18 @@ public:
         return wish == YES;
     }
 
+    int getInteger() {
+        cout << "Enter the integer" << endl;
+        int num;
+        cin >> num;
+        while (!cin || seek(cin) != EOL) {
+            clearInputStream(cin);
+            cout << INCORRECT_INPUT << endl;
+            cin >> num;
+        }
+        return num;
+    }
+
     void openFile() {
         string path;
         path = get_current_dir_name();

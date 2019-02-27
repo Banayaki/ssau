@@ -1,5 +1,3 @@
-; (2*c - b/2 +1)/(a*a-7); a=sqrt(7) is bad number
-
                                                                 ;Макрос (аля функция) с двумя параметрами print(str, format0)
 %macro PRINT 2      
     push eax                                                    ;во время вызова printf следующие регистры сбросятся. Что бы избежать этого, временно уберем их в стек
@@ -38,8 +36,8 @@ section .data                                                   ;секция о
     bigger dd "A bigger than B"
     equal dd "A = B"
     less dd "A less than B"
-    a_params dd 0, 1, 2, 30, 4, 5, 3
-    b_params dd 9, 10, 2, 3, 2, 5, 10
+    a_params dd 0, 1, 2, 30, 4, 5, 0
+    b_params dd 9, 10, 2, 3, 2, 5, 0
     count dd 7                                                  ;количество циклов (наборов)
     format_number dd ' %2d', 0x0a                               ;0x0a = \n, 0
     format_text dd ' %s ', 0x0a
@@ -52,10 +50,10 @@ section .text                                                   ;директи�
             push dword [b_params + (ecx-1)*4]
             push ecx
             call function
+            PRINT eax, format_number
             pop ecx
             pop dword [temp]                                    ;держим стек чистым
             pop dword [temp]
-            PRINT eax, format_number
             loop .cycle 
         call exit
 

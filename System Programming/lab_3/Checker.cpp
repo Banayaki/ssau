@@ -17,17 +17,17 @@ int function(int a, int b) {
 
 int main() {
     try {
-        int a, b;
-        executor.openFile("Props.txt");
-        executor.getFin() >> a;
-        executor.getFin() >> b;
-        executor.printAll("Calculating the expression with params: a = " + to_string(a) + ", b = " + to_string(b));
-        executor.printAll(to_string(function(a, b)));
+        while (true) {
+            int a, b;
+            executor.openFile("Props.txt");
+            a = executor.getInteger();
+            b = executor.getInteger();
+            executor.printAll("Calculating the expression with params: a = " + to_string(a) + ", b = " + to_string(b));
+            executor.printAll(to_string(function(a, b)));
+            if (!executor.wishToContinue())
+                return 0;
+        }
     } catch (exception &e) {
         cout << "Exception thrown: " + string(e.what());
     }
-
-}
-
-void check(const int &number) {
 }
