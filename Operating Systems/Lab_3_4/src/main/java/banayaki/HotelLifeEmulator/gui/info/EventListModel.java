@@ -18,8 +18,9 @@ public class EventListModel extends DefaultListModel<String> implements Runnable
 
     public EventListModel() {
         addElement("List of events");
-        this.setSize(100);
+        this.setSize(1);
         thread = new Thread(this, "EventListModel");
+        thread.setDaemon(true);
     }
 
     @Autowired
@@ -35,17 +36,22 @@ public class EventListModel extends DefaultListModel<String> implements Runnable
     public void run() {
         logger.info("Now listens to the queue");
         try {
-            String msg = eventInfoQueue.take().toString();
-            logger.info("Get the message: " + msg);
-            insertNewString(String.valueOf(msg));
+            while (true) {
+                String msg = eventInfoQueue.take().toString();
+                logger.debug("Get the message: " + msg);
+                insertNewString(msg);
+                Thread.sleep(100);
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     private void insertNewString(String msg) {
-        if (size() == 99)
-            removeElementAt(98);
-        add(1, msg);
+        try {
+            if (size() == 99)
+                removeElementAt(98);
+            add(1, msg);
+        } catch (Exception ignored) {}
     }
 }

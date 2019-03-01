@@ -57,6 +57,10 @@ public class RoomEntity {
         return returnVal;
     }
 
+    public int getCountOfPlaces() {
+        return countOfPlaces;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", RoomEntity.class.getSimpleName() + "[", "]")

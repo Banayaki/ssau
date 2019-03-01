@@ -11,21 +11,6 @@ import java.util.concurrent.BlockingQueue;
 @Service("threadController")
 public class ThreadsController {
     private ThreadSpawner spawner;
-    private BlockingQueue eventInfoQueue;
-    private BlockingQueue hotelInfoQueue;
-    private BlockingQueue threadsInfoQueue;
-
-    public void setEventInfoQueue(BlockingQueue eventInfoQueue) {
-        this.eventInfoQueue = eventInfoQueue;
-    }
-
-    public void setHotelInfoQueue(BlockingQueue hotelInfoQueue) {
-        this.hotelInfoQueue = hotelInfoQueue;
-    }
-
-    public void setThreadsInfoQueue(BlockingQueue threadsInfoQueue) {
-        this.threadsInfoQueue = threadsInfoQueue;
-    }
 
     @Autowired
     public void setSpawner(ThreadSpawner spawner) {
@@ -34,15 +19,5 @@ public class ThreadsController {
 
     public void startEndlessSpawn() {
         spawner.getThread().start();
-    }
-
-    public void putMessage(Object message, Class clazz) {
-        if (clazz.getName().equals(EventListModel.class.getName())) {
-            eventInfoQueue.add(message);
-        } else if (clazz.getName().equals(HotelInfoTableModel.class.getName())) {
-            hotelInfoQueue.add(message);
-        } else {
-            threadsInfoQueue.add(message);
-        }
     }
 }

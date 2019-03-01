@@ -32,6 +32,7 @@ public class HotelEntity {
                 room.occupy(human);
                 isInHotel = true;
             }
+            Thread.sleep(1000);
             semaphore.release();
         } catch (InterruptedException e) {
             e.printStackTrace();

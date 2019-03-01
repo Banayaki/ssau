@@ -8,18 +8,21 @@
     <aop:aspectj-autoproxy proxy-target-class="true"/>
     <context:component-scan base-package="banayaki.HotelLifeEmulator"/>
 
-    <bean id="threadsController" class="banayaki.HotelLifeEmulator.gui.helpers.ThreadsController"
-          p:eventInfoQueue-ref="eventInfoQueue"
+    <bean id="threadSpawner" class="banayaki.HotelLifeEmulator.gui.helpers.ThreadSpawner"
           p:hotelInfoQueue-ref="hotelInfoQueue"
-          p:threadsInfoQueue-ref="threadInfoQueue"/>
+          p:eventInfoQueue-ref="eventInfoQueue"
+          p:mapViewQueue-ref="mapViewQueue"/>
 
-    <bean id="eventInfoQueue" class="java.util.concurrent.ArrayBlockingQueue">
+    <bean id="mapView" class="banayaki.HotelLifeEmulator.gui.map.MapView"
+          p:messageProvider-ref="mapViewQueue"/>
+
+    <bean id="eventInfoQueue" class="java.util.concurrent.ArrayBlockingQueue" lazy-init="false">
         <constructor-arg value="50"/>
     </bean>
-    <bean id="threadInfoQueue" class="java.util.concurrent.ArrayBlockingQueue">
+    <bean id="hotelInfoQueue" class="java.util.concurrent.ArrayBlockingQueue" lazy-init="false">
         <constructor-arg value="50"/>
     </bean>
-    <bean id="hotelInfoQueue" class="java.util.concurrent.ArrayBlockingQueue">
+    <bean id="mapViewQueue" class="java.util.concurrent.ArrayBlockingQueue" lazy-init="false">
         <constructor-arg value="50"/>
     </bean>
 

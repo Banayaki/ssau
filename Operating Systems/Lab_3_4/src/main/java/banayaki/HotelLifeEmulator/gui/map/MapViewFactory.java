@@ -11,9 +11,7 @@ class MapViewFactory {
     MapViewFactory() { }
 
 
-    List<View> hotelDrawer() {
-        List<View> list = new ArrayList<>();
-        list.add(new HotelView());
-        return list;
+    View hotelDrawer() {
+        return new HotelView();
     }
 }

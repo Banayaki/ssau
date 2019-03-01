@@ -1,7 +1,6 @@
 package banayaki.HotelLifeEmulator.gui.main;
 
 import banayaki.HotelLifeEmulator.gui.info.HotelInfoTableModel;
-import banayaki.HotelLifeEmulator.gui.info.ThreadsTableModel;
 import banayaki.HotelLifeEmulator.gui.map.MapView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,13 +16,11 @@ public class MainPanel {
     private static final Logger logger = LoggerFactory.getLogger(MainPanel.class);
 
     private JPanel leftGroupPanel;
-    private JPanel rightGroupPanel;
     private JPanel centerGroupPanel;
     private JPanel hotelInfoPanel;
     private JPanel hotelEventsPanel;
     private JPanel mapPanel;
     private JPanel controlButtonsPanel;
-    private JPanel threadInfoPanel;
     private JList<String> eventList;
     private JButton pauseButton;
     private JButton stopButton;
@@ -32,7 +29,6 @@ public class MainPanel {
     private JTable threadInfoTable;
     private JScrollPane hotelInfoScrollPane;
     private JScrollPane eventListScrollPane;
-    private JScrollPane threadInfoScrollPane;
     public JPanel rootPanel;
 
     MainPanel() {
@@ -57,13 +53,6 @@ public class MainPanel {
     public void setHotelModel(HotelInfoTableModel model) {
         logger.info("Set <hotelModel> in mainPanel");
         hotelInfoTable.setModel(model);
-    }
-
-    @Autowired
-    @Resource(name = "threadModel")
-    public void setThreadModel(ThreadsTableModel model) {
-        logger.info("Set <threadModel> in mainPanel");
-        threadInfoTable.setModel(model);
     }
 
 }

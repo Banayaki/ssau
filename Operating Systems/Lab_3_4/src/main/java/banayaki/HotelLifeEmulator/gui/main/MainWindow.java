@@ -22,12 +22,11 @@ public class MainWindow extends JFrame {
         ctx.load("META-INF/spring/app-context.xml");
         ctx.refresh();
 
-        EventQueue.invokeLater(() -> {
-            MainWindow mainWindow = ctx.getBean("mainWindow", MainWindow.class);
-            MainPanel mainPanel = ctx.getBean("mainPanel", MainPanel.class);
-            mainWindow.setupComponents(mainPanel);
-            logger.info("Finish configurations");
-        });
+        MainWindow mainWindow = ctx.getBean("mainWindow", MainWindow.class);
+        MainPanel mainPanel = ctx.getBean("mainPanel", MainPanel.class);
+        mainWindow.setupComponents(mainPanel);
+        logger.info("Finish configurations");
+
     }
 
     public MainWindow() {

@@ -30,6 +30,9 @@ int main() {
             executor.printAll(to_string(function(a, b, c)));
             if (!executor.wishToContinue())
                 return 0;
+
+            __asm("mov a, 32");
+            cout << a;
         }
 
     } catch (exception &e) {
