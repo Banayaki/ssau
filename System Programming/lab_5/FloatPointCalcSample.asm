@@ -2,19 +2,31 @@
 
                                                                 ;Макрос (аля функция) с двумя параметрами print(str, format0)
 %macro PRINT 2      
-    push eax                                                    ;во время вызова printf следующие регистры сбросятся. Что бы избежать этого, временно уберем их в стек
-    push ebx
-    push ecx
-
+    pushad
+                                                        ;во время вызова printf следующие регистры сбросятся. Что бы избежать этого, временно уберем их в стек
     push %1             
     push %2
     call printf
     
     pop dword [temp]                                            ;что бы достать из стека переданные параметры, будем убирать их в temp
     pop dword [temp]
-    pop ecx
-    pop ebx
-    pop eax
+
+    popad
+%endmacro
+
+%macro DOUBLE_PRINT 2
+    pushad
+
+    push %1
+    push %2
+    push format_float
+    call printf
+
+    pop dword [temp]
+    pop dword [temp]
+    pop dword [temp]
+
+    popad
 %endmacro
 
                                                                 ;Проверка на равенство с нулем, применяется для предотвращения деления на ноль
@@ -32,7 +44,7 @@ section .bss                                                    ;секция в
     a_num resd 1
     b_num resd 1
     c_num resd 1
-    result resd 1
+    result resq 1
 
 section .data                                                   ;секция объявления инициализированных данных
     inf_message dd "Some number doesn't fit in integer. Exiting...."
@@ -69,9 +81,6 @@ section .text                                                   ;директи�
         fld dword [const2]
         fmulp
 
-        fst dword [result]
-        PRINT dword [result], format_float
-
         fld dword [b_params + (ecx-1)*4]
         fld dword [const2]
         fdivp
@@ -88,10 +97,10 @@ section .text                                                   ;директи�
         fsubp
         fdivp
 
-        fstp dword [result]
-        PRINT dword [result], format_float
+        fstp qword [result]
+        DOUBLE_PRINT dword [result + 4], dword [result]
 
-        mov esp, ebp                                            ;восстанавливаем значение esp 
+        mov esp, ebp                                            
         pop ebp                
         ret
 
