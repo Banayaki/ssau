@@ -10,23 +10,25 @@ import org.springframework.stereotype.Service;
 
 import javax.swing.*;
 import java.awt.*;
+import java.lang.reflect.InvocationTargetException;
 
 @Service("mainWindow")
 public class MainWindow extends JFrame {
     private static final Logger logger = LoggerFactory.getLogger(MainWindow.class);
     private ThreadsController threadsController;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvocationTargetException, InterruptedException {
         logger.info("Launch the application");
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
         ctx.load("META-INF/spring/app-context.xml");
         ctx.refresh();
 
-        MainWindow mainWindow = ctx.getBean("mainWindow", MainWindow.class);
-        MainPanel mainPanel = ctx.getBean("mainPanel", MainPanel.class);
-        mainWindow.setupComponents(mainPanel);
-        logger.info("Finish configurations");
-
+//        EventQueue.invokeLater(() -> {
+            MainPanel mainPanel = ctx.getBean("mainPanel", MainPanel.class);
+            MainWindow mainWindow = ctx.getBean("mainWindow", MainWindow.class);
+            mainWindow.setupComponents(mainPanel);
+            logger.info("Finish configurations");
+//        });
     }
 
     public MainWindow() {

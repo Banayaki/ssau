@@ -7,7 +7,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-public class ManGuestView extends View implements ActiveView {
+public class ManGuestView extends View {
     private static final String PATH = "src/main/resources/ManGuest.png";
     private int width = 100;
     private int height = 100;
@@ -17,11 +17,6 @@ public class ManGuestView extends View implements ActiveView {
     public ManGuestView(Pair<Integer, Integer> pair) {
         x = pair.fst;
         y = pair.snd;
-    }
-
-    @Override
-    public void update() {
-
     }
 
     @SuppressWarnings("Duplicates")
