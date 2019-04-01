@@ -87,8 +87,7 @@ section .bss                                                    ;секция в
     temp resd 1                                                 ;resd - reserve dword
     x resq 1
     eps resq 1
-    degree resd 1
-    result resq 1
+    degree resq 1
     accurate_val resq 1
     returned_val resq 1
 
@@ -96,15 +95,20 @@ section .data                                                   ;секция о
     enter_x dd "Enter the x (x < |1|): "
     enter_eps dd "Enter the eps: "
     accurate_result dd "Accurate result: "
+    intermediate_result dd "Intermediate result: "
+    calc_result dd "Calculated result: "
 
     overflow_ex dd "EXCEPTION: Some number doesn't fit. Exiting...."
     divide_by_zero_ex dd "EXCEPTION: Arithmetic exception. Divide by zero. Exiting...."
     incorrect_number_format_ex dd "EXCEPTION: Bad number"
     out_of_bounds_ex dd "EXCEPTION: Out of bounds"
 
-    const_neg_and_pos_one dq 1.0
-    const_neg dq -1.0
+    neg_and_pos_one dq -1.0
+    additional_x_for_pow dq 1.0
+    bottom_part dq 1.0
+    result dq 0.0
 
+    const_neg_one dq -1.0
     const_2 dq 2.0
                                                  
     format_number dd ' %2d', 0x0a                               ;0x0a = \n, 0
@@ -129,6 +133,9 @@ section .text                                                   ;директи�
         DOUBLE_PRINT dword [accurate_val + 4], dword [accurate_val]
 
         call function
+
+        PRINT format_text, calc_result
+        DOUBLE_PRINT dword [result + 4], dword [result]
         call exit
 
     x_bounds_check:
@@ -154,8 +161,8 @@ section .text                                                   ;директи�
         ret
 
     accurate:
-        fld1
         fld qword [x]
+        fld1
         fpatan
 
         fstp qword [accurate_val]
@@ -164,62 +171,100 @@ section .text                                                   ;директи�
     function: 
         push ebp                                                ;созраняем старое значение
         mov ebp, esp
-        mov ecx, 1   
 
-        .cycle:
-            push dword [const_neg_one + 4]
-            push dword [const_neg_one]
-            push ecx
-            call pow
+        fld qword [neg_and_pos_one]
+        fld qword [const_neg_one]
+        fmulp
+        fst qword [neg_and_pos_one]
 
-            fld qword [returned_val]
+        ;1 3 5
 
-            mov eax, ecx
-            mov ebx, 2
-            mul ebx
-            add eax, 1
-            push dword [x + 4]
-            push dword [x]
-            push ebx
-            call pow
+        fld qword [x]
+        fld qword [additional_x_for_pow]
+        fmulp   
 
-            fld qword [returned_val]
+        fld qword [additional_x_for_pow]
+        fmulp
+
+        fst qword [x]
+        fst qword [additional_x_for_pow]
+
+        fmulp
+
+        fld qword [bottom_part]
+        fdivp
+
+        fld qword [result]
+        faddp 
+        fstp qword [result]
+
+
+        fld qword [bottom_part]
+        fld qword [const_2]
+        faddp
+        fstp qword [bottom_part]
+
+        PRINT format_text, intermediate_result
+        DOUBLE_PRINT dword [result + 4], dword [result]
+
+        jmp check_with_eps
+
+        cycle:
+            fld qword [neg_and_pos_one]
+            fld qword [const_neg_one]
+            fmulp
+            fst qword [neg_and_pos_one]
+
+            ;1 3 5
+
+            fld qword [x]
+            fld qword [additional_x_for_pow]
+            fmulp   
+
+            fld qword [additional_x_for_pow]
             fmulp
 
-            mov dword [temp], ebx
-            fild dword [temp]
+            fst qword [x]
+
+            fmulp
+
+            fld qword [bottom_part]
             fdivp
 
+            fld qword [result]
+            faddp 
             fstp qword [result]
+
+
+            fld qword [bottom_part]
+            fld qword [const_2]
+            faddp
+            fstp qword [bottom_part]
+
+            PRINT format_text, intermediate_result
             DOUBLE_PRINT dword [result + 4], dword [result]
+
+            jmp check_with_eps
 
         continue:
         mov esp, ebp                                            ;восстанавливаем значение esp 
         pop ebp                
         ret
 
-    pow:
-        push ebp                                               
-        mov ebp, esp 
-        pushad
-
-        mov ecx, [ebp + 8]
-        mov dword [returned_val], [ebp + 12]
-        mov dword [returned_val + 4], [ebp + 16]
-        
-        popad
-        mov esp, ebp                                            
-        pop ebp                
-        ret
-
     check_with_eps:
-        push ebp                                                
-        mov ebp, esp 
+        fld qword [accurate_val]
+        fld qword [result]
+        fsubp
 
-        mov esp, ebp                                            
-        pop ebp                
-        ret
-
+        fabs
+        fld qword [eps]
+        
+        fcomip
+        fstp st0
+        
+        
+        jc cycle
+        jmp continue
 
     overflow:
         THORW_EXCEPTION overflow_ex
