@@ -4,44 +4,6 @@ import cv2
 import numpy as np
 
 
-def ass():
-    img = cv2.imread('/home/banayaki/Downloads/1.jpg')
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    cv2.imshow('f', img)
-    cv2.waitKey(0)
-    focal_length = img.shape[1] / 2
-    k = 0.5
-    theta = 180
-
-    R = f(focal_length, k, theta)
-
-    cy, cx = np.array(img.shape[:2]) // 2
-    dist_image = np.zeros(img.shape, np.uint8)
-    print(img[0][0])
-
-    for source_x in range(img.shape[1]):
-        for source_y in range(img.shape[0]):
-            xpos = source_x > cx
-            ypos = source_y > cy
-
-            xdif = source_x - cx
-            ydif = source_y - cy
-            theta = atan(ydif/xdif)
-            if np.isnan(theta):
-                theta = 1.0
-            r = f(focal_length, k, theta)
-
-            dist_x = r * cos(theta) + cx
-            dist_y = r * sin(theta) + cy
-            # print(f'{r} {dist_x} {dist_y}')
-            if dist_y < img.shape[0] and dist_x < img.shape[1]:
-                print(img[source_y][source_x])
-                dist_image[int(dist_y)][int(dist_x)] = img[source_y][source_x]
-    print(dist_image)
-    cv2.imshow('f', dist_image)
-    cv2.waitKey(0)
-
-
 def f(_focal_length, _k, _theta):
     if _k > 0:
         return _focal_length / _k * tan(_k * _theta)
