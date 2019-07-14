@@ -1,56 +1,57 @@
-from cmath import atan, tan, cos, sin
+import os
 
+import click
 import cv2
 import numpy as np
 
 
-def f(_focal_length, _k, _theta):
+def img_radius(_focal_length, _k, _theta):
     if _k > 0:
-        return _focal_length / _k * tan(_k * _theta)
+        return _focal_length / _k * np.tan(_k * _theta)
     elif _k < 0:
-        return _focal_length / _k * sin(_k * _theta)
+        return _focal_length / _k * np.sin(_k * _theta)
     else:
         return _focal_length * _theta
     pass
 
 
+def transform(image, _k, _focal_length):
+    img_shape = image.shape[:2]
+    source_map = np.indices(img_shape, dtype=np.int32)
+    cy, cx = np.array(img_shape) // 2
+    center = np.array([[[cy]], [[cx]]])
+    source_map = source_map - center
+    source_radius = np.sqrt(source_map[0] * source_map[0] + source_map[1] * source_map[1])
+    angle = np.arctan2(source_map[0], source_map[1])
+
+    theta = np.arctan2(source_radius, _focal_length)
+    dist_radius = img_radius(_focal_length, _k, theta)
+
+    map_x = dist_radius * np.cos(angle) + cx
+    map_y = dist_radius * np.sin(angle) + cy
+    dist_img = cv2.remap(image, map_x.astype(np.float32), map_y.astype(np.float32), cv2.INTER_CUBIC)
+    return dist_img
+
+
+@click.command()
+@click.option('--input-path', '-i')
+@click.option('--focal', '-f')
+@click.option('--distort', '-k')
+@click.option('--output-path', '-o')
+def main(input_path, focal, distort, output_path):
+    assert (input_path is not None)
+    assert (focal is not None)
+    assert (distort is not None)
+    assert (output_path is not None)
+    assert (len(output_path) > 0)
+    assert (os.path.exists(input_path))
+    k = float(distort)
+    focal_length = float(focal)
+    img = cv2.imread(input_path)
+    dist_img = transform(img, k, focal_length)
+    cv2.imwrite(output_path, dist_img)
+    pass
+
+
 if __name__ == '__main__':
-    img = cv2.imread('/home/banayaki/Downloads/2.png')
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    cv2.imshow('f', img)
-    # cv2.waitKey(0)
-    focal_length = img.shape[0] // 3
-    k = 1
-
-    cy, cx = np.array(img.shape[:2]) // 2
-    dist_image = np.zeros(np.array(img.shape) + 1000, np.uint8)
-    print(img[0][0])
-
-    for source_x in range(img.shape[1]):
-        for source_y in range(img.shape[0]):
-            xpos = source_x > cx
-            ypos = source_y > cy
-            xdif = source_x - cx
-            ydif = source_y - cy
-            source_radius = (xdif * xdif + ydif * ydif) ** 0.5
-            angle = atan(ydif/xdif).real
-            angle = np.rad2deg(angle)
-            if not xpos:
-                angle += 180
-            angle = np.deg2rad(angle)
-            theta = source_radius / focal_length
-            dist_radius = f(focal_length, k, theta)
-            if np.isnan(theta):
-                theta = 90
-
-            dist_x = dist_radius * cos(angle) + cx
-            dist_y = dist_radius * sin(angle) + cy
-            if np.isnan(dist_x) or np.isnan(dist_y):
-                print(f'{source_radius} {source_x} {source_y}')
-                continue
-            if 0 < int(round(dist_y)) < img.shape[0] and 0 < int(round(dist_x)) < img.shape[1]:
-                dist_image[int(round(dist_y))][int(round(dist_x))] = img[source_y][source_x]
-    print(dist_image)
-    cv2.imshow('f', dist_image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    main()
