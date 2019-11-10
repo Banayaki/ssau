@@ -53,20 +53,22 @@ from EMPLOYEES emp
 where emp.GENDER = 'm'
   and emp.WAGE_RATE = 1.5;
 
--- Task 7
-select *
+-- Task 6
+select PROPERTY
 from (
-         select dept.NUM_DEPARTMENT, count(dept.NUM_DEPARTMENT) as "COUNT"
-         from DEPARTMENT dept
-                  right join EMPLOYEES E on dept.NUM_DEPARTMENT = E.NUM_DEPARTMENT
-         group by dept.NUM_DEPARTMENT
+         select d.PROPERTY, jh.NUM_DEPARTMENT, count(jh.NUM_DEPARTMENT) as "COUNT"
+         from JOB_HISTORY jh
+                  right join DEPARTMENT D on jh.NUM_DEPARTMENT = D.NUM_DEPARTMENT
+         where END_DATE is null
+         group by d.PROPERTY, jh.NUM_DEPARTMENT
+         order by COUNT desc
      )
 where ROWNUM = 1;
 
-
--- Task 8
-select dept.NUM_DEPARTMENT, count(dept.NUM_DEPARTMENT) as "COUNT"
-from DEPARTMENT dept
-         right join EMPLOYEES E on dept.NUM_DEPARTMENT = E.NUM_DEPARTMENT
-group by dept.NUM_DEPARTMENT
-having count(dept.NUM_DEPARTMENT) > 2;
+-- Task 7
+select d.PROPERTY
+from JOB_HISTORY jh
+         right join DEPARTMENT D on jh.NUM_DEPARTMENT = D.NUM_DEPARTMENT
+where END_DATE is null
+group by d.PROPERTY, jh.NUM_DEPARTMENT
+having count(jh.NUM_DEPARTMENT) > &num;
