@@ -68,4 +68,32 @@ end;
 
 call P_TASK_4(1000);
 
-select * from SSAU.BONUS;
+select *
+from SSAU.BONUS;
+
+
+-- Удалять из emp если нет связных записей
+
+create or replace procedure test_task(emp_id in number)
+    is
+begin
+    DBMS_OUTPUT.ENABLE();
+    if (select num from EMPLOYEES where num = emp_id) is not null and
+       (select distinct num from JOB_HISTORY where num = emp_id) is null then
+        delete from EMPLOYEES where num = emp_id;
+
+    elsif (select num from EMPLOYEES where num = emp_id) is null or
+          (select distinct num from JOB_HISTORY where num = emp_id) is not null then
+        delete from JOB_HISTORY where num = emp_id;
+
+    else
+        DBMS_OUTPUT.PUT_LINE('Cant delete this employee');
+    end if;
+end test_task;
+
+
+call test_task(1014);
+
+select *
+from SSAU.JOB_HISTORY
+where (select distinct num from SSAU.JOB_HISTORY where num = 1014) is not null;

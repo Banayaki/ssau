@@ -26,13 +26,16 @@ where emp.NUM in (
 
 -- Task 3
 select NUM_DEPARTMENT
-from (select jh_1.NUM_DEPARTMENT, count(jh_1.NUM_DEPARTMENT)
-      from JOB_HISTORY jh_1
-               left join JOB_HISTORY jh_2 on jh_1.NUM = jh_2.NUM
-      where jh_1.JOB != jh_2.JOB
-      group by jh_1.NUM_DEPARTMENT
-      order by count(jh_1.NUM_DEPARTMENT) DESC)
-where ROWNUM = 1;
+from for_select_task_3
+where dept_count = (select MAX(dept_count)
+                    from for_select_task_3);
+
+create or replace view for_select_task_3 as
+select jh_1.NUM_DEPARTMENT, count(jh_1.NUM_DEPARTMENT) as dept_count
+from JOB_HISTORY jh_1
+         inner join JOB_HISTORY jh_2 on jh_1.NUM = jh_2.NUM
+where jh_1.JOB != jh_2.JOB
+group by jh_1.NUM_DEPARTMENT;
 
 -- Task 4
 select distinct emp.FNAME
@@ -56,16 +59,15 @@ where emp.GENDER = 'm'
 
 -- Task 6
 select PROPERTY
-from (
-         select d.PROPERTY, jh.NUM_DEPARTMENT, count(jh.NUM_DEPARTMENT) as "COUNT"
-         from JOB_HISTORY jh
-                  right join DEPARTMENT D on jh.NUM_DEPARTMENT = D.NUM_DEPARTMENT
-         where END_DATE is null
-         group by d.PROPERTY, jh.NUM_DEPARTMENT
-         order by COUNT desc
-     )
-where ROWNUM = 1;
+from select_for_task_6
+where COUNT = (select max(COUNT) from select_for_task_6);
 
+create or replace view select_for_task_6 as
+select d.PROPERTY, jh.NUM_DEPARTMENT, count(jh.NUM_DEPARTMENT) as "COUNT"
+from JOB_HISTORY jh
+         inner join DEPARTMENT D on jh.NUM_DEPARTMENT = D.NUM_DEPARTMENT
+where END_DATE is null
+group by d.PROPERTY, jh.NUM_DEPARTMENT;
 -- Task 7
 select d.PROPERTY
 from JOB_HISTORY jh

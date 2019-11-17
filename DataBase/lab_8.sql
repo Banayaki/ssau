@@ -38,6 +38,8 @@ end;
 
 alter trigger t_task_1 disable;
 alter trigger t_task_2 disable;
+alter trigger t_task_3 disable;
+alter trigger t_task_4 disable;
 
 -- Seems like it can't be written like this. I need to use much more instruments (packages) and if i will use it will be
 -- thousands lines of code
