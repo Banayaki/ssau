@@ -76,21 +76,21 @@ from SSAU.BONUS;
 
 create or replace procedure test_task(emp_id in number)
     is
+    emp_count number;
+    job_count number;
 begin
-    DBMS_OUTPUT.ENABLE();
-    if (select num from EMPLOYEES where num = emp_id) is not null and
-       (select distinct num from JOB_HISTORY where num = emp_id) is null then
-        delete from EMPLOYEES where num = emp_id;
+    select count(*) into emp_count from EMPLOYEES where num = emp_id;
+    select count(*) into job_count from JOB_HISTORY where num = emp_id;
 
-    elsif (select num from EMPLOYEES where num = emp_id) is null or
-          (select distinct num from JOB_HISTORY where num = emp_id) is not null then
+    if emp_count = 0 and job_count != 0 then
         delete from JOB_HISTORY where num = emp_id;
-
+    elsif emp_count != 0 and job_count = 0 then
+        delete from EMPLOYEES where num = emp_id;
     else
+        DBMS_OUTPUT.ENABLE();
         DBMS_OUTPUT.PUT_LINE('Cant delete this employee');
     end if;
-end test_task;
-
+end;
 
 call test_task(1014);
 

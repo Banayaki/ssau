@@ -45,26 +45,29 @@ alter trigger t_task_4 disable;
 -- thousands lines of code
 
 create or replace trigger t_task_4
-    before update of wage_rate
-    on EMPLOYEES
+    before update of WAGE_RATE on SSAU.EMPLOYEES
     for each row
 declare
-    min_num EMPLOYEES.num%TYPE;
+    pragma autonomous_transaction;
+    cursor cursor_employes is select * from SSAU.EMPLOYEES;
+    min_id number;
 begin
-    select min(num) into min_num from EMPLOYEES group by num;
-
-    if min_num = :new.num and :old.job = :new.job and :old.wage_rate != :new.wage_rate then
-        for itr in (select * from EMPLOYEES where num != min_num and job = :old.job)
+    select min(num) into min_id from SSAU.EMPLOYEES;
+    if :old.num = min_id and :new.job = :old.job and
+       :old.wage_rate != :new.wage_rate then
+        for cur_emp in cursor_employes
             loop
-                delete from EMPLOYEES where num = itr.num;
-                insert into EMPLOYEES (NUM, FNAME, BDAY, GENDER, JOB, WAGE_RATE, SDATE, ADDRESS) values
-                (itr.NUM, itr.FNAME, itr.BDAY, itr.GENDER, itr.JOB, :new.wage_rate, itr.SDATE, itr.ADDRESS);
+                if cur_emp.job = :new.job and cur_emp.num != :old.num then
+                    update SSAU.EMPLOYEES
+                    set WAGE_RATE = :new.wage_rate
+                    where num = cur_emp.num;
+                end if;
             end loop;
-
     end if;
+    commit;
 end;
 
-update EMPLOYEES
-set WAGE_RATE = 1.4
-where num = 1014
-
+update SSAU.EMPLOYEES
+set WAGE_RATE = 1.2
+where NUM = 102;
+commit;
