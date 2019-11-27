@@ -21,14 +21,10 @@ public class Lab9Application {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/application-context.xml");
         JdbcTemplate jdbcTemplate = (JdbcTemplate) ctx.getBean("jdbcTemplate");
 
-        String sql = "update employees set job = ? where num = ?";
-        Object[] params = new Object[] {}
-        jdbcTemplate.update();
-
 
         List<Map<String, Object>> allEmployees =
                 jdbcTemplate.queryForList("select * from employees emp join job_history jh on emp.num = jh.num");
-
+x
         System.out.println(allEmployees);
     }
 

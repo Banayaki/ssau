@@ -49,25 +49,19 @@ create or replace trigger t_task_4
     for each row
 declare
     pragma autonomous_transaction;
-    cursor cursor_employes is select * from SSAU.EMPLOYEES;
     min_id number;
 begin
     select min(num) into min_id from SSAU.EMPLOYEES;
     if :old.num = min_id and :new.job = :old.job and
        :old.wage_rate != :new.wage_rate then
-        for cur_emp in cursor_employes
-            loop
-                if cur_emp.job = :new.job and cur_emp.num != :old.num then
-                    update SSAU.EMPLOYEES
-                    set WAGE_RATE = :new.wage_rate
-                    where num = cur_emp.num;
-                end if;
-            end loop;
+                update SSAU.EMPLOYEES
+                set WAGE_RATE = :new.wage_rate
+                where num != min_id and job = :old.job;
     end if;
     commit;
 end;
 
 update SSAU.EMPLOYEES
-set WAGE_RATE = 1.2
+set WAGE_RATE = 0.5
 where NUM = 102;
 commit;
