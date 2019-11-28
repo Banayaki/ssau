@@ -2,8 +2,9 @@ package database.lab_9;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import javax.sql.DataSource;
 import java.util.List;
 import java.util.Map;
 
@@ -12,12 +13,13 @@ public class DatabaseService {
     private JdbcTemplate jdbcTemplate;
 
     private final String SQL_SELECT_ALL_EMP_ALL_INFO =
-            "select * from EMPLOYEES emp join JOB_HISTORY jh on emp.num = jh.num";
+            "select emp.NUM, emp.FNAME, emp.NUM, emp.FNAME, emp.BDAY, emp.GENDER, emp.WAGE_RATE, emp.SDATE, " +
+                    "emp.ADDRESS, jh.START_DATE, jh.END_DATE, jh.JOB, jh.NUM_DEPARTMENT " +
+                    "from EMPLOYEES emp join JOB_HISTORY jh on emp.num = jh.num";
     private final String SQL_SELECT_ALL_EMP = "select * from EMPLOYEES";
     private final String SQL_UPDATE_EMP_JOB = "update EMPLOYEES set job = ? where num = ?";
 
-    @Autowired
-    public DatabaseService(JdbcTemplate jdbcTemplate) {
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
