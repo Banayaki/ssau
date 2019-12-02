@@ -79,15 +79,18 @@ create or replace procedure test_task(emp_id in number)
     emp_count number;
     job_count number;
 begin
+    DBMS_OUTPUT.ENABLE();
     select count(*) into emp_count from EMPLOYEES where num = emp_id;
     select count(*) into job_count from JOB_HISTORY where num = emp_id;
+    DBMS_OUTPUT.PUT_LINE(emp_count || ' ' || job_count);
 
     if emp_count = 0 and job_count != 0 then
         delete from JOB_HISTORY where num = emp_id;
+        DBMS_OUTPUT.PUT_LINE('Was deleted');
     elsif emp_count != 0 and job_count = 0 then
         delete from EMPLOYEES where num = emp_id;
+        DBMS_OUTPUT.PUT_LINE('Was deleted');
     else
-        DBMS_OUTPUT.ENABLE();
         DBMS_OUTPUT.PUT_LINE('Cant delete this employee');
     end if;
 end;

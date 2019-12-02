@@ -63,3 +63,18 @@ update SSAU.EMPLOYEES
 set WAGE_RATE = 0.5
 where NUM = 102;
 commit;
+
+-- Изменение даты увольнения проверка что бы дата была больше start
+create or replace trigger t_test_task
+    after update of end_date on JOB_HISTORY
+    for each row
+declare
+begin
+    DBMS_OUTPUT.ENABLE();
+    if :new.end_date < :new.start_date then
+        DBMS_OUTPUT.PUT_LINE('Cant update');
+        rollback;
+    end if;
+end;
+
+update SSAU.JOB_HISTORY set END_DATE = TO_DATE('2020-02-02', 'yyyy-mm-dd') where num = 1015;
