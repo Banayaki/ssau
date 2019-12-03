@@ -21,7 +21,7 @@ public class ArgParser {
 
     private static final String SELECT_ALL_EMP = "emp";
     private static final String SELECT_ALL_EMP_JH = "emp_jh";
-    private static final String UPDATE_NUM_JOB = "upd_num_job";
+    private static final String UPDATE_NUM_JOB = "upd";
 
     private DatabaseService service;
 
@@ -42,7 +42,9 @@ public class ArgParser {
                     selectAllEmpAndJh(args[1]);
                     break;
                 case UPDATE_NUM_JOB:
-                    updateNumJob(args[1], args[2]);
+                    if (args[2].equals("num"))
+                        throw new IllegalArgumentException("You can't update id of the employee");
+                    updateNumJob(args[1], args[2], args[3]);
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal argument (args[0])");
@@ -63,8 +65,8 @@ public class ArgParser {
         createExcelTable(queryResult, toExcelPath);
     }
 
-    private void updateNumJob(String num, String job) {
-        System.out.println("Updated rows = " + service.updateEmpJob(job, Integer.parseInt(num)));
+    private void updateNumJob(String num, String target, String value) {
+        System.out.println("Updated rows = " + service.updateEmpJob(Integer.parseInt(num), target, value));
     }
 
     private void createExcelTable(List<Map> queryResult, String toExcelPath) throws IOException {

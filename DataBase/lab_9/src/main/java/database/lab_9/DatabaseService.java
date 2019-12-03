@@ -17,7 +17,6 @@ public class DatabaseService {
                     "emp.ADDRESS, jh.START_DATE, jh.END_DATE, jh.JOB, jh.NUM_DEPARTMENT " +
                     "from EMPLOYEES emp join JOB_HISTORY jh on emp.num = jh.num";
     private final String SQL_SELECT_ALL_EMP = "select * from EMPLOYEES";
-    private final String SQL_UPDATE_EMP_JOB = "update EMPLOYEES set job = ? where num = ?";
 
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -31,8 +30,10 @@ public class DatabaseService {
         return jdbcTemplate.queryForList(SQL_SELECT_ALL_EMP);
     }
 
-    public int updateEmpJob(String job, int num) {
-        Object[] params = new Object[]{job, num};
+    public int updateEmpJob(int num, String target, String value) {
+        String SQL_UPDATE_EMP_JOB = "update EMPLOYEES set " + target + " = ? where num = ?";
+
+        Object[] params = new Object[]{value, num};
         return jdbcTemplate.update(SQL_UPDATE_EMP_JOB, params);
     }
 }
